@@ -7,7 +7,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Contact";
 import { Reveal, SectionLabel } from "@/components/Reveal";
-import { getProject, projects } from "@/lib/projects";
+import { getProject, projects, type Project } from "@/lib/projects";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -50,11 +50,11 @@ function CaseNotFound() {
 }
 
 function CaseStudyPage() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: Project };
   const [revealed, setRevealed] = useState(false);
   const related = project.related
-    .map((slug) => projects.find((p) => p.slug === slug))
-    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+    .map((slug: string) => projects.find((p) => p.slug === slug))
+    .filter((p): p is Project => Boolean(p));
 
   return (
     <div className="min-h-screen bg-background">
