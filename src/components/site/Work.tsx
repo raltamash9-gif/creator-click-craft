@@ -1,30 +1,42 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
-import thumbDoc from "@/assets/thumb-doc.jpg";
-import thumbGaming from "@/assets/thumb-gaming.jpg";
-import thumbTech from "@/assets/thumb-tech.jpg";
-import thumbHistory from "@/assets/thumb-history.jpg";
-import thumbEdu from "@/assets/thumb-edu.jpg";
-import thumbFaceless from "@/assets/thumb-faceless.jpg";
+import { categories, projects } from "@/lib/projects";
 
-const work = [
-  { src: thumbDoc, title: "The Lost Empire", niche: "Documentary", note: "Cinematic tension, one focal subject" },
-  { src: thumbGaming, title: "Final Run", niche: "Gaming", note: "High-energy contrast, readable at 120px" },
-  { src: thumbHistory, title: "Rome's Last Day", niche: "History", note: "Editorial type, dramatic lighting" },
-  { src: thumbTech, title: "It's Over", niche: "Technology", note: "Product clarity with a bold hook" },
-  { src: thumbEdu, title: "How Memory Works", niche: "Education", note: "Concept made instantly visual" },
-  { src: thumbFaceless, title: "The $1B Secret", niche: "Faceless", note: "Curiosity gap without clickbait" },
-];
+const spanClass: Record<string, string> = {
+  wide: "md:col-span-4",
+  tall: "md:col-span-2",
+  regular: "md:col-span-3",
+};
 
-export function Work() {
+const ratioClass: Record<string, string> = {
+  wide: "aspect-[16/9]",
+  tall: "aspect-[4/5]",
+  regular: "aspect-[16/10]",
+};
+
+export function Work({
+  filter,
+  onFilterChange,
+}: {
+  filter: string;
+  onFilterChange: (value: string) => void;
+}) {
+  const isChannel = !(categories as readonly string[]).includes(filter);
+  const visible = projects.filter((p) => {
+    if (filter === "All") return true;
+    if (isChannel) return p.channel === filter;
+    return p.category === filter;
+  });
+
   return (
     <section id="work" className="py-28 lg:py-40">
       <div className="shell">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <Reveal>
-            <SectionLabel>Selected Work</SectionLabel>
+            <SectionLabel>Featured Work</SectionLabel>
             <h2 className="mt-6 max-w-2xl text-[clamp(2.5rem,4.4vw,4rem)] leading-[1.02] font-extrabold">
               Thumbnails built to win the scroll.
             </h2>
@@ -37,41 +49,124 @@ export function Work() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:mt-20 lg:gap-10">
-          {work.map((item, i) => (
-            <Reveal key={item.title} delay={(i % 2) * 0.08} className={i % 3 === 0 ? "md:col-span-2" : ""}>
-              <motion.article
-                data-cursor="view"
-                whileHover={{ y: -10, rotate: i % 2 === 0 ? -1.2 : 1.2 }}
-                transition={{ type: "spring", stiffness: 240, damping: 22 }}
-                className="shadow-soft hover:shadow-lift group overflow-hidden rounded-3xl border border-border bg-card p-3 backdrop-blur-xl transition-shadow duration-500"
-              >
-                <div className="overflow-hidden rounded-2xl bg-ink">
-                  <img
-                    src={item.src}
-                    alt={`${item.niche} YouTube thumbnail — ${item.title}`}
-                    loading="lazy"
-                    width={1280}
-                    height={720}
-                    className="h-auto w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045]"
-                  />
-                </div>
-                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-5">
-                  <div className="min-w-0">
-                    <h3 className="truncate text-lg font-bold">{item.title}</h3>
-                    <p className="mt-1 truncate text-sm text-muted-foreground">{item.note}</p>
-                  </div>
-                  <span className="flex shrink-0 items-center gap-3">
-                    <span className="rounded-full border border-border px-3 py-1 text-[11px] tracking-[0.14em] text-subtle uppercase">
-                      {item.niche}
-                    </span>
-                    <ArrowUpRight className="h-5 w-5 text-subtle transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
+        <Reveal delay={0.05}>
+          <div className="mt-12 flex flex-wrap gap-2 lg:mt-16">
+            {categories.map((c) => {
+              const active = filter === c;
+              return (
+                <button
+                  key={c}
+                  type="button"
+                  data-cursor="button"
+                  onClick={() => onFilterChange(c)}
+                  className={`relative rounded-full px-4 py-2 text-sm transition-colors duration-300 ${
+                    active ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="filter-pill"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      className="absolute inset-0 rounded-full bg-primary"
+                    />
+                  )}
+                  <span
+                    className={`relative z-10 ${
+                      active ? "" : "rounded-full"
+                    }`}
+                  >
+                    {c}
                   </span>
-                </div>
+                  {!active && (
+                    <span className="pointer-events-none absolute inset-0 rounded-full border border-border" />
+                  )}
+                </button>
+              );
+            })}
+            {isChannel && (
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm text-accent-foreground">
+                {filter}
+                <button
+                  type="button"
+                  data-cursor="button"
+                  onClick={() => onFilterChange("All")}
+                  className="opacity-80 transition-opacity hover:opacity-100"
+                  aria-label="Clear channel filter"
+                >
+                  ✕
+                </button>
+              </span>
+            )}
+          </div>
+        </Reveal>
+
+        <motion.div layout className="mt-12 grid gap-8 md:grid-cols-6 lg:mt-16 lg:gap-10">
+          <AnimatePresence mode="popLayout">
+            {visible.map((item) => (
+              <motion.article
+                key={item.slug}
+                layout
+                initial={{ opacity: 0, scale: 0.96, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: -12 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className={`group ${spanClass[item.span]}`}
+              >
+                <Link
+                  to="/work/$slug"
+                  params={{ slug: item.slug }}
+                  data-cursor="view"
+                  className="block [perspective:1200px]"
+                >
+                  <motion.div
+                    whileHover={{ y: -12, rotateX: 4, rotateY: -3 }}
+                    transition={{ type: "spring", stiffness: 240, damping: 22 }}
+                    className="shadow-soft group-hover:shadow-lift relative overflow-hidden rounded-3xl border border-border bg-card p-3 backdrop-blur-xl transition-shadow duration-500 [transform-style:preserve-3d]"
+                  >
+                    <div className={`relative overflow-hidden rounded-2xl bg-ink ${ratioClass[item.span]}`}>
+                      <img
+                        src={item.src}
+                        alt={`${item.category} YouTube thumbnail — ${item.title}`}
+                        loading="lazy"
+                        width={1280}
+                        height={720}
+                        className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
+                      />
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                        style={{
+                          background:
+                            "linear-gradient(160deg, oklch(1 0 0 / 0.22), transparent 42%), linear-gradient(to top, oklch(0 0 0 / 0.55), transparent 55%)",
+                        }}
+                      />
+                      <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                        View Case Study →
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-3 pt-5 pb-2">
+                      <div className="min-w-0">
+                        <h3 className="truncate text-lg font-bold transition-transform duration-500 group-hover:-translate-y-0.5">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 truncate text-sm text-muted-foreground">
+                          {item.category} · {item.year}
+                        </p>
+                      </div>
+                      <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
+                    </div>
+                  </motion.div>
+                </Link>
               </motion.article>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {visible.length === 0 && (
+          <p className="mt-16 text-center text-muted-foreground">
+            No projects in this category yet — try another filter.
+          </p>
+        )}
       </div>
     </section>
   );
