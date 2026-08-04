@@ -20,7 +20,7 @@ export function CustomCursor() {
       x.set(e.clientX);
       y.set(e.clientY);
       const el = (e.target as HTMLElement)?.closest?.("[data-cursor]") as HTMLElement | null;
-      setMode(((el?.dataset.cursor as CursorMode) ?? "default") satisfies CursorMode);
+      setMode(((el?.dataset["cursor"] as CursorMode) ?? "default") satisfies CursorMode);
     };
     window.addEventListener("mousemove", move);
     return () => {
