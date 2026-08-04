@@ -79,7 +79,10 @@ export function BeforeAfter() {
                 height={720}
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
+              <div
+                className="absolute inset-0 overflow-hidden"
+                style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+              >
                 <img
                   src={beforeImg}
                   alt="Original thumbnail before redesign"
@@ -87,7 +90,6 @@ export function BeforeAfter() {
                   width={1280}
                   height={720}
                   className="absolute inset-0 h-full w-full object-cover"
-                  style={{ width: ref.current?.clientWidth ? `${ref.current.clientWidth}px` : "100%" }}
                 />
               </div>
 
