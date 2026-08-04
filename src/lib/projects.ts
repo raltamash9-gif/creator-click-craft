@@ -62,7 +62,8 @@ const defaultLayers = (subject: string) => [
   { name: "Final Polish", body: "Colour grade, sharpening pass and a 120px legibility check." },
 ];
 
-export const projects: Project[] = [
+export const projects: Project[
+  ] = [
   {
     slug: "the-lost-empire",
     title: "The Lost Empire",
@@ -90,27 +91,7 @@ export const projects: Project[] = [
     layers: defaultLayers("silhouette"),
     related: ["romes-last-day", "the-1b-secret", "the-signal"],
   },
-  {
-    slug: "final-run",
-    title: "Final Run",
-    category: "Gaming",
-    channel: "Noble 6 Explains",
-    year: "2025",
-    src: thumbGaming,
-    span: "regular",
-    overview:
-      "A gaming lore channel whose audience browses on mobile in crowded sidebars. The thumbnail needed high energy that still reads at 120 pixels wide.",
-    challenge: "Gaming sidebars are saturated — everything is loud, so loud alone stops working.",
-    challengePoints: ["Show conflict instantly", "Improve small-size readability", "Avoid generic gaming noise"],
-    thinking: [
-      { heading: "Contrast over saturation", body: "Value contrast, not colour volume, is what survives a shrunken sidebar." },
-      { heading: "Motion implied, not drawn", body: "Diagonal composition suggests movement without motion-blur clutter." },
-      { heading: "Face-forward tension", body: "The expression carries the stakes faster than any word can." },
-    ],
-    tools: ["Adobe Photoshop", "Photo manipulation", "Lighting", "Compositing", "Typography"],
-    layers: defaultLayers("character"),
-    related: ["the-lost-empire", "the-signal", "how-memory-works"],
-  },
+  ,
   {
     slug: "romes-last-day",
     title: "Rome's Last Day",
@@ -132,6 +113,29 @@ export const projects: Project[] = [
     layers: defaultLayers("figure"),
     related: ["the-lost-empire", "the-signal", "the-1b-secret"],
   },
+  ,
+  {
+    slug: "final-run",
+    title: "Final Run",
+    category: "Gaming",
+    channel: "Noble 6 Explains",
+    year: "2025",
+    src: thumbGaming,
+    span: "regular",
+    overview:
+      "A gaming lore channel whose audience browses on mobile in crowded sidebars. The thumbnail needed high energy that still reads at 120 pixels wide.",
+    challenge: "Gaming sidebars are saturated — everything is loud, so loud alone stops working.",
+    challengePoints: ["Show conflict instantly", "Improve small-size readability", "Avoid generic gaming noise"],
+    thinking: [
+      { heading: "Contrast over saturation", body: "Value contrast, not colour volume, is what survives a shrunken sidebar." },
+      { heading: "Motion implied, not drawn", body: "Diagonal composition suggests movement without motion-blur clutter." },
+      { heading: "Face-forward tension", body: "The expression carries the stakes faster than any word can." },
+    ],
+    tools: ["Adobe Photoshop", "Photo manipulation", "Lighting", "Compositing", "Typography"],
+    layers: defaultLayers("character"),
+    related: ["the-lost-empire", "the-signal", "how-memory-works"],
+  },
+  ,
   {
     slug: "its-over",
     title: "It's Over",
@@ -153,6 +157,7 @@ export const projects: Project[] = [
     layers: defaultLayers("product"),
     related: ["the-machine-that-thinks", "the-signal", "final-run"],
   },
+  ,
   {
     slug: "how-memory-works",
     title: "How Memory Works",
@@ -174,27 +179,7 @@ export const projects: Project[] = [
     layers: defaultLayers("concept object"),
     related: ["the-1b-secret", "the-machine-that-thinks", "romes-last-day"],
   },
-  {
-    slug: "the-1b-secret",
-    title: "The $1B Secret",
-    category: "Documentary",
-    channel: "Renn Media",
-    year: "2025",
-    src: thumbFaceless,
-    span: "wide",
-    overview:
-      "A faceless finance format inside the Renn Media network. Without a presenter, the concept has to carry the entire click.",
-    challenge: "Faceless formats lose the human-face advantage that most thumbnails lean on.",
-    challengePoints: ["Create presence without identity", "Increase curiosity", "Protect retention — no false promises"],
-    thinking: [
-      { heading: "Back-facing figure", body: "Presence without a face keeps the format consistent across every upload." },
-      { heading: "One gold anchor", body: "A single warm accent tells the eye exactly where to land first." },
-      { heading: "Two type weights", body: "Restraint keeps the frame premium and mobile-legible." },
-    ],
-    tools: ["Adobe Photoshop", "AI-assisted workflow", "Photo manipulation", "Compositing", "Typography"],
-    layers: defaultLayers("back-facing figure"),
-    related: ["the-lost-empire", "how-memory-works", "the-signal"],
-  },
+  ,
   {
     slug: "the-machine-that-thinks",
     title: "The Machine That Thinks",
@@ -216,6 +201,29 @@ export const projects: Project[] = [
     layers: defaultLayers("neural core"),
     related: ["its-over", "the-signal", "final-run"],
   },
+  ,
+  {
+    slug: "the-1b-secret",
+    title: "The $1B Secret",
+    category: "Documentary",
+    channel: "Renn Media",
+    year: "2025",
+    src: thumbFaceless,
+    span: "wide",
+    overview:
+      "A faceless finance format inside the Renn Media network. Without a presenter, the concept has to carry the entire click.",
+    challenge: "Faceless formats lose the human-face advantage that most thumbnails lean on.",
+    challengePoints: ["Create presence without identity", "Increase curiosity", "Protect retention — no false promises"],
+    thinking: [
+      { heading: "Back-facing figure", body: "Presence without a face keeps the format consistent across every upload." },
+      { heading: "One gold anchor", body: "A single warm accent tells the eye exactly where to land first." },
+      { heading: "Two type weights", body: "Restraint keeps the frame premium and mobile-legible." },
+    ],
+    tools: ["Adobe Photoshop", "AI-assisted workflow", "Photo manipulation", "Compositing", "Typography"],
+    layers: defaultLayers("back-facing figure"),
+    related: ["the-lost-empire", "how-memory-works", "the-signal"],
+  },
+  ,
   {
     slug: "the-signal",
     title: "The Signal",
@@ -237,6 +245,7 @@ export const projects: Project[] = [
     layers: defaultLayers("astronaut"),
     related: ["the-machine-that-thinks", "romes-last-day", "the-lost-empire"],
   },
+  ,
   {
     slug: "above-the-noise",
     title: "Above the Noise",
@@ -258,6 +267,7 @@ export const projects: Project[] = [
     layers: defaultLayers("lone figure"),
     related: ["the-signal", "romes-last-day", "the-lost-empire"],
   },
+
 ];
 
 export function getProject(slug: string) {
