@@ -44,7 +44,7 @@ export function Hero() {
         onMouseMove={onMove}
         className="shell relative grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20"
       >
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 text-[clamp(3rem,7.2vw,6.9rem)] leading-[0.92] font-extrabold"
+            className="mt-8 text-[clamp(2.9rem,5.6vw,5.4rem)] leading-[0.92] font-extrabold"
           >
             Designing
             <br />
