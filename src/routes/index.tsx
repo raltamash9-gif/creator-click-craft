@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { CustomCursor } from "@/components/CustomCursor";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
+import { TrustedBy } from "@/components/site/TrustedBy";
 import { Work } from "@/components/site/Work";
 import { CaseStudies } from "@/components/site/CaseStudies";
+import { BeforeAfter } from "@/components/site/BeforeAfter";
+import { WhyItWorks } from "@/components/site/WhyItWorks";
 import { Process } from "@/components/site/Process";
 import { Testimonials } from "@/components/site/Testimonials";
+import { Services } from "@/components/site/Services";
+import { Faq } from "@/components/site/Faq";
 import { Contact, Footer } from "@/components/site/Contact";
 
 const title = "Altar Studio — Cinematic YouTube Thumbnail Design";
@@ -28,16 +34,28 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [filter, setFilter] = useState("All");
+
+  const selectChannel = (channel: string) => {
+    setFilter(channel);
+    document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <CustomCursor />
       <Nav />
       <main>
         <Hero />
-        <Work />
+        <TrustedBy onSelect={selectChannel} />
+        <Work filter={filter} onFilterChange={setFilter} />
         <CaseStudies />
+        <BeforeAfter />
+        <WhyItWorks />
         <Process />
         <Testimonials />
+        <Services />
+        <Faq />
         <Contact />
       </main>
       <Footer />

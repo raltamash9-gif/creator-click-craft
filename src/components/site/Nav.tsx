@@ -3,9 +3,10 @@ import { motion } from "motion/react";
 
 const items = [
   { id: "work", label: "Work" },
-  { id: "case-studies", label: "Case Studies" },
+  { id: "why", label: "Why It Works" },
   { id: "process", label: "Process" },
-  { id: "testimonials", label: "Testimonials" },
+  { id: "services", label: "Services" },
+  { id: "faq", label: "FAQ" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -51,7 +52,7 @@ export function Nav() {
       >
         <nav className="shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 py-5 lg:grid-cols-[1fr_auto_1fr]">
           <a
-            href="#top"
+            href="/"
             data-cursor="link"
             className="min-w-0 truncate font-display text-lg font-extrabold tracking-[-0.04em]"
           >
@@ -62,7 +63,7 @@ export function Nav() {
             {items.map((item) => (
               <a
                 key={item.id}
-                href={`#${item.id}`}
+                href={`/#${item.id}`}
                 data-cursor="link"
                 className={`nav-underline text-sm transition-colors duration-300 ${
                   active === item.id ? "text-foreground" : "text-muted-foreground"
@@ -75,7 +76,7 @@ export function Nav() {
 
           <div className="flex justify-end">
             <a
-              href="#contact"
+              href="/#contact"
               data-cursor="button"
               className="hover:shadow-glow inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
             >
