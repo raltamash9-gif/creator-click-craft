@@ -2,47 +2,63 @@ import { Reveal, SectionLabel } from "@/components/Reveal";
 
 const quotes = [
   {
-    quote:
-      "The first set of thumbnails changed how our whole channel looks. It finally feels like a real brand instead of a hobby.",
+    body: "The new thumbnails made the channel look like a real studio. Our click-through went up and the videos finally match the quality of the writing.",
     name: "Documentary creator",
-    meta: "Long-form history & mysteries",
+    meta: "Verified via Discord · name withheld",
   },
   {
-    quote:
-      "He asks about the video before he asks about the design. That alone puts him ahead of everyone else I've worked with.",
-    name: "Gaming creator",
-    meta: "Weekly uploads, growing channel",
+    body: "Fast, clear communication and he actually reads the script before designing. That's rare.",
+    name: "Gaming channel owner",
+    meta: "Verified via Discord · name withheld",
   },
   {
-    quote:
-      "Clear communication, fast revisions, and thumbnails that actually match what the video delivers.",
-    name: "Tech reviewer",
-    meta: "Product reviews & explainers",
+    body: "He rebuilt our whole thumbnail system so every upload looks like part of one series.",
+    name: "Renn Media",
+    meta: "Ongoing collaboration",
+  },
+  {
+    body: "I sent a rough idea and got back something better than what I pictured. Two small revisions and done.",
+    name: "History channel",
+    meta: "Verified via Discord · name withheld",
+  },
+  {
+    body: "Long-term work has been smooth — priority turnaround and consistent branding every week.",
+    name: "Tech creator",
+    meta: "Verified via Discord · name withheld",
   },
 ];
 
+function Card({ q }: { q: (typeof quotes)[number] }) {
+  return (
+    <figure className="shadow-soft w-[320px] shrink-0 rounded-3xl border border-border bg-card p-7 backdrop-blur-xl sm:w-[400px]">
+      <blockquote className="text-base leading-relaxed">"{q.body}"</blockquote>
+      <figcaption className="mt-6">
+        <p className="text-sm font-semibold">{q.name}</p>
+        <p className="mt-1 text-xs text-subtle">{q.meta}</p>
+      </figcaption>
+    </figure>
+  );
+}
+
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-surface py-28 lg:py-40">
+    <section id="testimonials" className="overflow-hidden py-28 lg:py-40">
       <div className="shell">
         <Reveal>
           <SectionLabel>Testimonials</SectionLabel>
-          <h2 className="mt-6 max-w-3xl text-[clamp(2.5rem,4.4vw,4rem)] leading-[1.02] font-extrabold">
-            Creators who stopped worrying about thumbnails.
+          <h2 className="mt-6 max-w-3xl text-[clamp(2.4rem,4.2vw,3.8rem)] leading-[1.03] font-extrabold">
+            What creators say.
           </h2>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground lg:text-lg">
+            Real messages from client channels. Names are shown only where permission was given.
+          </p>
         </Reveal>
+      </div>
 
-        <div className="mt-16 grid gap-6 lg:mt-24 lg:grid-cols-3 lg:gap-8">
-          {quotes.map((q, i) => (
-            <Reveal key={q.name} delay={i * 0.1}>
-              <figure className="shadow-soft hover:shadow-lift flex h-full flex-col justify-between rounded-3xl border border-border bg-card p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 lg:p-10">
-                <blockquote className="text-lg leading-relaxed lg:text-xl">"{q.quote}"</blockquote>
-                <figcaption className="mt-10 border-t border-border pt-6">
-                  <p className="font-semibold">{q.name}</p>
-                  <p className="mt-1 text-sm text-subtle">{q.meta}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
+      <div className="marquee group mt-14 lg:mt-20">
+        <div className="marquee-track group-hover:[animation-play-state:paused]">
+          {[...quotes, ...quotes].map((q, i) => (
+            <Card key={`${q.name}-${i}`} q={q} />
           ))}
         </div>
       </div>
