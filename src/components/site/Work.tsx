@@ -7,15 +7,11 @@ import { categories, projects } from "@/lib/projects";
 
 const spanClass: Record<string, string> = {
   wide: "md:col-span-4",
-  tall: "md:col-span-2",
-  regular: "md:col-span-3",
+  regular: "md:col-span-2",
 };
 
-const ratioClass: Record<string, string> = {
-  wide: "aspect-[16/9]",
-  tall: "aspect-[4/5]",
-  regular: "aspect-[16/10]",
-};
+const ratioClass = "aspect-[16/9]";
+
 
 export function Work({
   filter,
