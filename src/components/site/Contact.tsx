@@ -44,29 +44,31 @@ export function Contact() {
           </div>
         </Reveal>
 
-        <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => {
             const inner = (
               <>
-                <c.icon className="h-5 w-5 text-accent" />
+                <c.icon className="h-5 w-5 text-accent transition-all duration-300 group-hover:drop-shadow-[0_0_10px_oklch(0.623_0.214_259.8_/_0.75)]" />
                 <p className="mt-5 text-[11px] tracking-[0.24em] text-subtle uppercase">{c.label}</p>
                 <p className="mt-2 truncate text-sm font-medium">{c.value}</p>
               </>
             );
+            const isExternal = Boolean(c.href?.startsWith("http"));
             return (
               <Reveal key={c.label} delay={i * 0.06}>
                 {c.href ? (
                   <a
                     href={c.href}
-                    target={c.href.startsWith("http") ? "_blank" : undefined}
-                    rel="noreferrer"
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    aria-label={`${c.label} — ${c.value}`}
                     data-cursor="link"
-                    className="shadow-soft hover:shadow-lift block h-full rounded-3xl border border-border bg-card p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1.5"
+                    className="group shadow-soft hover:shadow-lift block h-full rounded-3xl border border-border bg-card p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5"
                   >
                     {inner}
                   </a>
                 ) : (
-                  <div className="shadow-soft h-full rounded-3xl border border-border bg-card p-7 backdrop-blur-xl">
+                  <div className="group shadow-soft h-full rounded-3xl border border-border bg-card p-7 backdrop-blur-xl">
                     {inner}
                   </div>
                 )}
@@ -83,19 +85,30 @@ export function Contact() {
               className="hover:shadow-glow inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
             >
               <Mail className="h-4 w-4" />
-              Start a Project
+              Hire Me
             </a>
             <a
               href={BEHANCE}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               data-cursor="button"
               className="hover:shadow-ember inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               View Behance
               <ArrowUpRight className="h-4 w-4" />
             </a>
+            <a
+              href={UPWORK}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="button"
+              className="hover:shadow-glow inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
+            >
+              View Upwork
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
           </div>
+
           <p className="mt-8 text-center text-sm text-subtle">
             Limited slots each month so every channel gets real creative direction.
           </p>
