@@ -1,37 +1,38 @@
 import { Reveal, SectionLabel } from "@/components/Reveal";
-import thumbDoc from "@/assets/thumb-doc.jpg";
-import thumbFaceless from "@/assets/thumb-faceless.jpg";
+import alexanderAsset from "@/assets/alexander-the-great.png.asset.json";
+import codingAsset from "@/assets/master-coding.png.asset.json";
 
 const studies = [
   {
-    src: thumbDoc,
-    channel: "Documentary channel",
+    src: alexanderAsset.url,
+    channel: "Documentary style",
     title: "One subject, one emotion, zero clutter",
     problem:
-      "The channel's uploads were visually busy — three ideas fighting for attention inside a 320px frame.",
+      "A painted battle scene has detail everywhere, which normally means the eye has nowhere to land.",
     approach: [
-      "Rebuilt the composition around a single silhouetted subject",
-      "Cut the headline from seven words to three",
-      "Locked a repeatable grade so the library reads as one series",
+      "Built the composition around a single commanding gesture",
+      "Kept the headline to three words",
+      "Locked an oil-paint grade so the frame reads as one image, not a collage",
     ],
     outcome:
-      "A consistent visual identity the creator can recognise on their own homepage — and viewers can recognise in a crowded sidebar.",
+      "A cinematic frame that still reads at sidebar size, with a look that can be repeated across a whole series.",
   },
   {
-    src: thumbFaceless,
-    channel: "Faceless finance channel",
-    title: "Curiosity without the clickbait tax",
+    src: codingAsset.url,
+    channel: "Tech & education style",
+    title: "Making an abstract topic visual",
     problem:
-      "Faceless formats lose the human face advantage, so the concept has to carry the whole click.",
+      "Coding content usually means screenshots of an editor — unreadable once the thumbnail shrinks.",
     approach: [
-      "Framed a back-facing figure to create presence without identity",
-      "Used one gold accent as the eye anchor",
-      "Kept type at two weights for instant mobile legibility",
+      "Turned code into light and logos streaming from the subject",
+      "Used a frosted glass panel to lift the headline off the artwork",
+      "Set three type weights in one block for instant hierarchy",
     ],
     outcome:
-      "Thumbnails that promise exactly what the video delivers, protecting retention while still earning the click.",
+      "A tech thumbnail where the topic is obvious in a glance and every word of the title stays crisp.",
   },
 ];
+
 
 export function CaseStudies() {
   return (
