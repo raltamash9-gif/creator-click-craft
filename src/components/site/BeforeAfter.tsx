@@ -1,8 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
-import beforeImg from "@/assets/before-original.jpg";
-import afterImg from "@/assets/thumb-history.jpg";
+import beforeAsset from "@/assets/alexander-before.png.asset.json";
+import afterAsset from "@/assets/alexander-the-great.png.asset.json";
+
+const beforeImg = beforeAsset.url;
+const afterImg = afterAsset.url;
+
 
 export function BeforeAfter() {
   const [pos, setPos] = useState(50);
