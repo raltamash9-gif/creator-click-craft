@@ -158,9 +158,13 @@ export function Footer() {
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-8">
           <p className="text-xs text-subtle">© {new Date().getFullYear()} Altar Studio. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href={BEHANCE} target="_blank" rel="noreferrer" data-cursor="link" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+            <a href={BEHANCE} target="_blank" rel="noopener noreferrer" data-cursor="link" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Behance
             </a>
+            <a href={UPWORK} target="_blank" rel="noopener noreferrer" data-cursor="link" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+              Upwork
+            </a>
+
             <a href={`mailto:${EMAIL}`} data-cursor="link" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Email
             </a>
