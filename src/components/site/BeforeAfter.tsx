@@ -1,8 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
-import beforeImg from "@/assets/before-original.jpg";
-import afterImg from "@/assets/thumb-history.jpg";
+import beforeAsset from "@/assets/alexander-before.png.asset.json";
+import afterAsset from "@/assets/alexander-the-great.png.asset.json";
+
+const beforeImg = beforeAsset.url;
+const afterImg = afterAsset.url;
+
 
 export function BeforeAfter() {
   const [pos, setPos] = useState(50);
@@ -42,18 +46,19 @@ export function BeforeAfter() {
               See the transformation.
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground lg:text-lg">
-              The original frame was flat, evenly lit and had no focal point — three problems that
-              cost clicks before a viewer reads a single word. The redesign introduces one dramatic
-              light source, a clear subject, a warm-against-cool grade and typography placed where
-              the eye actually lands.
+              Drag the slider on the Alexander the Great thumbnail. The raw stage is a flat set of
+              cut-out assets with hard white outlines and no focal point. The finished frame adds a
+              painted grade, directional light, atmospheric depth and a title placed where the eye
+              lands first.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
               {[
-                "Directional lighting replaces flat daylight",
-                "Composition rebuilt around a single focal point",
-                "Contrast raised for sidebar and mobile legibility",
-                "Colour graded into a repeatable series look",
+                "Hard white cut-out edges removed and blended",
+                "Directional key light added to the subject",
+                "Warm oil-painting grade applied across every layer",
+                "Title set in the emptiest corner of the frame",
               ].map((t) => (
+
                 <li key={t} className="flex gap-3">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
                   {t}
@@ -73,10 +78,11 @@ export function BeforeAfter() {
             >
               <img
                 src={afterImg}
-                alt="Redesigned cinematic thumbnail"
+                alt="Final Alexander the Great thumbnail after redesign"
                 loading="lazy"
                 width={1280}
                 height={720}
+
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div

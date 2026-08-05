@@ -23,7 +23,7 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
               <motion.button
                 type="button"
                 data-cursor="button"
-                onClick={() => onSelect(c.name === "Renn Media" ? "Renn Media" : c.name)}
+                onClick={() => onSelect(c.category)}
                 whileHover={{ y: -8, rotate: i % 2 === 0 ? -1 : 1 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 className="shadow-soft hover:shadow-glow group w-full rounded-3xl border border-border bg-card p-7 text-left backdrop-blur-xl transition-shadow duration-500"

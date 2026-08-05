@@ -1,24 +1,10 @@
-import thumbDoc from "@/assets/thumb-doc.jpg";
-import thumbGaming from "@/assets/thumb-gaming.jpg";
-import thumbTech from "@/assets/thumb-tech.jpg";
-import thumbHistory from "@/assets/thumb-history.jpg";
-import thumbEdu from "@/assets/thumb-edu.jpg";
-import thumbFaceless from "@/assets/thumb-faceless.jpg";
-import thumbAi from "@/assets/thumb-ai.jpg";
-import thumbScifi from "@/assets/thumb-scifi.jpg";
-import thumbPersonal from "@/assets/thumb-personal.jpg";
+import alexanderAsset from "@/assets/alexander-the-great.png.asset.json";
+import snakeIslandAsset from "@/assets/snake-island.png.asset.json";
+import bgmiAsset from "@/assets/bgmi-solo-vs-squad.png.asset.json";
+import codingAsset from "@/assets/master-coding.png.asset.json";
+import radiationAsset from "@/assets/radiation-leak.png.asset.json";
 
-export const categories = [
-  "All",
-  "Documentary",
-  "Gaming",
-  "History",
-  "Technology",
-  "Education",
-  "AI",
-  "Renn Media",
-  "Personal Projects",
-] as const;
+export const categories = ["All", "Documentary", "Gaming", "Technology"] as const;
 
 export type Channel = {
   name: string;
@@ -31,8 +17,8 @@ export const channels: Channel[] = [
   { name: "Hogan Explains", category: "Documentary", note: "Story-driven breakdowns" },
   { name: "Noble 6 Explains", category: "Gaming", note: "Lore & game analysis" },
   { name: "Sci-Fi Theory", category: "Technology", note: "Speculative science" },
-  { name: "Daryl Explains", category: "History", note: "Historical narratives" },
-  { name: "Renn Media", category: "Renn Media", note: "Network channels" },
+  { name: "Daryl Explains", category: "Documentary", note: "Historical narratives" },
+  { name: "Renn Media", category: "Documentary", note: "Network channels" },
 ];
 
 export type Project = {
@@ -42,7 +28,7 @@ export type Project = {
   channel: string;
   year: string;
   src: string;
-  span: "wide" | "tall" | "regular";
+  span: "wide" | "regular";
   overview: string;
   challenge: string;
   challengePoints: string[];
@@ -62,212 +48,134 @@ const defaultLayers = (subject: string) => [
   { name: "Final Polish", body: "Colour grade, sharpening pass and a 120px legibility check." },
 ];
 
-export const projects: Project[
-  ] = [
+export const projects: Project[] = [
   {
-    slug: "the-lost-empire",
-    title: "The Lost Empire",
+    slug: "alexander-the-great",
+    title: "Alexander the Great",
     category: "Documentary",
-    channel: "Bearny Explains",
+    channel: "Portfolio piece",
     year: "2025",
-    src: thumbDoc,
+    src: alexanderAsset.url,
     span: "wide",
     overview:
-      "A long-form documentary channel for viewers who watch history and investigation content end to end. The thumbnail had to promise scale and mystery without giving the story away.",
+      "A cinematic documentary thumbnail built in an oil-painting style. The assets were generated with AI, then composited and graded so the whole frame reads like a single classical painting rather than a collage.",
     challenge:
-      "The channel's uploads were visually busy — three competing ideas inside a 320px frame.",
+      "Painted history frames easily turn muddy — too much detail everywhere and nothing to look at first.",
     challengePoints: [
-      "Simplify a complex topic to one readable idea",
-      "Increase curiosity without clickbait",
-      "Build a repeatable series look",
+      "Hold a painterly texture without losing sharpness at small sizes",
+      "Give the frame one clear focal point",
+      "Keep the title readable over a busy battle scene",
     ],
     thinking: [
-      { heading: "One subject, one emotion", body: "A single silhouetted figure gives scale and lets the viewer project themselves into the scene." },
-      { heading: "Light from one side", body: "Directional key light carves the subject out of the background so it survives compression and dark mode." },
-      { heading: "Warm against cool", body: "A warm horizon behind a cool foreground creates instant separation at thumbnail size." },
-      { heading: "Type on the quiet third", body: "Three words placed where the composition is emptiest — the eye reads subject, then promise." },
+      { heading: "One commanding gesture", body: "The pointing arm draws a diagonal straight to the subject's face, so the eye has a route through the frame." },
+      { heading: "Oil-paint texture", body: "A painted finish separates the thumbnail from stock-photo history content in the same feed." },
+      { heading: "Warm gold against deep shadow", body: "Firelit skin on near-black armour keeps contrast high after compression." },
+      { heading: "Title in the quiet corner", body: "Type sits top-left where the composition is emptiest and the eye lands first." },
     ],
-    tools: ["Adobe Photoshop", "Image generation", "Photo manipulation", "Lighting", "Compositing", "Typography"],
-    layers: defaultLayers("silhouette"),
-    related: ["romes-last-day", "the-1b-secret", "the-signal"],
+    tools: ["Adobe Photoshop", "AI-generated assets", "Compositing", "Colour grading", "Typography"],
+    layers: defaultLayers("Alexander"),
+    related: ["snake-island", "radiation-leak", "master-coding"],
   },
-  ,
   {
-    slug: "romes-last-day",
-    title: "Rome's Last Day",
-    category: "History",
-    channel: "Daryl Explains",
-    year: "2024",
-    src: thumbHistory,
-    span: "tall",
-    overview:
-      "History storytelling for an audience that values accuracy. The frame had to feel cinematic and period-true rather than stock-dramatic.",
-    challenge: "Historical topics look interchangeable in a feed unless one moment is dramatised.",
-    challengePoints: ["Highlight emotion", "Make the title visually obvious", "Give the series a signature grade"],
-    thinking: [
-      { heading: "A moment, not a montage", body: "One decisive second is more compelling than a collage of eras." },
-      { heading: "Ember and ash palette", body: "Warm firelight against cold stone anchors the period and the mood at once." },
-      { heading: "Editorial typography", body: "Condensed caps borrowed from print give authority the audience already trusts." },
-    ],
-    tools: ["Adobe Photoshop", "AI-assisted workflow", "Photo manipulation", "Lighting", "Compositing", "Typography"],
-    layers: defaultLayers("figure"),
-    related: ["the-lost-empire", "the-signal", "the-1b-secret"],
-  },
-  ,
-  {
-    slug: "final-run",
-    title: "Final Run",
-    category: "Gaming",
-    channel: "Noble 6 Explains",
-    year: "2025",
-    src: thumbGaming,
-    span: "regular",
-    overview:
-      "A gaming lore channel whose audience browses on mobile in crowded sidebars. The thumbnail needed high energy that still reads at 120 pixels wide.",
-    challenge: "Gaming sidebars are saturated — everything is loud, so loud alone stops working.",
-    challengePoints: ["Show conflict instantly", "Improve small-size readability", "Avoid generic gaming noise"],
-    thinking: [
-      { heading: "Contrast over saturation", body: "Value contrast, not colour volume, is what survives a shrunken sidebar." },
-      { heading: "Motion implied, not drawn", body: "Diagonal composition suggests movement without motion-blur clutter." },
-      { heading: "Face-forward tension", body: "The expression carries the stakes faster than any word can." },
-    ],
-    tools: ["Adobe Photoshop", "Photo manipulation", "Lighting", "Compositing", "Typography"],
-    layers: defaultLayers("character"),
-    related: ["the-lost-empire", "the-signal", "how-memory-works"],
-  },
-  ,
-  {
-    slug: "its-over",
-    title: "It's Over",
-    category: "Technology",
-    channel: "Sci-Fi Theory",
-    year: "2025",
-    src: thumbTech,
-    span: "regular",
-    overview:
-      "Tech commentary for an audience that skims quickly. The product had to stay legible while the hook carried the emotion.",
-    challenge: "Product shots are clean but cold — clarity without a hook does not earn a click.",
-    challengePoints: ["Keep product clarity", "Add a curiosity hook", "Stay on brand with the channel"],
-    thinking: [
-      { heading: "Hero the object", body: "The product occupies a clean third so the shape is recognisable instantly." },
-      { heading: "Studio rim light", body: "A single cool rim separates hardware from a near-black backdrop." },
-      { heading: "Two-word hook", body: "Short, declarative type creates the tension that the product alone can't." },
-    ],
-    tools: ["Adobe Photoshop", "Lighting", "Compositing", "Typography"],
-    layers: defaultLayers("product"),
-    related: ["the-machine-that-thinks", "the-signal", "final-run"],
-  },
-  ,
-  {
-    slug: "how-memory-works",
-    title: "How Memory Works",
-    category: "Education",
-    channel: "Hogan Explains",
-    year: "2024",
-    src: thumbEdu,
-    span: "regular",
-    overview:
-      "Educational explainers aimed at curious general viewers. The concept had to become visual before it became verbal.",
-    challenge: "Abstract subjects have no obvious image — the concept must be invented.",
-    challengePoints: ["Simplify a complex topic", "Make an abstract idea concrete", "Keep it friendly, not clinical"],
-    thinking: [
-      { heading: "A metaphor you can see", body: "One visual analogy replaces a paragraph of explanation." },
-      { heading: "Soft, warm light", body: "Approachable lighting signals learning rather than alarm." },
-      { heading: "Left-weighted type", body: "Type sits where Western eyes scan first, subject balances the right." },
-    ],
-    tools: ["Adobe Photoshop", "Image generation", "Compositing", "Typography"],
-    layers: defaultLayers("concept object"),
-    related: ["the-1b-secret", "the-machine-that-thinks", "romes-last-day"],
-  },
-  ,
-  {
-    slug: "the-machine-that-thinks",
-    title: "The Machine That Thinks",
-    category: "AI",
-    channel: "Sci-Fi Theory",
-    year: "2025",
-    src: thumbAi,
-    span: "regular",
-    overview:
-      "An AI explainer for a technically literate audience. The visual had to feel engineered rather than illustrated.",
-    challenge: "AI topics attract the same glowing-brain cliché on every channel.",
-    challengePoints: ["Avoid the visual cliché", "Show intelligence as structure", "Keep the frame calm and premium"],
-    thinking: [
-      { heading: "Structure reads as intellect", body: "A lattice of connections implies computation without a literal brain." },
-      { heading: "Cool core, dark stage", body: "A single emissive subject on near-black maximises contrast at any size." },
-      { heading: "Centred symmetry", body: "Symmetry signals control — appropriate for a channel about systems." },
-    ],
-    tools: ["Adobe Photoshop", "AI-assisted workflow", "Image generation", "Lighting", "Compositing"],
-    layers: defaultLayers("neural core"),
-    related: ["its-over", "the-signal", "final-run"],
-  },
-  ,
-  {
-    slug: "the-1b-secret",
-    title: "The $1B Secret",
+    slug: "snake-island",
+    title: "Snake Island",
     category: "Documentary",
-    channel: "Renn Media",
+    channel: "Portfolio piece",
     year: "2025",
-    src: thumbFaceless,
+    src: snakeIslandAsset.url,
+    span: "regular",
+    overview:
+      "A cinematic survival thumbnail in a MrBeast-style visual language: a single person, an extreme situation and an expression you can read instantly.",
+    challenge: "High-energy formats rely on a face — the environment has to support it, never compete with it.",
+    challengePoints: [
+      "Sell danger without clutter",
+      "Keep the face the brightest point in the frame",
+      "Make the jungle read as depth, not noise",
+    ],
+    thinking: [
+      { heading: "Emotion first", body: "The expression carries the entire hook, so it sits large and centred." },
+      { heading: "Green on green, split by light", body: "A brighter key on the subject lifts him out of a fully green environment." },
+      { heading: "The threat stays secondary", body: "The snake frames the subject instead of stealing the focus." },
+    ],
+    tools: ["Adobe Photoshop", "AI-generated assets", "Photo manipulation", "Lighting", "Compositing"],
+    layers: defaultLayers("survivor"),
+    related: ["alexander-the-great", "radiation-leak", "bgmi-solo-vs-squad"],
+  },
+  {
+    slug: "radiation-leak",
+    title: "It Escaped",
+    category: "Documentary",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: radiationAsset.url,
+    span: "regular",
+    overview:
+      "A cinematic thumbnail in a MrBeast-style direction — a reaction shot, a hazard-lit environment and a two-word hook that finishes the story the image starts.",
+    challenge: "Reaction thumbnails only work when the viewer instantly understands what is being reacted to.",
+    challengePoints: [
+      "Show cause and reaction in one frame",
+      "Keep the hazard suit readable against a dark set",
+      "Place type so it never covers the face",
+    ],
+    thinking: [
+      { heading: "Cause on the left, reaction centre", body: "Western reading order does the storytelling: the creature, then the scream." },
+      { heading: "Toxic green versus gold", body: "Complementary colour separates the subject from the environment in one move." },
+      { heading: "Two-word hook", body: "Short declarative type in the empty corner adds tension the image alone can't." },
+    ],
+    tools: ["Adobe Photoshop", "AI-generated assets", "Compositing", "Lighting", "Typography"],
+    layers: defaultLayers("hazmat subject"),
+    related: ["snake-island", "alexander-the-great", "bgmi-solo-vs-squad"],
+  },
+  {
+    slug: "bgmi-solo-vs-squad",
+    title: "BGMI — Solo vs Squad",
+    category: "Gaming",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: bgmiAsset.url,
     span: "wide",
     overview:
-      "A faceless finance format inside the Renn Media network. Without a presenter, the concept has to carry the entire click.",
-    challenge: "Faceless formats lose the human-face advantage that most thumbnails lean on.",
-    challengePoints: ["Create presence without identity", "Increase curiosity", "Protect retention — no false promises"],
-    thinking: [
-      { heading: "Back-facing figure", body: "Presence without a face keeps the format consistent across every upload." },
-      { heading: "One gold anchor", body: "A single warm accent tells the eye exactly where to land first." },
-      { heading: "Two type weights", body: "Restraint keeps the frame premium and mobile-legible." },
+      "A mobile gaming thumbnail built entirely from in-game BGMI screenshots, cut and arranged in Photoshop into a three-panel split.",
+    challenge: "Raw gameplay screenshots are flat and low contrast — they need structure to work as a thumbnail.",
+    challengePoints: [
+      "Turn plain screenshots into a composed frame",
+      "Show gameplay and character in one look",
+      "Keep the title legible over bright scenery",
     ],
-    tools: ["Adobe Photoshop", "AI-assisted workflow", "Photo manipulation", "Compositing", "Typography"],
-    layers: defaultLayers("back-facing figure"),
-    related: ["the-lost-empire", "how-memory-works", "the-signal"],
+    thinking: [
+      { heading: "Angled split panels", body: "Diagonal dividers add motion and let three moments coexist without feeling stacked." },
+      { heading: "Character as the anchor", body: "The armoured skin on the right gives the frame a subject to land on." },
+      { heading: "Chrome-blue title", body: "A heavy gaming typeface with a hard outline survives a crowded mobile sidebar." },
+    ],
+    tools: ["Adobe Photoshop", "In-game screenshots", "Compositing", "Typography"],
+    layers: defaultLayers("player character"),
+    related: ["master-coding", "snake-island", "alexander-the-great"],
   },
-  ,
   {
-    slug: "the-signal",
-    title: "The Signal",
-    category: "Renn Media",
-    channel: "Renn Media",
+    slug: "master-coding",
+    title: "Master Coding in 30 Days",
+    category: "Technology",
+    channel: "Portfolio piece",
     year: "2025",
-    src: thumbScifi,
-    span: "tall",
-    overview:
-      "A speculative science series inside the Renn Media network. Scale and awe had to be readable in under a second.",
-    challenge: "Cosmic topics get abstract fast and abstract does not convert.",
-    challengePoints: ["Give scale a human reference", "Build awe, not confusion", "Unify the series look"],
-    thinking: [
-      { heading: "Human for scale", body: "A tiny figure turns an abstract object into something enormous." },
-      { heading: "Teal and ember", body: "Complementary grade separates foreground and background in one move." },
-      { heading: "Centre light beam", body: "The brightest value sits dead centre so the eye has one destination." },
-    ],
-    tools: ["Adobe Photoshop", "Image generation", "Lighting", "Compositing", "Typography"],
-    layers: defaultLayers("astronaut"),
-    related: ["the-machine-that-thinks", "romes-last-day", "the-lost-empire"],
-  },
-  ,
-  {
-    slug: "above-the-noise",
-    title: "Above the Noise",
-    category: "Personal Projects",
-    channel: "Personal",
-    year: "2024",
-    src: thumbPersonal,
+    src: codingAsset.url,
     span: "regular",
     overview:
-      "A self-initiated piece used to test grading and atmospheric compositing that later shipped into client work.",
-    challenge: "Personal work exists to push technique further than a client brief allows.",
-    challengePoints: ["Explore atmospheric depth", "Test a warm/cool grade", "Practise minimal composition"],
-    thinking: [
-      { heading: "Negative space as drama", body: "Emptiness around the subject makes the subject feel isolated and important." },
-      { heading: "Sunset as backlight", body: "Backlighting produces the cleanest silhouette possible with zero cutout artefacts." },
-      { heading: "No typography", body: "Removing type forces the composition alone to hold attention." },
+      "A tech-education thumbnail using glassmorphism built in Photoshop. Code becomes a visual object rather than something you have to read, and the hierarchy is deliberately strong.",
+    challenge: "Coding topics usually mean screenshots of an editor — unreadable at thumbnail size.",
+    challengePoints: [
+      "Represent coding visually, not literally",
+      "Build a clear three-line title hierarchy",
+      "Keep a dark frame from going flat",
     ],
-    tools: ["Adobe Photoshop", "Image generation", "Lighting", "Compositing"],
-    layers: defaultLayers("lone figure"),
-    related: ["the-signal", "romes-last-day", "the-lost-empire"],
+    thinking: [
+      { heading: "Glass panel behind the type", body: "A frosted plate lifts the headline off the artwork and keeps every word crisp." },
+      { heading: "Code as light", body: "Language logos and UI fragments streaming from the subject read as 'coding' in a glance." },
+      { heading: "Three type weights, one block", body: "Big, small, big gives instant hierarchy and a natural reading rhythm." },
+    ],
+    tools: ["Adobe Photoshop", "Glassmorphism", "AI-generated assets", "Compositing", "Typography"],
+    layers: defaultLayers("subject"),
+    related: ["bgmi-solo-vs-squad", "alexander-the-great", "radiation-leak"],
   },
-
 ];
 
 export function getProject(slug: string) {
