@@ -119,7 +119,7 @@ export function Work({
                     transition={{ type: "spring", stiffness: 240, damping: 22 }}
                     className="shadow-soft group-hover:shadow-lift relative overflow-hidden rounded-3xl border border-border bg-card p-3 backdrop-blur-xl transition-shadow duration-500 [transform-style:preserve-3d]"
                   >
-                    <div className={`relative overflow-hidden rounded-2xl bg-ink ${ratioClass[item.span]}`}>
+                    <div className={`relative overflow-hidden rounded-2xl bg-ink ${ratioClass}`}>
                       <img
                         src={item.src}
                         alt={`${item.category} YouTube thumbnail — ${item.title}`}
