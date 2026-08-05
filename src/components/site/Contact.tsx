@@ -1,4 +1,4 @@
-import { Mail, ArrowUpRight, MessageCircle, Globe, ArrowUp } from "lucide-react";
+import { Mail, ArrowUpRight, MessageCircle, Globe, ArrowUp, Briefcase } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
@@ -6,12 +6,15 @@ import { Reveal, SectionLabel } from "@/components/Reveal";
 const EMAIL = "raltamash9@gmail.com";
 const DISCORD = "altamashraza_123";
 const BEHANCE = "https://www.behance.net/altamashraza8";
+const UPWORK = "https://www.upwork.com/freelancers/~01117f9a8b0c60d946";
 
 const cards = [
   { icon: Mail, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
   { icon: MessageCircle, label: "Discord", value: DISCORD, href: undefined },
   { icon: Globe, label: "Behance", value: "behance.net/altamashraza8", href: BEHANCE },
+  { icon: Briefcase, label: "Upwork", value: "Hire Me on Upwork", href: UPWORK },
 ];
+
 
 export function Contact() {
   return (
