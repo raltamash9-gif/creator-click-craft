@@ -2,17 +2,18 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { ArrowDown } from "lucide-react";
 
-import thumbDoc from "@/assets/thumb-doc.jpg";
-import thumbGaming from "@/assets/thumb-gaming.jpg";
-import thumbTech from "@/assets/thumb-tech.jpg";
-import thumbHistory from "@/assets/thumb-history.jpg";
+import alexanderAsset from "@/assets/alexander-the-great.png.asset.json";
+import bgmiAsset from "@/assets/bgmi-solo-vs-squad.png.asset.json";
+import codingAsset from "@/assets/master-coding.png.asset.json";
+import radiationAsset from "@/assets/radiation-leak.png.asset.json";
 
 const cards = [
-  { src: thumbDoc, alt: "Documentary thumbnail: The Lost Empire", depth: 34, rotate: -5, className: "left-0 top-6 w-[62%] z-30" },
-  { src: thumbGaming, alt: "Gaming thumbnail: Final Run", depth: 22, rotate: 4, className: "right-0 top-0 w-[52%] z-20" },
-  { src: thumbHistory, alt: "History thumbnail: Rome's Last Day", depth: 46, rotate: 3, className: "right-[6%] bottom-2 w-[58%] z-40" },
-  { src: thumbTech, alt: "Tech thumbnail: It's Over", depth: 14, rotate: -3, className: "left-[8%] bottom-[16%] w-[44%] z-10" },
+  { src: alexanderAsset.url, alt: "Cinematic oil-painting documentary thumbnail: Alexander the Great", depth: 34, rotate: -5, className: "left-0 top-6 w-[62%] z-30" },
+  { src: bgmiAsset.url, alt: "Gaming thumbnail: BGMI Solo vs Squad split composition", depth: 22, rotate: 4, className: "right-0 top-0 w-[52%] z-20" },
+  { src: radiationAsset.url, alt: "Cinematic reaction thumbnail: It Escaped", depth: 46, rotate: 3, className: "right-[6%] bottom-2 w-[58%] z-40" },
+  { src: codingAsset.url, alt: "Tech thumbnail: Master Coding in 30 Days", depth: 14, rotate: -3, className: "left-[8%] bottom-[16%] w-[44%] z-10" },
 ];
+
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
