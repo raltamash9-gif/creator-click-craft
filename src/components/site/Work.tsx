@@ -115,8 +115,9 @@ export function Work({
                   className="block [perspective:1200px]"
                 >
                   <motion.div
-                    whileHover={{ y: -12, rotateX: 4, rotateY: -3 }}
-                    transition={{ type: "spring", stiffness: 240, damping: 22 }}
+                    whileHover={{ y: -8, scale: 1.025, rotateX: 3, rotateY: -2 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+
                     className="shadow-soft group-hover:shadow-lift relative overflow-hidden rounded-3xl border border-border bg-card p-3 backdrop-blur-xl transition-shadow duration-500 [transform-style:preserve-3d]"
                   >
                     <div className={`relative overflow-hidden rounded-2xl bg-ink ${ratioClass}`}>
