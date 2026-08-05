@@ -77,9 +77,8 @@ export function BeforeAfter() {
             >
               <img
                 src={afterImg}
-                alt="Redesigned cinematic thumbnail"
-                loading="lazy"
-                width={1280}
+                alt="Final Alexander the Great thumbnail after redesign"
+
                 height={720}
                 className="absolute inset-0 h-full w-full object-cover"
               />
