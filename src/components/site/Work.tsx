@@ -6,7 +6,7 @@ import { Reveal, SectionLabel } from "@/components/Reveal";
 import { categories, projects } from "@/lib/projects";
 
 const spanClass: Record<string, string> = {
-  wide: "md:col-span-4",
+  wide: "md:col-span-3",
   regular: "md:col-span-2",
 };
 
@@ -102,10 +102,10 @@ export function Work({
               <motion.article
                 key={item.slug}
                 layout
-                initial={{ opacity: 0, scale: 0.96, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.96, y: -12 }}
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.92 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 className={`group ${spanClass[item.span]}`}
               >
                 <Link
@@ -118,9 +118,9 @@ export function Work({
                     whileHover={{ y: -8, scale: 1.025, rotateX: 3, rotateY: -2 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
 
-                    className="shadow-soft group-hover:shadow-lift relative overflow-hidden rounded-3xl border border-border bg-card p-3 backdrop-blur-xl transition-shadow duration-500 [transform-style:preserve-3d]"
+                    className="relative [transform-style:preserve-3d]"
                   >
-                    <div className={`relative overflow-hidden rounded-2xl bg-ink ${ratioClass}`}>
+                    <div className={`relative overflow-hidden rounded-2xl border border-border bg-ink shadow-soft group-hover:shadow-lift transition-shadow duration-500 ${ratioClass}`}>
                       <img
                         src={item.src}
                         alt={`${item.category} YouTube thumbnail — ${item.title}`}
@@ -141,7 +141,7 @@ export function Work({
                         View Case Study →
                       </span>
                     </div>
-                    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-3 pt-5 pb-2">
+                    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-1 pt-5 pb-2">
                       <div className="min-w-0">
                         <h3 className="truncate text-lg font-bold transition-transform duration-500 group-hover:-translate-y-0.5">
                           {item.title}
