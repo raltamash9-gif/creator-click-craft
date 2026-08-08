@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
-import beforeAsset from "@/assets/alexander-before.png.asset.json";
-import afterAsset from "@/assets/alexander-the-great.png.asset.json";
+import beforeAsset from "@/assets/attacked-by-wolves-before.jpg.asset.json";
+import afterAsset from "@/assets/attacked-by-wolves.jpg.asset.json";
 
 const beforeImg = beforeAsset.url;
 const afterImg = afterAsset.url;
