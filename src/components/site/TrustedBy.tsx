@@ -5,8 +5,9 @@ import { channels } from "@/lib/projects";
 
 export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void }) {
   return (
-    <section id="trusted-by" className="bg-surface py-24 lg:py-32">
-      <div className="shell">
+    <section id="trusted-by" className="relative overflow-hidden bg-surface py-24 lg:py-32">
+      <div aria-hidden className="dot-grid pointer-events-none absolute inset-0 opacity-60" />
+      <div className="shell relative">
         <Reveal>
           <SectionLabel>Trusted By</SectionLabel>
           <h2 className="mt-6 max-w-3xl text-[clamp(2.2rem,4vw,3.6rem)] leading-[1.04] font-extrabold">
@@ -20,20 +21,26 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {channels.map((c, i) => (
             <Reveal key={c.name} delay={(i % 3) * 0.07}>
-              <motion.button
-                type="button"
-                data-cursor="button"
-                onClick={() => onSelect(c.category)}
-                whileHover={{ y: -8, rotate: i % 2 === 0 ? -1 : 1 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="shadow-soft hover:shadow-glow group w-full rounded-3xl border border-border bg-card p-7 text-left backdrop-blur-xl transition-shadow duration-500"
-              >
-                <p className="font-display text-xl font-extrabold tracking-[-0.03em]">{c.name}</p>
-                <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
-                <span className="mt-6 inline-flex rounded-full border border-border px-3 py-1 text-[11px] tracking-[0.14em] text-subtle uppercase transition-colors duration-300 group-hover:border-accent/40 group-hover:text-accent">
-                  {c.category}
-                </span>
-              </motion.button>
+              <div className="group relative">
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-2 rounded-[2rem] bg-accent/20 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                />
+                <motion.button
+                  type="button"
+                  data-cursor="button"
+                  onClick={() => onSelect(c.category)}
+                  whileHover={{ y: -8, scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                  className="gradient-border shadow-soft relative w-full rounded-3xl bg-card p-7 text-left backdrop-blur-xl"
+                >
+                  <p className="font-display text-xl font-extrabold tracking-[-0.03em]">{c.name}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
+                  <span className="mt-6 inline-flex rounded-full bg-ink px-3 py-1.5 text-[11px] tracking-[0.14em] text-ink-foreground uppercase">
+                    {c.category}
+                  </span>
+                </motion.button>
+              </div>
             </Reveal>
           ))}
         </div>

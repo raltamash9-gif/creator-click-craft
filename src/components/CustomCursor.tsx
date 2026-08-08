@@ -6,8 +6,8 @@ type CursorMode = "default" | "button" | "view" | "link";
 export function CustomCursor() {
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
-  const ringX = useSpring(x, { stiffness: 260, damping: 28, mass: 0.6 });
-  const ringY = useSpring(y, { stiffness: 260, damping: 28, mass: 0.6 });
+  const ringX = useSpring(x, { stiffness: 700, damping: 34, mass: 0.35 });
+  const ringY = useSpring(y, { stiffness: 700, damping: 34, mass: 0.35 });
   const [mode, setMode] = useState<CursorMode>("default");
   const [enabled, setEnabled] = useState(false);
 
@@ -31,27 +31,34 @@ export function CustomCursor() {
 
   if (!enabled) return null;
 
-  const ringSize = mode === "view" ? 96 : mode === "button" ? 64 : mode === "link" ? 24 : 40;
+  const ringSize = mode === "view" ? 92 : mode === "button" ? 46 : mode === "link" ? 26 : 32;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[100] hidden lg:block">
       <motion.div
         style={{ x, y }}
-        className="absolute -ml-[3px] -mt-[3px] h-1.5 w-1.5 rounded-full bg-accent"
-        animate={{ opacity: mode === "view" ? 0 : 1 }}
+        className="absolute -mt-[3px] -ml-[3px] h-1.5 w-1.5 rounded-full bg-foreground"
+        animate={{ opacity: mode === "default" ? 1 : 0 }}
       />
       <motion.div
         style={{ x: ringX, y: ringY }}
-        className="absolute grid place-items-center rounded-full border border-accent/50"
+        className="absolute grid place-items-center rounded-full"
         animate={{
           width: ringSize,
           height: ringSize,
           marginLeft: -ringSize / 2,
           marginTop: -ringSize / 2,
           backgroundColor:
-            mode === "view" ? "oklch(0.623 0.214 259.8)" : "oklch(0.623 0.214 259.8 / 0.06)",
+            mode === "view"
+              ? "oklch(0.623 0.214 259.8)"
+              : mode === "button"
+                ? "oklch(0.985 0 0)"
+                : "oklch(0.985 0 0 / 0)",
+          borderColor:
+            mode === "view" ? "oklch(0.623 0.214 259.8)" : "oklch(0.985 0 0 / 0.65)",
+          borderWidth: 1,
         }}
-        transition={{ type: "spring", stiffness: 320, damping: 26 }}
+        transition={{ type: "spring", stiffness: 420, damping: 30 }}
       >
         {mode === "view" && (
           <span className="text-[10px] font-semibold tracking-[0.18em] text-accent-foreground uppercase">
