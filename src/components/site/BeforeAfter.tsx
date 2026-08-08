@@ -46,17 +46,17 @@ export function BeforeAfter() {
               See the transformation.
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Drag the slider on the Alexander the Great thumbnail. The raw stage is a flat set of
-              cut-out assets with hard white outlines and no focal point. The finished frame adds a
-              painted grade, directional light, atmospheric depth and a title placed where the eye
-              lands first.
+              Drag the slider on the Attacked By Wolves thumbnail. The raw stage is a hand-built
+              Photoshop collage — cut-out man, wolves, eagle and mountains with hard white outlines
+              and mismatched light. The finished frame blends every layer into one storm, adds
+              damage, weather and a cold cinematic grade.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
               {[
                 "Hard white cut-out edges removed and blended",
-                "Directional key light added to the subject",
-                "Warm oil-painting grade applied across every layer",
-                "Title set in the emptiest corner of the frame",
+                "Snow light and colour temperature matched across every layer",
+                "Falling snow and haze added for real depth",
+                "Cold cinematic grade with warmth kept on the subject",
               ].map((t) => (
 
                 <li key={t} className="flex gap-3">
