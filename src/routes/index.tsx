@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
+import { motion, useScroll, useSpring } from "motion/react";
+
 import { CustomCursor } from "@/components/CustomCursor";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
@@ -35,6 +37,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [filter, setFilter] = useState("All");
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 180, damping: 30, mass: 0.3 });
 
   const selectChannel = (channel: string) => {
     setFilter(channel);
@@ -43,6 +47,12 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
+      <motion.div
+        aria-hidden
+        style={{ scaleX: progress }}
+        className="fixed inset-x-0 top-0 z-[110] h-[3px] origin-left bg-accent"
+      />
+      <div aria-hidden className="film-grain" />
       <CustomCursor />
       <Nav />
       <main>
