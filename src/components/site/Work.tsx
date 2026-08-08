@@ -6,7 +6,7 @@ import { Reveal, SectionLabel } from "@/components/Reveal";
 import { categories, projects } from "@/lib/projects";
 
 const spanClass: Record<string, string> = {
-  wide: "md:col-span-3",
+  wide: "md:col-span-2",
   regular: "md:col-span-2",
 };
 
