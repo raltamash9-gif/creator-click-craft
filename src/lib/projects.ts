@@ -3,8 +3,10 @@ import snakeIslandAsset from "@/assets/snake-island.png.asset.json";
 import bgmiAsset from "@/assets/bgmi-solo-vs-squad.png.asset.json";
 import codingAsset from "@/assets/master-coding.png.asset.json";
 import radiationAsset from "@/assets/radiation-leak.png.asset.json";
+import wolvesAsset from "@/assets/attacked-by-wolves.jpg.asset.json";
+import flashAsset from "@/assets/flash-split.jpg.asset.json";
 
-export const categories = ["All", "Documentary", "Gaming", "Technology"] as const;
+export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
 export type Channel = {
   name: string;
