@@ -5,6 +5,10 @@ import codingAsset from "@/assets/master-coding.png.asset.json";
 import radiationAsset from "@/assets/radiation-leak.png.asset.json";
 import wolvesAsset from "@/assets/attacked-by-wolves.jpg.asset.json";
 import flashAsset from "@/assets/flash-split.jpg.asset.json";
+import rickAsset from "@/assets/rick-and-morty.png.asset.json";
+import deathNoteAsset from "@/assets/death-note-split.jpg.asset.json";
+import celebrityAsset from "@/assets/celebrity-vector.webp.asset.json";
+import foosterAsset from "@/assets/fooster-gaming.webp.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
@@ -229,6 +233,106 @@ export const projects: Project[] = [
     tools: ["AI generation", "Prompt design", "Adobe Photoshop", "Typography", "Colour correction"],
     layers: defaultLayers("dual Flash panels"),
     related: ["master-coding", "bgmi-solo-vs-squad", "alexander-the-great"],
+  },
+  {
+    slug: "rick-and-morty-entire-story",
+    title: "The Entire Story of Rick and Morty",
+    category: "Animation",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: rickAsset.url,
+    span: "regular",
+    overview:
+      "A story-recap thumbnail for an animated franchise. Character assets were sourced and part-generated with AI, then cut, re-lit and arranged into a single ensemble line-up inside Photoshop.",
+    challenge: "Recap videos need to promise the whole story in one frame without turning into a crowded sticker sheet.",
+    challengePoints: [
+      "Fit five characters without losing the lead",
+      "Keep flat cartoon art from looking pasted on",
+      "Hold the title clear of every face",
+    ],
+    thinking: [
+      { heading: "Depth by overlap", body: "Characters staggered in scale and layered inward build a stage rather than a row." },
+      { heading: "Cyan rim on red", body: "A cool rim light against the red backdrop separates each cut-out and gives the flat art dimension." },
+      { heading: "Two-word promise", body: "\u2018Entire Story.\u2019 in the empty top band tells the viewer exactly what they get." },
+    ],
+    tools: ["Adobe Photoshop", "AI-generated assets", "Cut-out compositing", "Rim lighting", "Typography"],
+    layers: defaultLayers("character line-up"),
+    related: ["flash-speed-force-flashpoint", "death-note-split", "celebrity-vector-portraits"],
+  },
+  {
+    slug: "death-note-split",
+    title: "Light Yagami vs Misa Amane",
+    category: "Animation",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: deathNoteAsset.url,
+    span: "regular",
+    overview:
+      "A second wojak-style split thumbnail, this time pairing two anime characters. Both halves came from a tightly controlled prompt, then got hand-set typography and a colour-correction pass in Photoshop.",
+    challenge: "Two illustrated portraits side by side blur together unless each half owns its own world.",
+    challengePoints: [
+      "Give each side a distinct environment and palette",
+      "Keep the wojak expression consistent across both",
+      "Set names large enough for a mobile sidebar",
+    ],
+    thinking: [
+      { heading: "Cold desk, warm bedroom", body: "A blue-grey study against a rose-lit gothic room splits the frame emotionally before you read a word." },
+      { heading: "Matching grins", body: "The identical wojak smile on both sides is the joke \u2014 the styling has to stay strict for it to land." },
+      { heading: "Names as the header", body: "Heavy outlined type across the top keeps the divider clean and both faces uncovered." },
+    ],
+    tools: ["AI generation", "Prompt design", "Adobe Photoshop", "Typography", "Colour correction"],
+    layers: defaultLayers("dual character panels"),
+    related: ["flash-speed-force-flashpoint", "rick-and-morty-entire-story", "celebrity-vector-portraits"],
+  },
+  {
+    slug: "celebrity-vector-portraits",
+    title: "Creators Who Changed YouTube",
+    category: "Documentary",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: celebrityAsset.url,
+    span: "regular",
+    overview:
+      "Three creator portraits arranged in Photoshop, then converted into a clean vector-illustration finish through a prompt pass and retouched back to a consistent style.",
+    challenge: "Three faces of equal importance still need a hierarchy, or the frame reads as a contact sheet.",
+    challengePoints: [
+      "Make three portraits feel like one artwork",
+      "Keep skin tones consistent after stylisation",
+      "Separate faces from a near-black backdrop",
+    ],
+    thinking: [
+      { heading: "Centre hero, flanking support", body: "The laughing centre portrait sits larger and further forward so the eye has an obvious first stop." },
+      { heading: "Vector finish", body: "Flat shading with crisp edges survives heavy compression far better than photographic detail." },
+      { heading: "Red gradient stage", body: "A dark red vignette pushes every face forward and keeps the frame from going flat." },
+    ],
+    tools: ["Adobe Photoshop", "Prompt-based stylisation", "Vector illustration", "Retouching", "Colour grading"],
+    layers: defaultLayers("portrait trio"),
+    related: ["rick-and-morty-entire-story", "alexander-the-great", "death-note-split"],
+  },
+  {
+    slug: "fooster-gaming-survival",
+    title: "Survival Island \u2014 Cinematic Gaming",
+    category: "Gaming",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: foosterAsset.url,
+    span: "regular",
+    overview:
+      "A cinematic gaming thumbnail built entirely from gameplay screenshots. Frames were captured from a long-form survival video, composited into a single scene in Photoshop, then blended with an AI pass so the seams disappear.",
+    challenge: "Screenshots from different moments have different light, grain and lens \u2014 stacking them usually looks obvious.",
+    challengePoints: [
+      "Merge multiple captures into one believable shot",
+      "Build a first-person point of view that pulls the viewer in",
+      "Add stakes without any text",
+    ],
+    thinking: [
+      { heading: "First-person foreground", body: "The raised axe in the corner puts the viewer inside the frame instead of watching it." },
+      { heading: "Threat in the near ground", body: "The cobra between camera and player creates the tension the gameplay alone doesn\u2019t show." },
+      { heading: "One light direction", body: "Every layer regraded to the same afternoon sun so the composite reads as a single capture." },
+    ],
+    tools: ["Gameplay screenshots", "Adobe Photoshop", "Compositing", "AI blending", "Colour grading"],
+    layers: defaultLayers("survival scene"),
+    related: ["bgmi-solo-vs-squad", "snake-island", "attacked-by-wolves"],
   },
 ];
 
