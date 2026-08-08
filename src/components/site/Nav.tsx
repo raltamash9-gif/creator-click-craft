@@ -47,7 +47,9 @@ export function Nav() {
     >
       <div
         className={`transition-all duration-500 ${
-          scrolled ? "glass shadow-soft border-b" : "border-b border-transparent"
+          scrolled
+            ? "shadow-lift border-b border-border bg-background/70 backdrop-blur-xl backdrop-saturate-150"
+            : "border-b border-transparent"
         }`}
       >
         <nav className="shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 py-5 lg:grid-cols-[1fr_auto_1fr]">

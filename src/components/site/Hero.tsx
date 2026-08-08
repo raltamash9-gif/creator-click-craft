@@ -36,7 +36,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 55% at 18% 12%, oklch(0.623 0.214 259.8 / 0.10), transparent 70%), radial-gradient(50% 45% at 88% 30%, oklch(0.72 0.19 46 / 0.08), transparent 72%), radial-gradient(70% 60% at 50% 110%, oklch(0.938 0.005 95), transparent 70%)",
+            "radial-gradient(60% 55% at 18% 12%, oklch(0.623 0.214 259.8 / 0.10), transparent 70%), radial-gradient(50% 45% at 88% 30%, oklch(0.72 0.19 46 / 0.08), transparent 72%), radial-gradient(70% 60% at 50% 110%, oklch(0.24 0.02 260 / 0.7), transparent 70%)",
         }}
       />
 
