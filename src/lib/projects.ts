@@ -178,6 +178,58 @@ export const projects: Project[] = [
     layers: defaultLayers("subject"),
     related: ["bgmi-solo-vs-squad", "alexander-the-great", "radiation-leak"],
   },
+  {
+    slug: "attacked-by-wolves",
+    title: "Attacked By Wolves",
+    category: "Documentary",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: wolvesAsset.url,
+    span: "wide",
+    overview:
+      "A survival thumbnail built the hard way: man, wolves, eagle, snow ridge and treeline were sourced and arranged by hand in Photoshop, then pushed through an AI enhancement pass so the whole composite reads as one photographed moment.",
+    challenge:
+      "A hand-built collage of separate elements always looks like a collage until the light, grain and colour of every layer agree.",
+    challengePoints: [
+      "Kill the hard cut-out halos around every animal",
+      "Match snow light and colour temperature across seven sources",
+      "Keep the outstretched hand as the entry point of the frame",
+    ],
+    thinking: [
+      { heading: "Hand first, face second", body: "The reaching hand breaks the frame edge and pulls the viewer in before the expression sells the panic." },
+      { heading: "Predators on both flanks", body: "Wolves left and right close the composition inward, so there is no visual escape route." },
+      { heading: "Cold storm grade", body: "A desaturated blue-grey wash unifies every layer and makes the blood and skin tones the only warmth." },
+      { heading: "Depth through weather", body: "Falling snow and haze between planes turn a flat stack of cut-outs into real distance." },
+    ],
+    tools: ["Adobe Photoshop", "Photo manipulation", "AI enhancement", "Compositing", "Colour grading"],
+    layers: defaultLayers("survivor"),
+    related: ["snake-island", "alexander-the-great", "radiation-leak"],
+  },
+  {
+    slug: "flash-speed-force-flashpoint",
+    title: "Speed Force vs Flashpoint",
+    category: "Animation",
+    channel: "Portfolio piece",
+    year: "2025",
+    src: flashAsset.url,
+    span: "regular",
+    overview:
+      "A two-panel comparison thumbnail drawn in a wojak-style cartoon language, generated from a tightly written prompt and then finished in Photoshop with hand-set typography and a colour-correction pass.",
+    challenge: "Comparison thumbnails fail when both halves look the same — the split has to carry meaning at a glance.",
+    challengePoints: [
+      "Make two versions of one character instantly distinguishable",
+      "Keep both titles readable at sidebar size",
+      "Hold a consistent illustration style across both panels",
+    ],
+    thinking: [
+      { heading: "Warm versus toxic", body: "A red-lit lab against a sickly green ruin separates the timelines before a single word is read." },
+      { heading: "Eyes tell the story", body: "Calm dark eyes on the left, red glow on the right — the cheapest possible tension cue." },
+      { heading: "Type as the divider", body: "Two heavy outlined words sit at the top edge so the split line stays clean and the faces stay uncovered." },
+    ],
+    tools: ["AI generation", "Prompt design", "Adobe Photoshop", "Typography", "Colour correction"],
+    layers: defaultLayers("dual Flash panels"),
+    related: ["master-coding", "bgmi-solo-vs-squad", "alexander-the-great"],
+  },
 ];
 
 export function getProject(slug: string) {
