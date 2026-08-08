@@ -78,7 +78,7 @@ export function BeforeAfter() {
             >
               <img
                 src={afterImg}
-                alt="Final Alexander the Great thumbnail after redesign"
+                alt="Final Attacked By Wolves thumbnail after compositing and grading"
                 loading="lazy"
                 width={1280}
                 height={720}
