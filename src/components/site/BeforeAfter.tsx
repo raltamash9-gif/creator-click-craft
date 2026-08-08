@@ -96,7 +96,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
 
   return (
     <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
-      <Reveal className={flip ? "lg:order-2" : undefined}>
+      <Reveal className={flip ? "lg:order-2" : ""}>
         <SectionLabel>{data.label}</SectionLabel>
         <h2 className="mt-6 text-[clamp(2.2rem,4vw,3.6rem)] leading-[1.04] font-extrabold">
           {data.heading}
@@ -121,7 +121,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
         </ul>
       </Reveal>
 
-      <Reveal delay={0.1} className={flip ? "lg:order-1" : undefined}>
+      <Reveal delay={0.1} className={flip ? "lg:order-1" : ""}>
         <div
           ref={ref}
           className="shadow-lift relative aspect-[16/9] w-full touch-none overflow-hidden rounded-3xl border border-border bg-ink select-none"
