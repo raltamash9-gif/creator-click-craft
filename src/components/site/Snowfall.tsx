@@ -52,7 +52,6 @@ export function Snowfall() {
             left: `${f.left}%`,
             width: f.size,
             height: f.size,
-            background: f.color,
             animation: `snow-fall ${f.fall}s linear ${f.delay}s infinite`,
           }}
         >
