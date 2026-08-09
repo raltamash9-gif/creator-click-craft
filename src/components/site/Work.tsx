@@ -98,15 +98,17 @@ export function Work({
 
         <motion.div layout className="mt-12 grid gap-8 md:grid-cols-6 lg:mt-16 lg:gap-10">
           <AnimatePresence mode="popLayout">
-            {visible.map((item) => (
+            {visible.map((item, i) => (
               <motion.article
                 key={item.slug}
                 layout
-                initial={{ opacity: 0, scale: 0.92 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 40, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
                 exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: (i % 6) * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 className={`group ${spanClass[item.span]}`}
+                style={{ animationDelay: `${(i % 5) * 0.8}s` }}
               >
                 <Link
                   to="/work/$slug"
@@ -118,7 +120,7 @@ export function Work({
                     whileHover={{ y: -8, scale: 1.025, rotateX: 3, rotateY: -2 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
 
-                    className="relative [transform-style:preserve-3d]"
+                    className="card-breathe relative [transform-style:preserve-3d]"
                   >
                     <div className={`relative overflow-hidden rounded-2xl border border-border bg-ink  group- transition-shadow duration-500 ${ratioClass}`}>
                       <img

@@ -84,7 +84,11 @@ function CaseStudyPage() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.06}>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+          >
             <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
               <h1 className="max-w-3xl text-[clamp(2.4rem,5vw,4.4rem)] leading-[1.02] font-extrabold">
                 {project.title}
@@ -100,7 +104,7 @@ function CaseStudyPage() {
                 ))}
               </div>
             </div>
-          </Reveal>
+          </motion.div>
         </div>
 
         {/* Overview + challenge */}
@@ -114,11 +118,17 @@ function CaseStudyPage() {
               <SectionLabel>Creative Challenge</SectionLabel>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{project.challenge}</p>
               <ul className="mt-8 space-y-3">
-                {project.challengePoints.map((p) => (
-                  <li key={p} className="flex gap-3 text-sm text-muted-foreground">
+                {project.challengePoints.map((p, i) => (
+                  <motion.li
+                    key={p}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease: "easeOut" }}
+                    className="flex gap-3 text-sm text-muted-foreground"
+                  >
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
                     {p}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </Reveal>
