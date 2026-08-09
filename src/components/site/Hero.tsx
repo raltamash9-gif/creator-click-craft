@@ -2,10 +2,12 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { ArrowDown } from "lucide-react";
 
+import { Snowfall } from "@/components/site/Snowfall";
 import alexanderAsset from "@/assets/alexander-the-great.png.asset.json";
 import bgmiAsset from "@/assets/bgmi-solo-vs-squad.png.asset.json";
 import codingAsset from "@/assets/master-coding.png.asset.json";
 import radiationAsset from "@/assets/radiation-leak.png.asset.json";
+import wolvesAsset from "@/assets/attacked-by-wolves.jpg.asset.json";
 
 const cards = [
   { src: alexanderAsset.url, alt: "Cinematic oil-painting documentary thumbnail: Alexander the Great", depth: 34, rotate: -5, className: "left-0 top-6 w-[62%] z-30" },
