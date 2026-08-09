@@ -28,7 +28,7 @@ function makeFlakes(count: number): Flake[] {
 }
 
 export function Snowfall() {
-  const [count, setCount] = useState(60);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const set = () => setCount(window.innerWidth < 768 ? 30 : 60);
