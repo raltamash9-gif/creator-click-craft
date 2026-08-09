@@ -48,7 +48,7 @@ export function Nav() {
       <div
         className={`transition-all duration-500 ${
           scrolled
-            ? "shadow-lift border-b border-border bg-background/70 backdrop-blur-xl backdrop-saturate-150"
+            ? "nav-glass border-b"
             : "border-b border-transparent"
         }`}
       >
