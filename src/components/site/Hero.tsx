@@ -2,18 +2,43 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { ArrowDown } from "lucide-react";
 
+import { Snowfall } from "@/components/site/Snowfall";
 import alexanderAsset from "@/assets/alexander-the-great.png.asset.json";
 import bgmiAsset from "@/assets/bgmi-solo-vs-squad.png.asset.json";
 import codingAsset from "@/assets/master-coding.png.asset.json";
 import radiationAsset from "@/assets/radiation-leak.png.asset.json";
+import wolvesAsset from "@/assets/attacked-by-wolves.jpg.asset.json";
 
 const cards = [
-  { src: alexanderAsset.url, alt: "Cinematic oil-painting documentary thumbnail: Alexander the Great", depth: 34, rotate: -5, className: "left-0 top-6 w-[62%] z-30" },
-  { src: bgmiAsset.url, alt: "Gaming thumbnail: BGMI Solo vs Squad split composition", depth: 22, rotate: 4, className: "right-0 top-0 w-[52%] z-20" },
-  { src: radiationAsset.url, alt: "Cinematic reaction thumbnail: It Escaped", depth: 46, rotate: 3, className: "right-[6%] bottom-2 w-[58%] z-40" },
-  { src: codingAsset.url, alt: "Tech thumbnail: Master Coding in 30 Days", depth: 14, rotate: -3, className: "left-[8%] bottom-[16%] w-[44%] z-10" },
+  {
+    src: alexanderAsset.url,
+    alt: "Cinematic oil-painting documentary thumbnail: Alexander the Great",
+    depth: 34,
+    rotate: -5,
+    className: "left-0 top-6 w-[62%] z-30",
+  },
+  {
+    src: bgmiAsset.url,
+    alt: "Gaming thumbnail: BGMI Solo vs Squad split composition",
+    depth: 22,
+    rotate: 4,
+    className: "right-0 top-0 w-[52%] z-20",
+  },
+  {
+    src: radiationAsset.url,
+    alt: "Cinematic reaction thumbnail: It Escaped",
+    depth: 46,
+    rotate: 3,
+    className: "right-[6%] bottom-2 w-[58%] z-40",
+  },
+  {
+    src: codingAsset.url,
+    alt: "Tech thumbnail: Master Coding in 30 Days",
+    depth: 14,
+    rotate: -3,
+    className: "left-[8%] bottom-[16%] w-[44%] z-10",
+  },
 ];
-
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -21,6 +46,8 @@ export function Hero() {
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 90, damping: 20 });
   const sy = useSpring(my, { stiffness: 90, damping: 20 });
+  const snowX = useTransform(sx, (v) => v * 30);
+  const snowY = useTransform(sy, (v) => v * 30);
 
   const onMove = (e: React.MouseEvent) => {
     const rect = ref.current?.getBoundingClientRect();
@@ -31,19 +58,35 @@ export function Hero() {
 
   return (
     <section id="top" className="grain relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <img
+        aria-hidden
+        src={wolvesAsset.url}
+        alt=""
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
-          background:
-            "radial-gradient(60% 55% at 18% 12%, oklch(0.623 0.214 259.8 / 0.10), transparent 70%), radial-gradient(50% 45% at 88% 30%, oklch(0.72 0.19 46 / 0.08), transparent 72%), radial-gradient(70% 60% at 50% 110%, oklch(0.24 0.02 260 / 0.7), transparent 70%)",
+          background: "linear-gradient(to right, rgba(10,15,20,0.88), rgba(10,15,20,0.15))",
         }}
       />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: "linear-gradient(to top, rgba(10,15,20,0.9), transparent 45%)",
+        }}
+      />
+
+      <motion.div style={{ x: snowX, y: snowY }} className="absolute inset-0">
+        <Snowfall />
+      </motion.div>
 
       <div
         ref={ref}
         onMouseMove={onMove}
-        className="shell relative grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20"
+        className="shell relative z-10 grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20"
       >
         <div className="max-w-3xl">
           <motion.div
@@ -59,11 +102,20 @@ export function Hero() {
             Worked with multiple YouTube channels
           </motion.div>
 
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 text-[11px] tracking-[0.3em] text-subtle uppercase"
+          >
+            [ Altar Studio — Thumbnail Design ]
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 text-[clamp(2.9rem,5.6vw,5.4rem)] leading-[0.92] font-extrabold"
+            className="mt-4 text-[clamp(2.9rem,7vw,88px)] leading-[0.92] font-extrabold"
           >
             Designing
             <br />
@@ -101,7 +153,7 @@ export function Hero() {
             <a
               href="#contact"
               data-cursor="button"
-              className="hover:shadow-ember inline-flex items-center rounded-full border border-border bg-card px-7 py-3.5 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember inline-flex items-center glass-card rounded-full px-7 py-3.5 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               Hire Me
             </a>

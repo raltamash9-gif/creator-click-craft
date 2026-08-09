@@ -18,7 +18,10 @@ export const Route = createFileRoute("/work/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Case study unavailable — Altar Studio" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Case study unavailable — Altar Studio" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const t = `${loaderData.project.title} — Thumbnail Case Study | Altar Studio`;
@@ -73,18 +76,27 @@ function CaseStudyPage() {
               All work
             </Link>
 
-            <div className="shadow-lift mt-8 overflow-hidden rounded-[2rem] border border-border bg-ink">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="shadow-lift mt-8 flex items-center justify-center rounded-[2rem] border border-border bg-ink p-6 lg:min-h-[500px]"
+            >
               <img
                 src={project.src}
                 alt={`${project.category} thumbnail — ${project.title}`}
                 width={1280}
                 height={720}
-                className="h-auto w-full object-cover"
+                className="h-auto max-h-[70vh] w-full object-contain"
               />
-            </div>
+            </motion.div>
           </Reveal>
 
-          <Reveal delay={0.06}>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+          >
             <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
               <h1 className="max-w-3xl text-[clamp(2.4rem,5vw,4.4rem)] leading-[1.02] font-extrabold">
                 {project.title}
@@ -100,7 +112,7 @@ function CaseStudyPage() {
                 ))}
               </div>
             </div>
-          </Reveal>
+          </motion.div>
         </div>
 
         {/* Overview + challenge */}
@@ -108,17 +120,27 @@ function CaseStudyPage() {
           <div className="shell grid gap-12 lg:grid-cols-2 lg:gap-20">
             <Reveal>
               <SectionLabel>Project Overview</SectionLabel>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{project.overview}</p>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                {project.overview}
+              </p>
             </Reveal>
             <Reveal delay={0.08}>
               <SectionLabel>Creative Challenge</SectionLabel>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{project.challenge}</p>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                {project.challenge}
+              </p>
               <ul className="mt-8 space-y-3">
-                {project.challengePoints.map((p) => (
-                  <li key={p} className="flex gap-3 text-sm text-muted-foreground">
+                {project.challengePoints.map((p, i) => (
+                  <motion.li
+                    key={p}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease: "easeOut" }}
+                    className="flex gap-3 text-sm text-muted-foreground"
+                  >
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
                     {p}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </Reveal>
@@ -137,7 +159,7 @@ function CaseStudyPage() {
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
               {project.thinking.map((t, i) => (
                 <Reveal key={t.heading} delay={(i % 2) * 0.07}>
-                  <div className="shadow-soft h-full rounded-3xl border border-border bg-card p-8 backdrop-blur-xl">
+                  <div className=" h-full glass-card rounded-3xl p-8 backdrop-blur-xl">
                     <h3 className="text-lg font-bold">{t.heading}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
                   </div>
@@ -207,8 +229,12 @@ function CaseStudyPage() {
                         ? { opacity: 1, x: 0, filter: "blur(0px)" }
                         : { opacity: 0.35, x: -8, filter: "blur(1.5px)" }
                     }
-                    transition={{ duration: 0.7, delay: revealed ? i * 0.75 : 0, ease: [0.22, 1, 0.36, 1] }}
-                    className="rounded-2xl border border-border bg-card p-5 backdrop-blur-xl"
+                    transition={{
+                      duration: 0.7,
+                      delay: revealed ? i * 0.75 : 0,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="glass-card rounded-2xl p-5 backdrop-blur-xl"
                   >
                     <div className="flex items-baseline gap-3">
                       <span className="text-[11px] tracking-[0.2em] text-subtle">
@@ -216,7 +242,9 @@ function CaseStudyPage() {
                       </span>
                       <h3 className="text-base font-bold">{layer.name}</h3>
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{layer.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {layer.body}
+                    </p>
                   </motion.li>
                 ))}
               </ol>
@@ -236,7 +264,7 @@ function CaseStudyPage() {
             <div className="mt-10 flex flex-wrap gap-3">
               {project.tools.map((tool, i) => (
                 <Reveal key={tool} delay={Math.min(i * 0.05, 0.3)}>
-                  <span className="shadow-soft inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm backdrop-blur-xl">
+                  <span className=" inline-flex items-center gap-2 glass-card rounded-full px-5 py-3 text-sm backdrop-blur-xl">
                     <Check className="h-4 w-4 text-accent" />
                     {tool}
                   </span>
@@ -286,7 +314,7 @@ function CaseStudyPage() {
                     <motion.div
                       whileHover={{ y: -10 }}
                       transition={{ type: "spring", stiffness: 240, damping: 22 }}
-                      className="shadow-soft group-hover:shadow-lift overflow-hidden rounded-3xl border border-border bg-card p-3 backdrop-blur-xl transition-shadow duration-500"
+                      className=" overflow-hidden glass-card rounded-3xl p-3 backdrop-blur-xl transition-shadow duration-500"
                     >
                       <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                         <img

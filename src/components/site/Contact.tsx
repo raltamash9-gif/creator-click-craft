@@ -15,7 +15,6 @@ const cards = [
   { icon: Briefcase, label: "Upwork", value: "Hire Me on Upwork", href: UPWORK },
 ];
 
-
 export function Contact() {
   return (
     <section id="contact" className="grain relative overflow-hidden py-28 lg:py-40">
@@ -24,7 +23,7 @@ export function Contact() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(55% 60% at 50% 10%, oklch(0.623 0.214 259.8 / 0.12), transparent 70%), radial-gradient(45% 50% at 85% 90%, oklch(0.72 0.19 46 / 0.09), transparent 72%)",
+            "radial-gradient(55% 60% at 50% 10%, rgba(44,83,100,0.22), transparent 70%), radial-gradient(45% 50% at 85% 90%, rgba(44,83,100,0.14), transparent 72%)",
         }}
       />
       <div className="shell relative">
@@ -49,7 +48,9 @@ export function Contact() {
             const inner = (
               <>
                 <c.icon className="h-5 w-5 text-accent transition-all duration-300 group-hover:drop-shadow-[0_0_10px_oklch(0.623_0.214_259.8_/_0.75)]" />
-                <p className="mt-5 text-[11px] tracking-[0.24em] text-subtle uppercase">{c.label}</p>
+                <p className="mt-5 text-[11px] tracking-[0.24em] text-subtle uppercase">
+                  {c.label}
+                </p>
                 <p className="mt-2 truncate text-sm font-medium">{c.value}</p>
               </>
             );
@@ -63,12 +64,12 @@ export function Contact() {
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     aria-label={`${c.label} — ${c.value}`}
                     data-cursor="link"
-                    className="group shadow-soft hover:shadow-lift block h-full rounded-3xl border border-border bg-card p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5"
+                    className="group  block h-full glass-card rounded-3xl p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5"
                   >
                     {inner}
                   </a>
                 ) : (
-                  <div className="group shadow-soft h-full rounded-3xl border border-border bg-card p-7 backdrop-blur-xl">
+                  <div className="group h-full glass-card rounded-3xl p-7 backdrop-blur-xl">
                     {inner}
                   </div>
                 )}
@@ -92,7 +93,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-ember inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               View Behance
               <ArrowUpRight className="h-4 w-4" />
@@ -102,7 +103,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
+              className="hover:shadow-glow inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
             >
               View Upwork
               <ArrowUpRight className="h-4 w-4" />
@@ -133,7 +134,11 @@ export function Footer() {
       <div className="shell">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
           <div>
-            <Link to="/" data-cursor="link" className="font-display text-base font-extrabold tracking-[-0.04em]">
+            <Link
+              to="/"
+              data-cursor="link"
+              className="font-display text-base font-extrabold tracking-[-0.04em]"
+            >
               ALTAR<span className="text-accent">.</span>STUDIO
             </Link>
             <p className="mt-3 max-w-xs text-sm text-subtle">
@@ -156,16 +161,34 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-8">
-          <p className="text-xs text-subtle">© {new Date().getFullYear()} Altar Studio. All rights reserved.</p>
+          <p className="text-xs text-subtle">
+            © {new Date().getFullYear()} Altar Studio. All rights reserved.
+          </p>
           <div className="flex items-center gap-6">
-            <a href={BEHANCE} target="_blank" rel="noopener noreferrer" data-cursor="link" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href={BEHANCE}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="link"
+              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
               Behance
             </a>
-            <a href={UPWORK} target="_blank" rel="noopener noreferrer" data-cursor="link" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href={UPWORK}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="link"
+              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
               Upwork
             </a>
 
-            <a href={`mailto:${EMAIL}`} data-cursor="link" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href={`mailto:${EMAIL}`}
+              data-cursor="link"
+              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
               Email
             </a>
             <button

@@ -33,9 +33,11 @@ export function Services() {
             <motion.div
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className="shadow-soft hover:shadow-lift flex h-full flex-col rounded-3xl border border-border bg-card p-9 backdrop-blur-xl transition-shadow duration-500"
+              className=" flex h-full flex-col glass-card rounded-3xl p-9 backdrop-blur-xl transition-shadow duration-500"
             >
-              <span className="text-[11px] tracking-[0.24em] text-subtle uppercase">Service One</span>
+              <span className="text-[11px] tracking-[0.24em] text-subtle uppercase">
+                Service One
+              </span>
               <h3 className="mt-5 text-2xl font-bold lg:text-3xl">Individual Thumbnail</h3>
               <p className="mt-4 text-sm text-muted-foreground">
                 For creators who need a single thumbnail done properly.
@@ -67,26 +69,31 @@ export function Services() {
             <motion.div
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className="shadow-soft hover:shadow-glow relative flex h-full flex-col overflow-hidden rounded-3xl border border-accent/25 bg-card p-9 backdrop-blur-xl transition-shadow duration-500"
+              className=" hover:shadow-glow relative flex h-full flex-col overflow-hidden rounded-3xl border border-accent/25 bg-card p-9 backdrop-blur-xl transition-shadow duration-500"
             >
               <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "radial-gradient(70% 60% at 90% 0%, oklch(0.623 0.214 259.8 / 0.12), transparent 70%)",
+                    "radial-gradient(70% 60% at 90% 0%, rgba(44,83,100,0.22), transparent 70%)",
                 }}
               />
               <div className="relative flex h-full flex-col">
-                <span className="text-[11px] tracking-[0.24em] text-accent uppercase">Service Two</span>
+                <span className="text-[11px] tracking-[0.24em] text-accent uppercase">
+                  Service Two
+                </span>
                 <h3 className="mt-5 text-2xl font-bold lg:text-3xl">Long-Term Collaboration</h3>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  For creators uploading consistently who want one visual identity across everything.
+                  For creators uploading consistently who want one visual identity across
+                  everything.
                 </p>
                 <p className="mt-8 font-display text-3xl font-extrabold tracking-[-0.03em]">
                   Pricing based on workload
                 </p>
-                <p className="mt-2 text-sm text-subtle">No fixed monthly package — let's talk volume.</p>
+                <p className="mt-2 text-sm text-subtle">
+                  No fixed monthly package — let's talk volume.
+                </p>
                 <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
                   {retainer.map((s) => (
                     <li key={s} className="flex gap-3">

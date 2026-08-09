@@ -1,14 +1,46 @@
 import { Reveal, SectionLabel } from "@/components/Reveal";
 
 const steps = [
-  { n: "01", title: "Script Analysis", body: "I read the script or outline first. The thumbnail has to promise exactly what the video delivers." },
-  { n: "02", title: "Competitor Research", body: "I study the sidebars your video will actually appear in, then design to stand apart from them." },
-  { n: "03", title: "Visual Concept", body: "One idea, one emotion. We agree on the hook before a single pixel is placed." },
-  { n: "04", title: "AI-Assisted Asset Creation", body: "Used only when it's the fastest route to a specific plate or element — never as the whole design." },
-  { n: "05", title: "Photoshop Compositing", body: "Cutouts, plates and elements assembled into a believable scene with real depth." },
-  { n: "06", title: "Lighting & Colour Grading", body: "Directional key light, rim separation and a grade that becomes your channel's signature." },
-  { n: "07", title: "Typography", body: "Two weights maximum, sized and placed for full screen and 120 pixels alike." },
-  { n: "08", title: "Final Polish", body: "Sharpening, contrast check, mobile preview, then delivery in every size you need." },
+  {
+    n: "01",
+    title: "Script Analysis",
+    body: "I read the script or outline first. The thumbnail has to promise exactly what the video delivers.",
+  },
+  {
+    n: "02",
+    title: "Competitor Research",
+    body: "I study the sidebars your video will actually appear in, then design to stand apart from them.",
+  },
+  {
+    n: "03",
+    title: "Visual Concept",
+    body: "One idea, one emotion. We agree on the hook before a single pixel is placed.",
+  },
+  {
+    n: "04",
+    title: "AI-Assisted Asset Creation",
+    body: "Used only when it's the fastest route to a specific plate or element — never as the whole design.",
+  },
+  {
+    n: "05",
+    title: "Photoshop Compositing",
+    body: "Cutouts, plates and elements assembled into a believable scene with real depth.",
+  },
+  {
+    n: "06",
+    title: "Lighting & Colour Grading",
+    body: "Directional key light, rim separation and a grade that becomes your channel's signature.",
+  },
+  {
+    n: "07",
+    title: "Typography",
+    body: "Two weights maximum, sized and placed for full screen and 120 pixels alike.",
+  },
+  {
+    n: "08",
+    title: "Final Polish",
+    body: "Sharpening, contrast check, mobile preview, then delivery in every size you need.",
+  },
 ];
 
 export function Process() {

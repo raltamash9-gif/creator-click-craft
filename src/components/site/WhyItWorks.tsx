@@ -1,26 +1,49 @@
 import { motion } from "motion/react";
-import {
-  Layers,
-  Eye,
-  Heart,
-  Contrast,
-  Sun,
-  LayoutGrid,
-  Type,
-  Palette,
-} from "lucide-react";
+import { Layers, Eye, Heart, Contrast, Sun, LayoutGrid, Type, Palette } from "lucide-react";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
 
 const principles = [
-  { icon: Layers, title: "Visual Hierarchy", body: "One subject, one promise. The eye should never have to choose what to look at first." },
-  { icon: Eye, title: "Curiosity", body: "Show enough to raise a question, never enough to answer it in the frame." },
-  { icon: Heart, title: "Emotion", body: "A readable expression communicates stakes faster than any headline can." },
-  { icon: Contrast, title: "Contrast", body: "Value separation is what survives compression, dark mode and a 120px sidebar." },
-  { icon: Sun, title: "Lighting", body: "Directional light sculpts depth and tells the viewer the scene is real." },
-  { icon: LayoutGrid, title: "Composition", body: "Negative space is a tool — emptiness makes the subject feel important." },
-  { icon: Type, title: "Typography", body: "Two weights, three words, placed where the composition is quietest." },
-  { icon: Palette, title: "Colour Psychology", body: "Warm against cool creates instant separation and a repeatable channel identity." },
+  {
+    icon: Layers,
+    title: "Visual Hierarchy",
+    body: "One subject, one promise. The eye should never have to choose what to look at first.",
+  },
+  {
+    icon: Eye,
+    title: "Curiosity",
+    body: "Show enough to raise a question, never enough to answer it in the frame.",
+  },
+  {
+    icon: Heart,
+    title: "Emotion",
+    body: "A readable expression communicates stakes faster than any headline can.",
+  },
+  {
+    icon: Contrast,
+    title: "Contrast",
+    body: "Value separation is what survives compression, dark mode and a 120px sidebar.",
+  },
+  {
+    icon: Sun,
+    title: "Lighting",
+    body: "Directional light sculpts depth and tells the viewer the scene is real.",
+  },
+  {
+    icon: LayoutGrid,
+    title: "Composition",
+    body: "Negative space is a tool — emptiness makes the subject feel important.",
+  },
+  {
+    icon: Type,
+    title: "Typography",
+    body: "Two weights, three words, placed where the composition is quietest.",
+  },
+  {
+    icon: Palette,
+    title: "Colour Psychology",
+    body: "Warm against cool creates instant separation and a repeatable channel identity.",
+  },
 ];
 
 export function WhyItWorks() {
@@ -45,7 +68,7 @@ export function WhyItWorks() {
                 data-cursor="link"
                 whileHover={{ scale: 1.035, y: -6 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="shadow-soft hover:shadow-lift h-full rounded-3xl border border-border bg-card p-7 backdrop-blur-xl transition-shadow duration-500"
+                className=" h-full glass-card rounded-3xl p-7 backdrop-blur-xl transition-shadow duration-500"
               >
                 <p.icon className="h-6 w-6 text-accent" />
                 <h3 className="mt-6 text-lg font-bold">{p.title}</h3>

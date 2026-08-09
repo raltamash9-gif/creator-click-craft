@@ -50,37 +50,38 @@
   --shadow-soft: 0 2px 8px oklch(0 0 0 / 0.03), 0 18px 40px -18px oklch(0 0 0 / 0.12);
   --shadow-float: 0 4px 12px oklch(0 0 0 / 0.04), 0 40px 80px -30px oklch(0 0 0 / 0.22);
   --shadow-lift: 0 6px 16px oklch(0 0 0 / 0.05), 0 60px 110px -40px oklch(0 0 0 / 0.3);
-  --shadow-glow: 0 12px 34px -10px oklch(0.623 0.214 259.8 / 0.45);
-  --shadow-ember: 0 16px 44px -12px oklch(0.72 0.19 46 / 0.4);
+  --shadow-glow: 0 12px 34px -10px rgba(44, 83, 100, 0.55);
+  --shadow-ember: 0 16px 44px -12px rgba(44, 83, 100, 0.4);
 }
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.157 0 0);
+  --background: transparent;
   --foreground: oklch(0.985 0 0);
-  --surface: oklch(0.205 0 0);
-  --card: oklch(1 0 0 / 0.045);
+  --surface: rgba(255, 255, 255, 0.025);
+  --card: rgba(255, 255, 255, 0.03);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.19 0 0);
+  --popover: #101a1e;
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.157 0 0);
-  --secondary: oklch(0.24 0 0);
+  --primary-foreground: #0a0f14;
+  --secondary: rgba(255, 255, 255, 0.06);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.24 0 0);
+  --muted: rgba(255, 255, 255, 0.06);
   --muted-foreground: oklch(0.735 0 0);
-  --subtle: oklch(0.6 0 0);
-  --accent: oklch(0.623 0.214 259.8);
+  --subtle: rgba(255, 255, 255, 0.4);
+  --accent: #2c5364;
   --accent-foreground: oklch(0.99 0 0);
-  --ember: oklch(0.72 0.19 46);
+  --ember: #2c5364;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(1 0 0 / 0.1);
-  --input: oklch(1 0 0 / 0.14);
-  --ring: oklch(0.623 0.214 259.8 / 0.4);
-  --ink: oklch(0.11 0.004 260);
+  --border: rgba(255, 255, 255, 0.07);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: rgba(44, 83, 100, 0.5);
+  --ink: #0a0f14;
   --ink-foreground: oklch(0.97 0.003 95);
 }
+
 
 
 @layer base {
@@ -90,10 +91,13 @@
 
   html {
     scroll-behavior: smooth;
+    background-color: #0a0a0a;
+    background-image: linear-gradient(to bottom, #0f2027 0%, #0a0a0a 100%);
+    background-attachment: fixed;
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: transparent;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -254,15 +258,80 @@
 
 @utility gradient-border {
   border: 1px solid transparent;
-  border-image: linear-gradient(140deg, oklch(0.623 0.214 259.8 / 0.65), oklch(0.623 0.214 259.8 / 0.05) 55%, transparent) 1;
+  border-image: linear-gradient(140deg, rgba(44,83,100,0.85), rgba(44,83,100,0.12) 55%, transparent) 1;
 }
 
 @keyframes handle-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 oklch(0.623 0.214 259.8 / 0.5);
+    box-shadow: 0 0 0 0 rgba(44,83,100,0.6);
   }
   50% {
-    box-shadow: 0 0 0 14px oklch(0.623 0.214 259.8 / 0);
+    box-shadow: 0 0 0 14px rgba(44,83,100,0);
   }
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: rgba(44, 83, 100, 0.7);
+    box-shadow: 0 8px 32px rgba(44, 83, 100, 0.2);
+  }
+}
+
+.group:hover .glass-card {
+  border-color: rgba(44, 83, 100, 0.7);
+  box-shadow: 0 8px 32px rgba(44, 83, 100, 0.2);
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -10%, 0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 110vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes snow-drift {
+  0%,
+  100% {
+    transform: translateX(-14px);
+  }
+  50% {
+    transform: translateX(14px);
+  }
+}
+
+@keyframes card-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.008);
+  }
+}
+
+@utility card-breathe {
+  animation: card-breathe 4s ease-in-out infinite;
+}
+
+@utility nav-glass {
+  background: rgba(15, 32, 39, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }

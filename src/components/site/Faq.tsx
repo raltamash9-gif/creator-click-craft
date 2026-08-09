@@ -52,7 +52,10 @@ export function Faq() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((f) => (
                 <AccordionItem key={f.q} value={f.q} className="border-border">
-                  <AccordionTrigger data-cursor="link" className="text-left text-lg font-semibold hover:no-underline">
+                  <AccordionTrigger
+                    data-cursor="link"
+                    className="text-left text-lg font-semibold hover:no-underline"
+                  >
                     {f.q}
                   </AccordionTrigger>
                   <AccordionContent className="max-w-2xl text-base leading-relaxed text-muted-foreground">

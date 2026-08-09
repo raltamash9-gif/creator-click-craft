@@ -12,7 +12,6 @@ const spanClass: Record<string, string> = {
 
 const ratioClass = "aspect-[16/9]";
 
-
 export function Work({
   filter,
   onFilterChange,
@@ -56,7 +55,9 @@ export function Work({
                   data-cursor="button"
                   onClick={() => onFilterChange(c)}
                   className={`relative rounded-full px-4 py-2 text-sm transition-colors duration-300 ${
-                    active ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                    active
+                      ? "text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {active && (
@@ -66,13 +67,7 @@ export function Work({
                       className="absolute inset-0 rounded-full bg-primary"
                     />
                   )}
-                  <span
-                    className={`relative z-10 ${
-                      active ? "" : "rounded-full"
-                    }`}
-                  >
-                    {c}
-                  </span>
+                  <span className={`relative z-10 ${active ? "" : "rounded-full"}`}>{c}</span>
                   {!active && (
                     <span className="pointer-events-none absolute inset-0 rounded-full border border-border" />
                   )}
@@ -98,15 +93,17 @@ export function Work({
 
         <motion.div layout className="mt-12 grid gap-8 md:grid-cols-6 lg:mt-16 lg:gap-10">
           <AnimatePresence mode="popLayout">
-            {visible.map((item) => (
+            {visible.map((item, i) => (
               <motion.article
                 key={item.slug}
                 layout
-                initial={{ opacity: 0, scale: 0.92 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 40, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
                 exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: (i % 6) * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 className={`group ${spanClass[item.span]}`}
+                style={{ animationDelay: `${(i % 5) * 0.8}s` }}
               >
                 <Link
                   to="/work/$slug"
@@ -120,7 +117,9 @@ export function Work({
 
                     className="relative [transform-style:preserve-3d]"
                   >
-                    <div className={`relative overflow-hidden rounded-2xl border border-border bg-ink shadow-soft group-hover:shadow-lift transition-shadow duration-500 ${ratioClass}`}>
+                    <div
+                      className={`card-breathe relative overflow-hidden rounded-2xl border border-border bg-ink transition-shadow duration-500 ${ratioClass}`}
+                    >
                       <img
                         src={item.src}
                         alt={`${item.category} YouTube thumbnail — ${item.title}`}

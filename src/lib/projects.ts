@@ -45,11 +45,26 @@ export type Project = {
 };
 
 const defaultLayers = (subject: string) => [
-  { name: "Background", body: "Base plate and depth established first — the stage everything else sits inside." },
-  { name: "Environment", body: "Supporting scenery, haze and scale cues layered behind the focal point." },
-  { name: `Main Subject — ${subject}`, body: "Cut, cleaned and positioned on the strongest third of the frame." },
-  { name: "Lighting", body: "Directional key light, rim separation and contact shadows painted in." },
-  { name: "Atmospheric Effects", body: "Dust, glow and volumetric depth to bind the composite together." },
+  {
+    name: "Background",
+    body: "Base plate and depth established first — the stage everything else sits inside.",
+  },
+  {
+    name: "Environment",
+    body: "Supporting scenery, haze and scale cues layered behind the focal point.",
+  },
+  {
+    name: `Main Subject — ${subject}`,
+    body: "Cut, cleaned and positioned on the strongest third of the frame.",
+  },
+  {
+    name: "Lighting",
+    body: "Directional key light, rim separation and contact shadows painted in.",
+  },
+  {
+    name: "Atmospheric Effects",
+    body: "Dust, glow and volumetric depth to bind the composite together.",
+  },
   { name: "Typography", body: "Two weights maximum, set where the eye lands after the subject." },
   { name: "Final Polish", body: "Colour grade, sharpening pass and a 120px legibility check." },
 ];
@@ -73,12 +88,30 @@ export const projects: Project[] = [
       "Keep the title readable over a busy battle scene",
     ],
     thinking: [
-      { heading: "One commanding gesture", body: "The pointing arm draws a diagonal straight to the subject's face, so the eye has a route through the frame." },
-      { heading: "Oil-paint texture", body: "A painted finish separates the thumbnail from stock-photo history content in the same feed." },
-      { heading: "Warm gold against deep shadow", body: "Firelit skin on near-black armour keeps contrast high after compression." },
-      { heading: "Title in the quiet corner", body: "Type sits top-left where the composition is emptiest and the eye lands first." },
+      {
+        heading: "One commanding gesture",
+        body: "The pointing arm draws a diagonal straight to the subject's face, so the eye has a route through the frame.",
+      },
+      {
+        heading: "Oil-paint texture",
+        body: "A painted finish separates the thumbnail from stock-photo history content in the same feed.",
+      },
+      {
+        heading: "Warm gold against deep shadow",
+        body: "Firelit skin on near-black armour keeps contrast high after compression.",
+      },
+      {
+        heading: "Title in the quiet corner",
+        body: "Type sits top-left where the composition is emptiest and the eye lands first.",
+      },
     ],
-    tools: ["Adobe Photoshop", "AI-generated assets", "Compositing", "Colour grading", "Typography"],
+    tools: [
+      "Adobe Photoshop",
+      "AI-generated assets",
+      "Compositing",
+      "Colour grading",
+      "Typography",
+    ],
     layers: defaultLayers("Alexander"),
     related: ["snake-island", "radiation-leak", "master-coding"],
   },
@@ -92,18 +125,34 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "A cinematic survival thumbnail in a MrBeast-style visual language: a single person, an extreme situation and an expression you can read instantly.",
-    challenge: "High-energy formats rely on a face — the environment has to support it, never compete with it.",
+    challenge:
+      "High-energy formats rely on a face — the environment has to support it, never compete with it.",
     challengePoints: [
       "Sell danger without clutter",
       "Keep the face the brightest point in the frame",
       "Make the jungle read as depth, not noise",
     ],
     thinking: [
-      { heading: "Emotion first", body: "The expression carries the entire hook, so it sits large and centred." },
-      { heading: "Green on green, split by light", body: "A brighter key on the subject lifts him out of a fully green environment." },
-      { heading: "The threat stays secondary", body: "The snake frames the subject instead of stealing the focus." },
+      {
+        heading: "Emotion first",
+        body: "The expression carries the entire hook, so it sits large and centred.",
+      },
+      {
+        heading: "Green on green, split by light",
+        body: "A brighter key on the subject lifts him out of a fully green environment.",
+      },
+      {
+        heading: "The threat stays secondary",
+        body: "The snake frames the subject instead of stealing the focus.",
+      },
     ],
-    tools: ["Adobe Photoshop", "AI-generated assets", "Photo manipulation", "Lighting", "Compositing"],
+    tools: [
+      "Adobe Photoshop",
+      "AI-generated assets",
+      "Photo manipulation",
+      "Lighting",
+      "Compositing",
+    ],
     layers: defaultLayers("survivor"),
     related: ["alexander-the-great", "radiation-leak", "bgmi-solo-vs-squad"],
   },
@@ -117,16 +166,26 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "A cinematic thumbnail in a MrBeast-style direction — a reaction shot, a hazard-lit environment and a two-word hook that finishes the story the image starts.",
-    challenge: "Reaction thumbnails only work when the viewer instantly understands what is being reacted to.",
+    challenge:
+      "Reaction thumbnails only work when the viewer instantly understands what is being reacted to.",
     challengePoints: [
       "Show cause and reaction in one frame",
       "Keep the hazard suit readable against a dark set",
       "Place type so it never covers the face",
     ],
     thinking: [
-      { heading: "Cause on the left, reaction centre", body: "Western reading order does the storytelling: the creature, then the scream." },
-      { heading: "Toxic green versus gold", body: "Complementary colour separates the subject from the environment in one move." },
-      { heading: "Two-word hook", body: "Short declarative type in the empty corner adds tension the image alone can't." },
+      {
+        heading: "Cause on the left, reaction centre",
+        body: "Western reading order does the storytelling: the creature, then the scream.",
+      },
+      {
+        heading: "Toxic green versus gold",
+        body: "Complementary colour separates the subject from the environment in one move.",
+      },
+      {
+        heading: "Two-word hook",
+        body: "Short declarative type in the empty corner adds tension the image alone can't.",
+      },
     ],
     tools: ["Adobe Photoshop", "AI-generated assets", "Compositing", "Lighting", "Typography"],
     layers: defaultLayers("hazmat subject"),
@@ -142,16 +201,26 @@ export const projects: Project[] = [
     span: "wide",
     overview:
       "A mobile gaming thumbnail built entirely from in-game BGMI screenshots, cut and arranged in Photoshop into a three-panel split.",
-    challenge: "Raw gameplay screenshots are flat and low contrast — they need structure to work as a thumbnail.",
+    challenge:
+      "Raw gameplay screenshots are flat and low contrast — they need structure to work as a thumbnail.",
     challengePoints: [
       "Turn plain screenshots into a composed frame",
       "Show gameplay and character in one look",
       "Keep the title legible over bright scenery",
     ],
     thinking: [
-      { heading: "Angled split panels", body: "Diagonal dividers add motion and let three moments coexist without feeling stacked." },
-      { heading: "Character as the anchor", body: "The armoured skin on the right gives the frame a subject to land on." },
-      { heading: "Chrome-blue title", body: "A heavy gaming typeface with a hard outline survives a crowded mobile sidebar." },
+      {
+        heading: "Angled split panels",
+        body: "Diagonal dividers add motion and let three moments coexist without feeling stacked.",
+      },
+      {
+        heading: "Character as the anchor",
+        body: "The armoured skin on the right gives the frame a subject to land on.",
+      },
+      {
+        heading: "Chrome-blue title",
+        body: "A heavy gaming typeface with a hard outline survives a crowded mobile sidebar.",
+      },
     ],
     tools: ["Adobe Photoshop", "In-game screenshots", "Compositing", "Typography"],
     layers: defaultLayers("player character"),
@@ -167,16 +236,26 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "A tech-education thumbnail using glassmorphism built in Photoshop. Code becomes a visual object rather than something you have to read, and the hierarchy is deliberately strong.",
-    challenge: "Coding topics usually mean screenshots of an editor — unreadable at thumbnail size.",
+    challenge:
+      "Coding topics usually mean screenshots of an editor — unreadable at thumbnail size.",
     challengePoints: [
       "Represent coding visually, not literally",
       "Build a clear three-line title hierarchy",
       "Keep a dark frame from going flat",
     ],
     thinking: [
-      { heading: "Glass panel behind the type", body: "A frosted plate lifts the headline off the artwork and keeps every word crisp." },
-      { heading: "Code as light", body: "Language logos and UI fragments streaming from the subject read as 'coding' in a glance." },
-      { heading: "Three type weights, one block", body: "Big, small, big gives instant hierarchy and a natural reading rhythm." },
+      {
+        heading: "Glass panel behind the type",
+        body: "A frosted plate lifts the headline off the artwork and keeps every word crisp.",
+      },
+      {
+        heading: "Code as light",
+        body: "Language logos and UI fragments streaming from the subject read as 'coding' in a glance.",
+      },
+      {
+        heading: "Three type weights, one block",
+        body: "Big, small, big gives instant hierarchy and a natural reading rhythm.",
+      },
     ],
     tools: ["Adobe Photoshop", "Glassmorphism", "AI-generated assets", "Compositing", "Typography"],
     layers: defaultLayers("subject"),
@@ -200,12 +279,30 @@ export const projects: Project[] = [
       "Keep the outstretched hand as the entry point of the frame",
     ],
     thinking: [
-      { heading: "Hand first, face second", body: "The reaching hand breaks the frame edge and pulls the viewer in before the expression sells the panic." },
-      { heading: "Predators on both flanks", body: "Wolves left and right close the composition inward, so there is no visual escape route." },
-      { heading: "Cold storm grade", body: "A desaturated blue-grey wash unifies every layer and makes the blood and skin tones the only warmth." },
-      { heading: "Depth through weather", body: "Falling snow and haze between planes turn a flat stack of cut-outs into real distance." },
+      {
+        heading: "Hand first, face second",
+        body: "The reaching hand breaks the frame edge and pulls the viewer in before the expression sells the panic.",
+      },
+      {
+        heading: "Predators on both flanks",
+        body: "Wolves left and right close the composition inward, so there is no visual escape route.",
+      },
+      {
+        heading: "Cold storm grade",
+        body: "A desaturated blue-grey wash unifies every layer and makes the blood and skin tones the only warmth.",
+      },
+      {
+        heading: "Depth through weather",
+        body: "Falling snow and haze between planes turn a flat stack of cut-outs into real distance.",
+      },
     ],
-    tools: ["Adobe Photoshop", "Photo manipulation", "AI enhancement", "Compositing", "Colour grading"],
+    tools: [
+      "Adobe Photoshop",
+      "Photo manipulation",
+      "AI enhancement",
+      "Compositing",
+      "Colour grading",
+    ],
     layers: defaultLayers("survivor"),
     related: ["snake-island", "alexander-the-great", "radiation-leak"],
   },
@@ -219,16 +316,26 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "A two-panel comparison thumbnail drawn in a wojak-style cartoon language, generated from a tightly written prompt and then finished in Photoshop with hand-set typography and a colour-correction pass.",
-    challenge: "Comparison thumbnails fail when both halves look the same — the split has to carry meaning at a glance.",
+    challenge:
+      "Comparison thumbnails fail when both halves look the same — the split has to carry meaning at a glance.",
     challengePoints: [
       "Make two versions of one character instantly distinguishable",
       "Keep both titles readable at sidebar size",
       "Hold a consistent illustration style across both panels",
     ],
     thinking: [
-      { heading: "Warm versus toxic", body: "A red-lit lab against a sickly green ruin separates the timelines before a single word is read." },
-      { heading: "Eyes tell the story", body: "Calm dark eyes on the left, red glow on the right — the cheapest possible tension cue." },
-      { heading: "Type as the divider", body: "Two heavy outlined words sit at the top edge so the split line stays clean and the faces stay uncovered." },
+      {
+        heading: "Warm versus toxic",
+        body: "A red-lit lab against a sickly green ruin separates the timelines before a single word is read.",
+      },
+      {
+        heading: "Eyes tell the story",
+        body: "Calm dark eyes on the left, red glow on the right — the cheapest possible tension cue.",
+      },
+      {
+        heading: "Type as the divider",
+        body: "Two heavy outlined words sit at the top edge so the split line stays clean and the faces stay uncovered.",
+      },
     ],
     tools: ["AI generation", "Prompt design", "Adobe Photoshop", "Typography", "Colour correction"],
     layers: defaultLayers("dual Flash panels"),
@@ -244,18 +351,34 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "A story-recap thumbnail for an animated franchise. Character assets were sourced and part-generated with AI, then cut, re-lit and arranged into a single ensemble line-up inside Photoshop.",
-    challenge: "Recap videos need to promise the whole story in one frame without turning into a crowded sticker sheet.",
+    challenge:
+      "Recap videos need to promise the whole story in one frame without turning into a crowded sticker sheet.",
     challengePoints: [
       "Fit five characters without losing the lead",
       "Keep flat cartoon art from looking pasted on",
       "Hold the title clear of every face",
     ],
     thinking: [
-      { heading: "Depth by overlap", body: "Characters staggered in scale and layered inward build a stage rather than a row." },
-      { heading: "Cyan rim on red", body: "A cool rim light against the red backdrop separates each cut-out and gives the flat art dimension." },
-      { heading: "Two-word promise", body: "\u2018Entire Story.\u2019 in the empty top band tells the viewer exactly what they get." },
+      {
+        heading: "Depth by overlap",
+        body: "Characters staggered in scale and layered inward build a stage rather than a row.",
+      },
+      {
+        heading: "Cyan rim on red",
+        body: "A cool rim light against the red backdrop separates each cut-out and gives the flat art dimension.",
+      },
+      {
+        heading: "Two-word promise",
+        body: "\u2018Entire Story.\u2019 in the empty top band tells the viewer exactly what they get.",
+      },
     ],
-    tools: ["Adobe Photoshop", "AI-generated assets", "Cut-out compositing", "Rim lighting", "Typography"],
+    tools: [
+      "Adobe Photoshop",
+      "AI-generated assets",
+      "Cut-out compositing",
+      "Rim lighting",
+      "Typography",
+    ],
     layers: defaultLayers("character line-up"),
     related: ["flash-speed-force-flashpoint", "death-note-split", "celebrity-vector-portraits"],
   },
@@ -269,20 +392,34 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "A second wojak-style split thumbnail, this time pairing two anime characters. Both halves came from a tightly controlled prompt, then got hand-set typography and a colour-correction pass in Photoshop.",
-    challenge: "Two illustrated portraits side by side blur together unless each half owns its own world.",
+    challenge:
+      "Two illustrated portraits side by side blur together unless each half owns its own world.",
     challengePoints: [
       "Give each side a distinct environment and palette",
       "Keep the wojak expression consistent across both",
       "Set names large enough for a mobile sidebar",
     ],
     thinking: [
-      { heading: "Cold desk, warm bedroom", body: "A blue-grey study against a rose-lit gothic room splits the frame emotionally before you read a word." },
-      { heading: "Matching grins", body: "The identical wojak smile on both sides is the joke \u2014 the styling has to stay strict for it to land." },
-      { heading: "Names as the header", body: "Heavy outlined type across the top keeps the divider clean and both faces uncovered." },
+      {
+        heading: "Cold desk, warm bedroom",
+        body: "A blue-grey study against a rose-lit gothic room splits the frame emotionally before you read a word.",
+      },
+      {
+        heading: "Matching grins",
+        body: "The identical wojak smile on both sides is the joke \u2014 the styling has to stay strict for it to land.",
+      },
+      {
+        heading: "Names as the header",
+        body: "Heavy outlined type across the top keeps the divider clean and both faces uncovered.",
+      },
     ],
     tools: ["AI generation", "Prompt design", "Adobe Photoshop", "Typography", "Colour correction"],
     layers: defaultLayers("dual character panels"),
-    related: ["flash-speed-force-flashpoint", "rick-and-morty-entire-story", "celebrity-vector-portraits"],
+    related: [
+      "flash-speed-force-flashpoint",
+      "rick-and-morty-entire-story",
+      "celebrity-vector-portraits",
+    ],
   },
   {
     slug: "celebrity-vector-portraits",
@@ -294,18 +431,34 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "Three creator portraits arranged in Photoshop, then converted into a clean vector-illustration finish through a prompt pass and retouched back to a consistent style.",
-    challenge: "Three faces of equal importance still need a hierarchy, or the frame reads as a contact sheet.",
+    challenge:
+      "Three faces of equal importance still need a hierarchy, or the frame reads as a contact sheet.",
     challengePoints: [
       "Make three portraits feel like one artwork",
       "Keep skin tones consistent after stylisation",
       "Separate faces from a near-black backdrop",
     ],
     thinking: [
-      { heading: "Centre hero, flanking support", body: "The laughing centre portrait sits larger and further forward so the eye has an obvious first stop." },
-      { heading: "Vector finish", body: "Flat shading with crisp edges survives heavy compression far better than photographic detail." },
-      { heading: "Red gradient stage", body: "A dark red vignette pushes every face forward and keeps the frame from going flat." },
+      {
+        heading: "Centre hero, flanking support",
+        body: "The laughing centre portrait sits larger and further forward so the eye has an obvious first stop.",
+      },
+      {
+        heading: "Vector finish",
+        body: "Flat shading with crisp edges survives heavy compression far better than photographic detail.",
+      },
+      {
+        heading: "Red gradient stage",
+        body: "A dark red vignette pushes every face forward and keeps the frame from going flat.",
+      },
     ],
-    tools: ["Adobe Photoshop", "Prompt-based stylisation", "Vector illustration", "Retouching", "Colour grading"],
+    tools: [
+      "Adobe Photoshop",
+      "Prompt-based stylisation",
+      "Vector illustration",
+      "Retouching",
+      "Colour grading",
+    ],
     layers: defaultLayers("portrait trio"),
     related: ["rick-and-morty-entire-story", "alexander-the-great", "death-note-split"],
   },
@@ -319,18 +472,34 @@ export const projects: Project[] = [
     span: "regular",
     overview:
       "A cinematic gaming thumbnail built entirely from gameplay screenshots. Frames were captured from a long-form survival video, composited into a single scene in Photoshop, then blended with an AI pass so the seams disappear.",
-    challenge: "Screenshots from different moments have different light, grain and lens \u2014 stacking them usually looks obvious.",
+    challenge:
+      "Screenshots from different moments have different light, grain and lens \u2014 stacking them usually looks obvious.",
     challengePoints: [
       "Merge multiple captures into one believable shot",
       "Build a first-person point of view that pulls the viewer in",
       "Add stakes without any text",
     ],
     thinking: [
-      { heading: "First-person foreground", body: "The raised axe in the corner puts the viewer inside the frame instead of watching it." },
-      { heading: "Threat in the near ground", body: "The cobra between camera and player creates the tension the gameplay alone doesn\u2019t show." },
-      { heading: "One light direction", body: "Every layer regraded to the same afternoon sun so the composite reads as a single capture." },
+      {
+        heading: "First-person foreground",
+        body: "The raised axe in the corner puts the viewer inside the frame instead of watching it.",
+      },
+      {
+        heading: "Threat in the near ground",
+        body: "The cobra between camera and player creates the tension the gameplay alone doesn\u2019t show.",
+      },
+      {
+        heading: "One light direction",
+        body: "Every layer regraded to the same afternoon sun so the composite reads as a single capture.",
+      },
     ],
-    tools: ["Gameplay screenshots", "Adobe Photoshop", "Compositing", "AI blending", "Colour grading"],
+    tools: [
+      "Gameplay screenshots",
+      "Adobe Photoshop",
+      "Compositing",
+      "AI blending",
+      "Colour grading",
+    ],
     layers: defaultLayers("survival scene"),
     related: ["bgmi-solo-vs-squad", "snake-island", "attacked-by-wolves"],
   },

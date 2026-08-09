@@ -32,7 +32,7 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
                   onClick={() => onSelect(c.category)}
                   whileHover={{ y: -8, scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                  className="gradient-border shadow-soft relative w-full rounded-3xl bg-card p-7 text-left backdrop-blur-xl"
+                  className="gradient-border relative w-full glass-card rounded-3xl p-7 text-left backdrop-blur-xl"
                 >
                   <p className="font-display text-xl font-extrabold tracking-[-0.03em]">{c.name}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
