@@ -23,6 +23,8 @@ export function Hero() {
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 90, damping: 20 });
   const sy = useSpring(my, { stiffness: 90, damping: 20 });
+  const snowX = useTransform(sx, (v) => v * 30);
+  const snowY = useTransform(sy, (v) => v * 30);
 
   const onMove = (e: React.MouseEvent) => {
     const rect = ref.current?.getBoundingClientRect();
