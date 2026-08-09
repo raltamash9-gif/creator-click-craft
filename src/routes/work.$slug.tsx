@@ -73,15 +73,20 @@ function CaseStudyPage() {
               All work
             </Link>
 
-            <div className="shadow-lift mt-8 overflow-hidden rounded-[2rem] border border-border bg-ink">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="shadow-lift mt-8 flex items-center justify-center rounded-[2rem] border border-border bg-ink p-6 lg:min-h-[500px]"
+            >
               <img
                 src={project.src}
                 alt={`${project.category} thumbnail — ${project.title}`}
                 width={1280}
                 height={720}
-                className="h-auto w-full object-cover"
+                className="h-auto max-h-[70vh] w-full object-contain"
               />
-            </div>
+            </motion.div>
           </Reveal>
 
           <motion.div

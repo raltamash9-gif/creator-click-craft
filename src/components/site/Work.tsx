@@ -120,9 +120,9 @@ export function Work({
                     whileHover={{ y: -8, scale: 1.025, rotateX: 3, rotateY: -2 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
 
-                    className="card-breathe relative [transform-style:preserve-3d]"
+                    className="relative [transform-style:preserve-3d]"
                   >
-                    <div className={`relative overflow-hidden rounded-2xl border border-border bg-ink  group- transition-shadow duration-500 ${ratioClass}`}>
+                    <div className={`card-breathe relative overflow-hidden rounded-2xl border border-border bg-ink  group- transition-shadow duration-500 ${ratioClass}`}>
                       <img
                         src={item.src}
                         alt={`${item.category} YouTube thumbnail — ${item.title}`}
