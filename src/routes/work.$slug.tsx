@@ -137,7 +137,7 @@ function CaseStudyPage() {
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
               {project.thinking.map((t, i) => (
                 <Reveal key={t.heading} delay={(i % 2) * 0.07}>
-                  <div className="shadow-soft h-full rounded-3xl border border-border bg-card p-8 backdrop-blur-xl">
+                  <div className=" h-full glass-card rounded-3xl p-8 backdrop-blur-xl">
                     <h3 className="text-lg font-bold">{t.heading}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
                   </div>
@@ -208,7 +208,7 @@ function CaseStudyPage() {
                         : { opacity: 0.35, x: -8, filter: "blur(1.5px)" }
                     }
                     transition={{ duration: 0.7, delay: revealed ? i * 0.75 : 0, ease: [0.22, 1, 0.36, 1] }}
-                    className="rounded-2xl border border-border bg-card p-5 backdrop-blur-xl"
+                    className="glass-card rounded-2xl p-5 backdrop-blur-xl"
                   >
                     <div className="flex items-baseline gap-3">
                       <span className="text-[11px] tracking-[0.2em] text-subtle">
@@ -236,7 +236,7 @@ function CaseStudyPage() {
             <div className="mt-10 flex flex-wrap gap-3">
               {project.tools.map((tool, i) => (
                 <Reveal key={tool} delay={Math.min(i * 0.05, 0.3)}>
-                  <span className="shadow-soft inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm backdrop-blur-xl">
+                  <span className=" inline-flex items-center gap-2 glass-card rounded-full px-5 py-3 text-sm backdrop-blur-xl">
                     <Check className="h-4 w-4 text-accent" />
                     {tool}
                   </span>
@@ -286,7 +286,7 @@ function CaseStudyPage() {
                     <motion.div
                       whileHover={{ y: -10 }}
                       transition={{ type: "spring", stiffness: 240, damping: 22 }}
-                      className="shadow-soft group-hover:shadow-lift overflow-hidden rounded-3xl border border-border bg-card p-3 backdrop-blur-xl transition-shadow duration-500"
+                      className=" group- overflow-hidden glass-card rounded-3xl p-3 backdrop-blur-xl transition-shadow duration-500"
                     >
                       <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                         <img

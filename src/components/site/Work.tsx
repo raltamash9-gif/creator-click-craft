@@ -120,7 +120,7 @@ export function Work({
 
                     className="relative [transform-style:preserve-3d]"
                   >
-                    <div className={`relative overflow-hidden rounded-2xl border border-border bg-ink shadow-soft group-hover:shadow-lift transition-shadow duration-500 ${ratioClass}`}>
+                    <div className={`relative overflow-hidden rounded-2xl border border-border bg-ink  group- transition-shadow duration-500 ${ratioClass}`}>
                       <img
                         src={item.src}
                         alt={`${item.category} YouTube thumbnail — ${item.title}`}

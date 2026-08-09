@@ -50,12 +50,12 @@ export function CustomCursor() {
           marginTop: -ringSize / 2,
           backgroundColor:
             mode === "view"
-              ? "oklch(0.623 0.214 259.8)"
+              ? "#2C5364"
               : mode === "button"
                 ? "oklch(0.985 0 0)"
                 : "oklch(0.985 0 0 / 0)",
           borderColor:
-            mode === "view" ? "oklch(0.623 0.214 259.8)" : "oklch(0.985 0 0 / 0.65)",
+            mode === "view" ? "#2C5364" : "oklch(0.985 0 0 / 0.65)",
           borderWidth: 1,
         }}
         transition={{ type: "spring", stiffness: 420, damping: 30 }}
