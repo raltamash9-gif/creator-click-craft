@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ArrowUpRight, Wand2, Check } from "lucide-react";
 
 import { CustomCursor } from "@/components/CustomCursor";
+import { Atmosphere } from "@/components/site/Atmosphere";
+
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Contact";
 import { Reveal, SectionLabel } from "@/components/Reveal";
