@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ArrowUpRight, Wand2, Check } from "lucide-react";
 
 import { CustomCursor } from "@/components/CustomCursor";
+import { Atmosphere } from "@/components/site/Atmosphere";
+
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Contact";
 import { Reveal, SectionLabel } from "@/components/Reveal";
@@ -60,8 +62,10 @@ function CaseStudyPage() {
     .filter((p): p is Project => Boolean(p));
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative z-[2] min-h-screen">
+      <Atmosphere />
       <CustomCursor />
+
       <Nav />
       <main className="pt-32 lg:pt-40">
         <div className="shell">
