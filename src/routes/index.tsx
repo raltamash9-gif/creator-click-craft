@@ -46,15 +46,16 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative z-[2] min-h-screen">
+      <Atmosphere />
       <motion.div
         aria-hidden
         style={{ scaleX: progress }}
         className="fixed inset-x-0 top-0 z-[110] h-[3px] origin-left bg-accent"
       />
-      <div aria-hidden className="film-grain" />
       <CustomCursor />
       <Nav />
+
       <main>
         <Hero />
         <TrustedBy onSelect={selectChannel} />
