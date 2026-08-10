@@ -3,42 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { ArrowDown } from "lucide-react";
 
 import { Snowfall } from "@/components/site/Snowfall";
-import alexanderAsset from "@/assets/alexander-the-great.png.asset.json";
-import bgmiAsset from "@/assets/bgmi-solo-vs-squad.png.asset.json";
-import codingAsset from "@/assets/master-coding.png.asset.json";
-import radiationAsset from "@/assets/radiation-leak.png.asset.json";
 import wolvesAsset from "@/assets/attacked-by-wolves.jpg.asset.json";
-
-const cards = [
-  {
-    src: alexanderAsset.url,
-    alt: "Cinematic oil-painting documentary thumbnail: Alexander the Great",
-    depth: 34,
-    rotate: -5,
-    className: "left-0 top-6 w-[62%] z-30",
-  },
-  {
-    src: bgmiAsset.url,
-    alt: "Gaming thumbnail: BGMI Solo vs Squad split composition",
-    depth: 22,
-    rotate: 4,
-    className: "right-0 top-0 w-[52%] z-20",
-  },
-  {
-    src: radiationAsset.url,
-    alt: "Cinematic reaction thumbnail: It Escaped",
-    depth: 46,
-    rotate: 3,
-    className: "right-[6%] bottom-2 w-[58%] z-40",
-  },
-  {
-    src: codingAsset.url,
-    alt: "Tech thumbnail: Master Coding in 30 Days",
-    depth: 14,
-    rotate: -3,
-    className: "left-[8%] bottom-[16%] w-[44%] z-10",
-  },
-];
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -57,12 +22,16 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="grain relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section
+      id="top"
+      className="grain relative min-h-[92vh] overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
+    >
       <img
         aria-hidden
         src={wolvesAsset.url}
         alt=""
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        style={{ objectPosition: "center 20%" }}
       />
       <div
         aria-hidden
@@ -83,11 +52,7 @@ export function Hero() {
         <Snowfall />
       </motion.div>
 
-      <div
-        ref={ref}
-        onMouseMove={onMove}
-        className="shell relative z-10 grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20"
-      >
+      <div ref={ref} onMouseMove={onMove} className="shell relative z-10">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -115,16 +80,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 text-[clamp(2.9rem,7vw,88px)] leading-[0.92] font-extrabold"
+            className="mt-4 text-[clamp(2.9rem,7vw,88px)] leading-[0.95] font-extrabold"
           >
             Designing
             <br />
             Thumbnails That
             <br />
-            <span className="relative inline-block">
-              Make People Click.
-              <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-gradient-to-r from-accent to-ember opacity-80" />
-            </span>
+            Make People Click.
           </motion.h1>
 
           <motion.p
@@ -153,63 +115,20 @@ export function Hero() {
             <a
               href="#contact"
               data-cursor="button"
-              className="hover:shadow-ember inline-flex items-center glass-card rounded-full px-7 py-3.5 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               Hire Me
             </a>
           </motion.div>
         </div>
-
-        <div className="relative aspect-[5/4] w-full">
-          {cards.map((card, i) => (
-            <FloatingCard key={card.alt} card={card} sx={sx} sy={sy} index={i} />
-          ))}
-        </div>
       </div>
 
-      <div className="shell relative mt-20 flex justify-center lg:mt-24">
+      <div className="shell relative z-10 mt-20 flex justify-center lg:mt-24">
         <div className="flex flex-col items-center gap-3 text-[11px] font-semibold tracking-[0.24em] text-subtle uppercase">
           Scroll to Explore
           <ArrowDown className="h-4 w-4 animate-[bounce-arrow_2s_ease-in-out_infinite] text-accent" />
         </div>
       </div>
     </section>
-  );
-}
-
-function FloatingCard({
-  card,
-  sx,
-  sy,
-  index,
-}: {
-  card: (typeof cards)[number];
-  sx: ReturnType<typeof useSpring>;
-  sy: ReturnType<typeof useSpring>;
-  index: number;
-}) {
-  const tx = useTransform(sx, (v) => v * card.depth);
-  const ty = useTransform(sy, (v) => v * card.depth);
-  const rotY = useTransform(sx, (v) => v * 9);
-  const rotX = useTransform(sy, (v) => -v * 9);
-
-  return (
-    <motion.figure
-      style={{ x: tx, y: ty, rotateX: rotX, rotateY: rotY, rotate: card.rotate }}
-      initial={{ opacity: 0, scale: 0.92, y: 40 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.25 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ scale: 1.04, zIndex: 50 }}
-      data-cursor="view"
-      className={`shadow-float absolute overflow-hidden rounded-2xl border border-border bg-ink ${card.className}`}
-    >
-      <img
-        src={card.src}
-        alt={card.alt}
-        width={1280}
-        height={720}
-        className="h-auto w-full object-cover"
-      />
-    </motion.figure>
   );
 }

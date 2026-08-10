@@ -97,64 +97,65 @@ export function Work({
               <motion.article
                 key={item.slug}
                 layout
-                initial={{ opacity: 0, y: 40, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
+                initial={{ opacity: 0, y: 50, scale: 0.94, rotateX: 8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
                 exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ duration: 0.6, delay: (i % 6) * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className={`group ${spanClass[item.span]}`}
-                style={{ animationDelay: `${(i % 5) * 0.8}s` }}
+                transition={{ duration: 0.75, delay: (i % 6) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className={`group ${spanClass[item.span]} [perspective:1200px] [will-change:transform]`}
               >
-                <Link
-                  to="/work/$slug"
-                  params={{ slug: item.slug }}
-                  data-cursor="view"
-                  className="block [perspective:1200px]"
+                <div
+                  className="card-float"
+                  style={{
+                    animationDuration: `${3.5 + (i % 4) * 0.5}s`,
+                    animationDelay: `${(i % 5) * 0.7}s`,
+                  }}
                 >
-                  <motion.div
-                    whileHover={{ y: -8, scale: 1.025, rotateX: 3, rotateY: -2 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-
-                    className="relative [transform-style:preserve-3d]"
+                  <Link
+                    to="/work/$slug"
+                    params={{ slug: item.slug }}
+                    data-cursor="view"
+                    className="block"
                   >
-                    <div
-                      className={`card-breathe relative overflow-hidden rounded-2xl border border-border bg-ink transition-shadow duration-500 ${ratioClass}`}
-                    >
-                      <img
-                        src={item.src}
-                        alt={`${item.category} YouTube thumbnail — ${item.title}`}
-                        loading="lazy"
-                        width={1280}
-                        height={720}
-                        className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
-                      />
-                      <span
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                        style={{
-                          background:
-                            "linear-gradient(160deg, oklch(1 0 0 / 0.22), transparent 42%), linear-gradient(to top, oklch(0 0 0 / 0.55), transparent 55%)",
-                        }}
-                      />
-                      <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                        View Case Study →
-                      </span>
-                    </div>
-                    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-1 pt-5 pb-2">
-                      <div className="min-w-0">
-                        <h3 className="truncate text-lg font-bold transition-transform duration-500 group-hover:-translate-y-0.5">
-                          {item.title}
-                        </h3>
-                        <p className="mt-1 truncate text-sm text-muted-foreground">
-                          {item.category} · {item.year}
-                        </p>
+                    <div className="card-hover">
+                      <div
+                        className={`relative overflow-hidden rounded-2xl border border-border bg-ink ${ratioClass}`}
+                      >
+                        <img
+                          src={item.src}
+                          alt={`${item.category} YouTube thumbnail — ${item.title}`}
+                          loading="lazy"
+                          width={1280}
+                          height={720}
+                          className="card-image-reveal h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-[1.06]"
+                        />
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                          style={{
+                            background:
+                              "linear-gradient(160deg, oklch(1 0 0 / 0.22), transparent 42%), linear-gradient(to top, oklch(0 0 0 / 0.55), transparent 55%)",
+                          }}
+                        />
+                        <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                          View Case Study →
+                        </span>
                       </div>
-                      <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
+                      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-1 pt-5 pb-2">
+                        <div className="min-w-0">
+                          <h3 className="truncate text-lg font-bold">{item.title}</h3>
+                          <p className="mt-1 truncate text-sm text-muted-foreground">
+                            {item.category} · {item.year}
+                          </p>
+                        </div>
+                        <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
+                      </div>
                     </div>
-                  </motion.div>
-                </Link>
+                  </Link>
+                </div>
               </motion.article>
             ))}
+
           </AnimatePresence>
         </motion.div>
 
