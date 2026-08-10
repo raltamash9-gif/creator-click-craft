@@ -4,6 +4,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useSpring } from "motion/react";
 
 import { CustomCursor } from "@/components/CustomCursor";
+import { Atmosphere } from "@/components/site/Atmosphere";
+
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { TrustedBy } from "@/components/site/TrustedBy";
