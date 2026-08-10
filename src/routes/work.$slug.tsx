@@ -60,8 +60,10 @@ function CaseStudyPage() {
     .filter((p): p is Project => Boolean(p));
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative z-[2] min-h-screen">
+      <Atmosphere />
       <CustomCursor />
+
       <Nav />
       <main className="pt-32 lg:pt-40">
         <div className="shell">
