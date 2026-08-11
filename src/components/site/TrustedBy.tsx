@@ -5,7 +5,7 @@ import { channels } from "@/lib/projects";
 
 export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void }) {
   return (
-    <section id="trusted-by" className="relative overflow-hidden bg-surface py-24 lg:py-32">
+    <section id="trusted-by" className="relative overflow-hidden py-24 lg:py-32">
       <div aria-hidden className="dot-grid pointer-events-none absolute inset-0 opacity-60" />
       <div className="shell relative">
         <Reveal>
