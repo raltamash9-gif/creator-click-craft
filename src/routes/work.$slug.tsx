@@ -152,7 +152,7 @@ function CaseStudyPage() {
         </section>
 
         {/* Design thinking */}
-        <section className="bg-surface py-24 lg:py-32">
+        <section className="py-24 lg:py-32">
           <div className="shell">
             <Reveal>
               <SectionLabel>Design Thinking</SectionLabel>
@@ -257,7 +257,7 @@ function CaseStudyPage() {
         </section>
 
         {/* Tools */}
-        <section className="bg-surface py-24 lg:py-32">
+        <section className="py-24 lg:py-32">
           <div className="shell">
             <Reveal>
               <SectionLabel>Tools Used</SectionLabel>
