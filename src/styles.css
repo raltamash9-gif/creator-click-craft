@@ -91,11 +91,11 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: #080d10;
-    background-image:
-      radial-gradient(ellipse 100% 60% at 50% 0%, #0f2535 0%, transparent 65%),
-      radial-gradient(ellipse 70% 50% at 0% 50%, #0a1f2e 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 80%, #0d1f2d 0%, transparent 55%);
+    background:
+      radial-gradient(ellipse 120% 60% at 50% 0%, #0f2535 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 0% 60%, #0a1825 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 90%, #0d1f2d 0%, transparent 50%),
+      #080d10;
     background-attachment: fixed;
   }
 
@@ -110,12 +110,17 @@
   body::after {
     content: "";
     position: fixed;
-    inset: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
   }
+
 
 
   h1,
@@ -401,67 +406,50 @@
 .orb-layer .orb {
   position: fixed;
   display: block;
-  filter: blur(80px);
+  filter: blur(100px);
   pointer-events: none;
   z-index: 0;
   border-radius: 9999px;
 }
 
 .orb-1 {
-  width: 700px;
-  height: 700px;
+  width: 800px;
+  height: 800px;
   left: -200px;
   top: -200px;
-  opacity: 0.5;
-  background: radial-gradient(circle, #0f2535 0%, transparent 70%);
-  animation: orb-float1 25s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(15, 37, 53, 0.6) 0%, transparent 70%);
+  animation: orb-float1 28s ease-in-out infinite alternate;
 }
 
 .orb-2 {
-  width: 600px;
-  height: 600px;
-  right: -150px;
-  top: -100px;
-  opacity: 0.4;
-  background: radial-gradient(circle, #1a2a3a 0%, transparent 70%);
-  animation: orb-float2 30s ease-in-out infinite alternate;
+  width: 700px;
+  height: 700px;
+  right: -200px;
+  top: 40%;
+  background: radial-gradient(circle, rgba(10, 24, 37, 0.5) 0%, transparent 70%);
+  animation: orb-float2 35s ease-in-out infinite alternate;
 }
 
 .orb-3 {
-  width: 800px;
-  height: 800px;
-  left: -300px;
-  top: 40%;
-  opacity: 0.35;
-  background: radial-gradient(circle, #0a1825 0%, transparent 70%);
-  animation: orb-float3 20s ease-in-out infinite alternate;
-}
-
-.orb-4 {
-  width: 500px;
-  height: 500px;
-  right: -100px;
+  width: 600px;
+  height: 600px;
+  left: 30%;
   bottom: -100px;
-  opacity: 0.4;
-  background: radial-gradient(circle, #0f2030 0%, transparent 70%);
-  animation: orb-float4 35s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(13, 31, 45, 0.5) 0%, transparent 70%);
+  animation: orb-float3 22s ease-in-out infinite alternate;
 }
 
 @keyframes orb-float1 {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(70px, 60px, 0); }
+  from { transform: translate(0px, 0px); }
+  to { transform: translate(80px, 60px); }
 }
 @keyframes orb-float2 {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-80px, 70px, 0); }
+  from { transform: translate(0px, 0px); }
+  to { transform: translate(-70px, 80px); }
 }
 @keyframes orb-float3 {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(60px, -70px, 0); }
-}
-@keyframes orb-float4 {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-60px, -80px, 0); }
+  from { transform: translate(0px, 0px); }
+  to { transform: translate(60px, -70px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -469,3 +457,4 @@
     animation: none !important;
   }
 }
+
