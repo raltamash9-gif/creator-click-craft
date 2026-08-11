@@ -19,7 +19,7 @@ const retainer = [
 
 export function Services() {
   return (
-    <section id="services" className="bg-surface py-28 lg:py-40">
+    <section id="services" className="py-28 lg:py-40">
       <div className="shell">
         <Reveal>
           <SectionLabel>Services</SectionLabel>

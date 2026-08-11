@@ -35,7 +35,7 @@ const studies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="bg-surface py-28 lg:py-40">
+    <section id="case-studies" className="py-28 lg:py-40">
       <div className="shell">
         <Reveal>
           <SectionLabel>Case Studies</SectionLabel>
