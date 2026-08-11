@@ -48,7 +48,7 @@ function Index() {
   };
 
   return (
-    <div className="relative z-[2] min-h-screen">
+    <div className="relative z-[2] min-h-screen bg-transparent">
       <Atmosphere />
       <motion.div
         aria-hidden
@@ -58,7 +58,7 @@ function Index() {
       <CustomCursor />
       <Nav />
 
-      <main>
+      <main className="bg-transparent">
         <Hero />
         <TrustedBy onSelect={selectChannel} />
         <Work filter={filter} onFilterChange={setFilter} />

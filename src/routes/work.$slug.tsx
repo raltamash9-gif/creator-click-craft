@@ -62,12 +62,12 @@ function CaseStudyPage() {
     .filter((p): p is Project => Boolean(p));
 
   return (
-    <div className="relative z-[2] min-h-screen">
+    <div className="relative z-[2] min-h-screen bg-transparent">
       <Atmosphere />
       <CustomCursor />
 
       <Nav />
-      <main className="pt-32 lg:pt-40">
+      <main className="bg-transparent pt-32 lg:pt-40">
         <div className="shell">
           <Reveal>
             <Link
@@ -152,7 +152,7 @@ function CaseStudyPage() {
         </section>
 
         {/* Design thinking */}
-        <section className="bg-surface py-24 lg:py-32">
+        <section className="py-24 lg:py-32">
           <div className="shell">
             <Reveal>
               <SectionLabel>Design Thinking</SectionLabel>
@@ -257,7 +257,7 @@ function CaseStudyPage() {
         </section>
 
         {/* Tools */}
-        <section className="bg-surface py-24 lg:py-32">
+        <section className="py-24 lg:py-32">
           <div className="shell">
             <Reveal>
               <SectionLabel>Tools Used</SectionLabel>

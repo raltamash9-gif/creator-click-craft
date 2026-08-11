@@ -48,7 +48,7 @@ const principles = [
 
 export function WhyItWorks() {
   return (
-    <section id="why" className="bg-surface py-28 lg:py-40">
+    <section id="why" className="py-28 lg:py-40">
       <div className="shell">
         <Reveal>
           <SectionLabel>Why These Thumbnails Work</SectionLabel>
