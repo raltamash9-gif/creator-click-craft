@@ -45,7 +45,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="py-28 lg:py-40">
+    <section id="process" className="section-tone-a py-28 lg:py-40">
       <div className="shell">
         <Reveal>
           <SectionLabel>Creative Process</SectionLabel>
