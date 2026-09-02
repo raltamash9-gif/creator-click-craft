@@ -34,7 +34,7 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
                   className="gradient-border relative w-full glass-card rounded-3xl p-7 text-left backdrop-blur-xl"
                 >
-                  <p className="font-display text-xl font-extrabold tracking-[-0.03em]">{c.name}</p>
+                  <p className="font-display text-xl font-extrabold tracking-[0.01em]">{c.name}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
                   <span className="mt-6 inline-flex rounded-full bg-ink px-3 py-1.5 text-[11px] tracking-[0.14em] text-ink-foreground uppercase">
                     {c.category}
