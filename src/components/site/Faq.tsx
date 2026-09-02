@@ -35,7 +35,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="py-28 lg:py-40">
+    <section id="faq" className="section-tone-b py-28 lg:py-40">
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
           <Reveal>

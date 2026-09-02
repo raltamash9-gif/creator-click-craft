@@ -59,7 +59,7 @@
   --background: transparent;
   --foreground: oklch(0.985 0 0);
   --surface: rgba(255, 255, 255, 0.025);
-  --card: rgba(255, 255, 255, 0.03);
+  --card: rgba(23, 27, 36, 0.55);
   --card-foreground: oklch(0.985 0 0);
   --popover: #101a1e;
   --popover-foreground: oklch(0.985 0 0);
@@ -78,7 +78,7 @@
   --border: rgba(255, 255, 255, 0.07);
   --input: rgba(255, 255, 255, 0.14);
   --ring: rgba(44, 83, 100, 0.5);
-  --ink: #0a0f14;
+  --ink: #0d1017;
   --ink-foreground: oklch(0.97 0.003 95);
 }
 
@@ -92,10 +92,10 @@
   html,
   body {
     background:
-      radial-gradient(ellipse 120% 60% at 50% 0%, #0f2535 0%, transparent 60%),
-      radial-gradient(ellipse 80% 50% at 0% 60%, #0a1825 0%, transparent 55%),
-      radial-gradient(ellipse 60% 40% at 100% 90%, #0d1f2d 0%, transparent 50%),
-      #080d10 !important;
+      radial-gradient(ellipse 90% 55% at 50% -10%, rgba(42, 62, 92, 0.32) 0%, transparent 60%),
+      radial-gradient(ellipse 65% 45% at 5% 45%, rgba(22, 32, 50, 0.5) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 40% at 95% 80%, rgba(70, 48, 26, 0.2) 0%, transparent 55%),
+      #0b0d12 !important;
     background-attachment: fixed !important;
     min-height: 100vh;
   }
@@ -291,10 +291,10 @@
 }
 
 @utility glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(23, 27, 36, 0.55);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   border-radius: 16px;
   transition: all 0.3s ease;
   &:hover {
@@ -390,9 +390,27 @@
 
 
 @utility nav-glass {
-  background: rgba(15, 32, 39, 0.65);
+  background: rgba(11, 13, 18, 0.7);
   backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Section surface variation — smooth, layered separation between major sections. */
+@utility section-tone-a {
+  background: linear-gradient(180deg, rgba(15, 18, 24, 0) 0%, rgba(15, 18, 24, 0.85) 12%, rgba(15, 18, 24, 0.85) 88%, rgba(15, 18, 24, 0) 100%);
+}
+
+@utility section-tone-b {
+  background: linear-gradient(180deg, rgba(18, 22, 30, 0) 0%, rgba(18, 22, 30, 0.9) 12%, rgba(18, 22, 30, 0.9) 88%, rgba(18, 22, 30, 0) 100%);
+}
+
+@utility section-elevated {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(44, 83, 100, 0.14) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(23, 27, 36, 0) 0%, rgba(23, 27, 36, 0.9) 14%, rgba(23, 27, 36, 0.9) 86%, rgba(23, 27, 36, 0) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .orb-layer {
@@ -417,7 +435,7 @@
   height: 800px;
   left: -200px;
   top: -200px;
-  background: radial-gradient(circle, rgba(15, 60, 90, 0.6) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(34, 54, 84, 0.55) 0%, transparent 70%);
   animation: orb-float1 28s ease-in-out infinite alternate;
 }
 
@@ -426,7 +444,7 @@
   height: 700px;
   right: -200px;
   top: 40%;
-  background: radial-gradient(circle, rgba(10, 50, 80, 0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(22, 34, 56, 0.5) 0%, transparent 70%);
   animation: orb-float2 35s ease-in-out infinite alternate;
 }
 
@@ -435,7 +453,7 @@
   height: 600px;
   left: 30%;
   bottom: -100px;
-  background: radial-gradient(circle, rgba(20, 70, 100, 0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(92, 60, 28, 0.32) 0%, transparent 70%);
   animation: orb-float3 22s ease-in-out infinite alternate;
 }
 

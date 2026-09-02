@@ -17,7 +17,7 @@ const cards = [
 
 export function Contact() {
   return (
-    <section id="contact" className="grain relative overflow-hidden py-28 lg:py-40">
+    <section id="contact" className="section-elevated grain relative overflow-hidden py-28 lg:py-40">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
