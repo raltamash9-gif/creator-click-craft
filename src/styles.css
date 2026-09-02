@@ -104,7 +104,16 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "cv02", "cv03", "cv11";
+    letter-spacing: 0.003em;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  p {
+    letter-spacing: 0.004em;
+    line-height: 1.7;
   }
 
   body::after {
