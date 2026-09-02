@@ -44,7 +44,7 @@ export function Services() {
               </p>
               <p className="mt-8 flex items-end gap-2">
                 <span className="text-sm text-subtle">Starting from</span>
-                <span className="font-display text-5xl font-extrabold tracking-[-0.04em]">$50</span>
+                <span className="font-display text-5xl font-extrabold tracking-[0.01em]">$50</span>
               </p>
               <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
                 {single.map((s) => (
@@ -88,7 +88,7 @@ export function Services() {
                   For creators uploading consistently who want one visual identity across
                   everything.
                 </p>
-                <p className="mt-8 font-display text-3xl font-extrabold tracking-[-0.03em]">
+                <p className="mt-8 font-display text-3xl font-extrabold tracking-[0.01em]">
                   Pricing based on workload
                 </p>
                 <p className="mt-2 text-sm text-subtle">
