@@ -131,11 +131,36 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 700;
-    letter-spacing: -0.005em;
   }
 
   h1 {
-    letter-spacing: 0.008em;
+    letter-spacing: 0.035em;
+  }
+
+  h2 {
+    letter-spacing: 0.018em;
+  }
+
+  h3 {
+    letter-spacing: 0.01em;
+  }
+
+  h4 {
+    letter-spacing: 0.01em;
+  }
+
+  /* Open up tracking on nav items, buttons, and small uppercase labels */
+  nav a,
+  nav button,
+  a[class*="rounded-full"],
+  button[class*="rounded-full"],
+  .uppercase:not(h1):not(h2):not(h3):not(p) {
+    letter-spacing: 0.06em;
+  }
+
+  a[class*="rounded-full"],
+  button[class*="rounded-full"] {
+    letter-spacing: 0.04em;
   }
 
   ::selection {
