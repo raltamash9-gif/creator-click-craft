@@ -137,7 +137,7 @@ export function Footer() {
             <Link
               to="/"
               data-cursor="link"
-              className="font-display text-base font-extrabold tracking-[-0.01em]"
+              className="font-display text-base font-extrabold tracking-[0.015em]"
             >
               ALTAR<span className="text-accent">.</span>STUDIO
             </Link>
