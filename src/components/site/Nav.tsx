@@ -54,7 +54,7 @@ export function Nav() {
           <a
             href="/"
             data-cursor="link"
-            className="min-w-0 truncate font-display text-lg font-extrabold tracking-[0.01em]"
+            className="min-w-0 truncate font-display text-lg font-extrabold tracking-[-0.01em]"
           >
             ALTAR<span className="text-accent">.</span>STUDIO
           </a>
