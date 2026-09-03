@@ -12,6 +12,8 @@ import foosterAsset from "@/assets/fooster-gaming.webp.asset.json";
 import gordonRamsayAsset from "@/assets/gordon-ramsay.png.asset.json";
 import twdMistakesAsset from "@/assets/twd-mistakes.jpg.asset.json";
 import twdCommunitiesAsset from "@/assets/twd-communities.jpg.asset.json";
+import diabloXpAsset from "@/assets/diablo-xp-buff.png.asset.json";
+import diabloSoulsAsset from "@/assets/diablo-forgotten-souls.png.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
@@ -508,7 +510,7 @@ export const projects: Project[] = [
   },
   {
     slug: "gordon-ramsay-lied-cheated",
-    title: "They Lied. They Cheated.",
+    title: "Gordon Ramsay Exposed Them",
     category: "Documentary",
     channel: "Portfolio piece",
     year: "2026",
@@ -632,6 +634,76 @@ export const projects: Project[] = [
     ],
     layers: defaultLayers("location grid"),
     related: ["walking-dead-biggest-mistakes", "flash-speed-force-flashpoint", "celebrity-vector-portraits"],
+  },
+  {
+    slug: "diablo-secret-xp-buff",
+    title: "The Secret XP Buff You Need",
+    category: "Gaming",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: diabloXpAsset.url,
+    span: "regular",
+    overview:
+      "A Diablo 4 guide thumbnail built mostly by hand in Photoshop — the sorceress, the golden well and the XP coin bursts were composited from game captures, with a light AI assist for a few supporting assets.",
+    challenge:
+      "Guide thumbnails live or die on urgency — the reward has to look unmissable without the frame turning into gold soup.",
+    challengePoints: [
+      "Make one glowing object the undisputed focal point",
+      "Balance heavy golden light against a dark dungeon",
+      "Sell 'secret' through type without crowding the art",
+    ],
+    thinking: [
+      {
+        heading: "Light as the reward",
+        body: "A single vertical column of gold draws the eye straight from the title to the XP coins.",
+      },
+      {
+        heading: "Character on the edge",
+        body: "The sorceress grips the frame from the right, so she guards the reward instead of blocking it.",
+      },
+      {
+        heading: "Brush-style lettering",
+        body: "Rough three-colour type matches the game's grit and stays readable over dark artwork.",
+      },
+    ],
+    tools: ["Adobe Photoshop", "Game captures", "AI-assisted assets", "Compositing", "Colour grading"],
+    layers: defaultLayers("sorceress"),
+    related: ["diablo-forgotten-souls", "bgmi-solo-vs-squad", "fooster-gaming-survival"],
+  },
+  {
+    slug: "diablo-forgotten-souls",
+    title: "Max Out Forgotten Souls, Fast",
+    category: "Gaming",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: diabloSoulsAsset.url,
+    span: "wide",
+    overview:
+      "A Diablo 4 farming-guide thumbnail where the character's outstretched arm literally presents the UI panel. Built primarily in Photoshop from game captures, with AI used sparingly to generate a handful of assets.",
+    challenge:
+      "UI screenshots are flat and boring — the panel had to feel like a physical object inside the scene, not a pasted screenshot.",
+    challengePoints: [
+      "Integrate a game menu into a painted scene",
+      "Keep the number '9,999+' dominant at any size",
+      "Ground the character's hand so the gesture reads",
+    ],
+    thinking: [
+      {
+        heading: "The hand as a shelf",
+        body: "The gauntlet stretches under the panel so the UI feels held, not overlaid.",
+      },
+      {
+        heading: "One number, huge",
+        body: "The count is the promise of the video, so it gets the largest type on the frame.",
+      },
+      {
+        heading: "Fire-lit palette",
+        body: "Ember reds and yellows unify the background, the boss and the panel frame into one hot scene.",
+      },
+    ],
+    tools: ["Adobe Photoshop", "Game captures", "AI-assisted assets", "Compositing", "Typography"],
+    layers: defaultLayers("armoured boss"),
+    related: ["diablo-secret-xp-buff", "bgmi-solo-vs-squad", "fooster-gaming-survival"],
   },
 ];
 
