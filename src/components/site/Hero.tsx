@@ -80,7 +80,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 text-[clamp(2.9rem,7vw,88px)] leading-[0.95] font-extrabold"
+            className="mt-4 text-[clamp(2.9rem,7vw,88px)] leading-[1] font-extrabold tracking-[0.012em]"
           >
             Designing
             <br />
