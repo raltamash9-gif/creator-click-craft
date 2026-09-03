@@ -125,10 +125,6 @@
 
 
 
-  h1 {
-    letter-spacing: 0.005em;
-  }
-
   h1,
   h2,
   h3,
@@ -136,6 +132,10 @@
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.005em;
+  }
+
+  h1 {
+    letter-spacing: 0.008em;
   }
 
   ::selection {
