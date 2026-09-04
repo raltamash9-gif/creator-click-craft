@@ -62,7 +62,7 @@ export function CaseStudies() {
                   <span className="text-[11px] font-semibold tracking-[0.22em] text-subtle uppercase">
                     {study.channel}
                   </span>
-                  <h3 className="mt-4 text-3xl leading-tight font-bold lg:text-4xl">
+                  <h3 className="mt-4 text-3xl leading-tight font-bold tracking-[0.01em] lg:text-4xl">
                     {study.title}
                   </h3>
                   <p className="mt-6 text-base leading-relaxed text-muted-foreground lg:text-lg">

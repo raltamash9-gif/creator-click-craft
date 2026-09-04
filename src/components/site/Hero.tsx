@@ -58,7 +58,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="glass inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-xs text-muted-foreground"
+            className="glass inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-xs tracking-wide text-muted-foreground"
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
@@ -108,14 +108,14 @@ export function Hero() {
             <a
               href="#work"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
+              className="hover:shadow-glow inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
             >
               View My Work
             </a>
             <a
               href="#contact"
               data-cursor="button"
-              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               Hire Me
             </a>

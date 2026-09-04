@@ -51,7 +51,7 @@ export function Contact() {
                 <p className="mt-5 text-[11px] tracking-[0.24em] text-subtle uppercase">
                   {c.label}
                 </p>
-                <p className="mt-2 truncate text-sm font-medium">{c.value}</p>
+                <p className="mt-2 truncate text-sm font-medium tracking-wide">{c.value}</p>
               </>
             );
             const isExternal = Boolean(c.href?.startsWith("http"));
@@ -83,7 +83,7 @@ export function Contact() {
             <a
               href={`mailto:${EMAIL}`}
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
+              className="hover:shadow-glow inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
             >
               <Mail className="h-4 w-4" />
               Hire Me
@@ -93,7 +93,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-ember inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               View Behance
               <ArrowUpRight className="h-4 w-4" />
@@ -103,14 +103,14 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
+              className="hover:shadow-glow inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
             >
               View Upwork
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
 
-          <p className="mt-8 text-center text-sm text-subtle">
+          <p className="mt-8 text-center text-sm tracking-wide text-subtle">
             Limited slots each month so every channel gets real creative direction.
           </p>
         </Reveal>
@@ -137,11 +137,11 @@ export function Footer() {
             <Link
               to="/"
               data-cursor="link"
-              className="font-display text-base font-extrabold tracking-[0.015em]"
+              className="font-display text-base font-extrabold tracking-[0.025em]"
             >
               ALTAR<span className="text-accent">.</span>STUDIO
             </Link>
-            <p className="mt-3 max-w-xs text-sm text-subtle">
+            <p className="mt-3 max-w-xs text-sm tracking-wide text-subtle">
               Cinematic thumbnail design & creative direction.
             </p>
           </div>
@@ -152,7 +152,7 @@ export function Footer() {
                 key={l.label}
                 href={l.href}
                 data-cursor="link"
-                className="nav-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                className="nav-underline text-sm tracking-wide text-muted-foreground transition-colors duration-300 hover:text-foreground"
               >
                 {l.label}
               </a>
@@ -161,7 +161,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-8">
-          <p className="text-xs text-subtle">
+          <p className="text-xs tracking-wide text-subtle">
             © {new Date().getFullYear()} Altar Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -170,7 +170,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="link"
-              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs tracking-wide text-muted-foreground transition-colors hover:text-foreground"
             >
               Behance
             </a>
@@ -179,7 +179,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="link"
-              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs tracking-wide text-muted-foreground transition-colors hover:text-foreground"
             >
               Upwork
             </a>
@@ -187,7 +187,7 @@ export function Footer() {
             <a
               href={`mailto:${EMAIL}`}
               data-cursor="link"
-              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs tracking-wide text-muted-foreground transition-colors hover:text-foreground"
             >
               Email
             </a>
@@ -195,7 +195,7 @@ export function Footer() {
               type="button"
               data-cursor="button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40"
             >
               Back to top
               <ArrowUp className="h-3.5 w-3.5" />

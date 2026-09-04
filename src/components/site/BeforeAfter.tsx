@@ -104,7 +104,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
         <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground lg:text-lg">
           {data.copy}
         </p>
-        <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
+        <ul className="mt-8 space-y-3 text-sm tracking-wide text-muted-foreground">
           {data.points.map((t, i) => (
             <motion.li
               key={t}
