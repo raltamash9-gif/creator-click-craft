@@ -67,7 +67,7 @@ export function Work({
                       className="absolute inset-0 rounded-full bg-primary"
                     />
                   )}
-                  <span className={`relative z-10 ${active ? "" : "rounded-full"}`}>{c}</span>
+                  <span className={`relative z-10 tracking-wide ${active ? "" : "rounded-full"}`}>{c}</span>
                   {!active && (
                     <span className="pointer-events-none absolute inset-0 rounded-full border border-border" />
                   )}
@@ -75,7 +75,7 @@ export function Work({
               );
             })}
             {isChannel && (
-              <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm text-accent-foreground">
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm tracking-wide text-accent-foreground">
                 {filter}
                 <button
                   type="button"
@@ -137,14 +137,14 @@ export function Work({
                               "linear-gradient(160deg, oklch(1 0 0 / 0.22), transparent 42%), linear-gradient(to top, oklch(0 0 0 / 0.55), transparent 55%)",
                           }}
                         />
-                        <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                        <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium tracking-wide opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                           View Case Study →
                         </span>
                       </div>
                       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-1 pt-5 pb-2">
                         <div className="min-w-0">
-                          <h3 className="truncate text-lg font-bold">{item.title}</h3>
-                          <p className="mt-1 truncate text-sm text-muted-foreground">
+                          <h3 className="truncate text-lg font-bold tracking-[0.015em]">{item.title}</h3>
+                          <p className="mt-1 truncate text-sm tracking-wide text-muted-foreground">
                             {item.category} · {item.year}
                           </p>
                         </div>

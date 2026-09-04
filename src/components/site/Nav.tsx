@@ -54,7 +54,7 @@ export function Nav() {
           <a
             href="/"
             data-cursor="link"
-            className="min-w-0 truncate font-display text-lg font-extrabold tracking-[0.015em]"
+            className="min-w-0 truncate font-display text-lg font-extrabold tracking-[0.025em]"
           >
             ALTAR<span className="text-accent">.</span>STUDIO
           </a>
@@ -65,7 +65,7 @@ export function Nav() {
                 key={item.id}
                 href={`/#${item.id}`}
                 data-cursor="link"
-                className={`nav-underline text-sm transition-colors duration-300 ${
+                className={`nav-underline text-sm tracking-wide transition-colors duration-300 ${
                   active === item.id ? "text-foreground" : "text-muted-foreground"
                 } hover:text-foreground`}
               >

@@ -74,7 +74,7 @@ function CaseStudyPage() {
               to="/"
               hash="work"
               data-cursor="link"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex items-center gap-2 text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
             >
               <ArrowLeft className="h-4 w-4" />
               All work
@@ -164,7 +164,7 @@ function CaseStudyPage() {
               {project.thinking.map((t, i) => (
                 <Reveal key={t.heading} delay={(i % 2) * 0.07}>
                   <div className=" h-full glass-card rounded-3xl p-8 backdrop-blur-xl">
-                    <h3 className="text-lg font-bold">{t.heading}</h3>
+                    <h3 className="text-lg font-bold tracking-[0.015em]">{t.heading}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
                   </div>
                 </Reveal>
@@ -244,7 +244,7 @@ function CaseStudyPage() {
                       <span className="text-[11px] tracking-[0.2em] text-subtle">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <h3 className="text-base font-bold">{layer.name}</h3>
+                      <h3 className="text-base font-bold tracking-[0.015em]">{layer.name}</h3>
                     </div>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {layer.body}
@@ -268,7 +268,7 @@ function CaseStudyPage() {
             <div className="mt-10 flex flex-wrap gap-3">
               {project.tools.map((tool, i) => (
                 <Reveal key={tool} delay={Math.min(i * 0.05, 0.3)}>
-                  <span className=" inline-flex items-center gap-2 glass-card rounded-full px-5 py-3 text-sm backdrop-blur-xl">
+                  <span className=" inline-flex items-center gap-2 glass-card rounded-full px-5 py-3 text-sm tracking-wide backdrop-blur-xl">
                     <Check className="h-4 w-4 text-accent" />
                     {tool}
                   </span>
@@ -332,10 +332,10 @@ function CaseStudyPage() {
                       </div>
                       <div className="flex items-center justify-between gap-4 px-3 pt-5 pb-2">
                         <div className="min-w-0">
-                          <h3 className="truncate text-base font-bold">{r.title}</h3>
-                          <p className="mt-1 truncate text-sm text-muted-foreground">
-                            {r.category} · {r.year}
-                          </p>
+                        <h3 className="truncate text-base font-bold tracking-[0.015em]">{r.title}</h3>
+                        <p className="mt-1 truncate text-sm tracking-wide text-muted-foreground">
+                          {r.category} · {r.year}
+                        </p>
                         </div>
                         <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
                       </div>

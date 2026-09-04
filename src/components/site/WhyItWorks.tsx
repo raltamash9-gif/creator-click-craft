@@ -71,7 +71,7 @@ export function WhyItWorks() {
                 className=" h-full glass-card rounded-3xl p-7 backdrop-blur-xl transition-shadow duration-500"
               >
                 <p.icon className="h-6 w-6 text-accent" />
-                <h3 className="mt-6 text-lg font-bold">{p.title}</h3>
+                <h3 className="mt-6 text-lg font-bold tracking-[0.015em]">{p.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
               </motion.div>
             </Reveal>

@@ -54,7 +54,7 @@ export function Faq() {
                 <AccordionItem key={f.q} value={f.q} className="border-border">
                   <AccordionTrigger
                     data-cursor="link"
-                    className="text-left text-lg font-semibold hover:no-underline"
+                    className="text-left text-lg font-semibold tracking-[0.015em] hover:no-underline"
                   >
                     {f.q}
                   </AccordionTrigger>

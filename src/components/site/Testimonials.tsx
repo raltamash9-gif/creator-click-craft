@@ -36,8 +36,8 @@ export function Testimonials() {
                 />
               </div>
               <figcaption className="px-3 pt-4 pb-2">
-                <p className="truncate text-sm font-semibold">{p.title}</p>
-                <p className="mt-1 text-xs text-subtle">{p.category}</p>
+                <p className="truncate text-sm font-semibold tracking-wide">{p.title}</p>
+                <p className="mt-1 text-xs tracking-wide text-subtle">{p.category}</p>
               </figcaption>
             </figure>
           ))}
