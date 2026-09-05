@@ -455,7 +455,7 @@
 .orb-layer .orb {
   position: fixed;
   display: block;
-  filter: blur(100px);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
   border-radius: 9999px;
@@ -463,90 +463,132 @@
 }
 
 .orb-1 {
-  width: 800px;
-  height: 800px;
-  left: -200px;
-  top: -200px;
-  background: radial-gradient(circle, rgba(34, 54, 84, 0.55) 0%, transparent 70%);
-  animation: orb-float1 36s ease-in-out infinite alternate;
+  width: 900px;
+  height: 900px;
+  left: -220px;
+  top: -220px;
+  background: radial-gradient(circle, rgba(38, 84, 122, 0.85) 0%, transparent 70%);
+  animation: orb-float1 30s ease-in-out infinite alternate;
 }
 
 .orb-2 {
-  width: 700px;
-  height: 700px;
-  right: -200px;
-  top: 40%;
-  background: radial-gradient(circle, rgba(22, 34, 56, 0.5) 0%, transparent 70%);
-  animation: orb-float2 44s ease-in-out infinite alternate;
+  width: 820px;
+  height: 820px;
+  right: -240px;
+  top: 32%;
+  background: radial-gradient(circle, rgba(24, 58, 92, 0.75) 0%, transparent 70%);
+  animation: orb-float2 38s ease-in-out infinite alternate;
 }
 
 .orb-3 {
-  width: 600px;
-  height: 600px;
-  left: 30%;
-  bottom: -100px;
-  background: radial-gradient(circle, rgba(92, 60, 28, 0.32) 0%, transparent 70%);
-  animation: orb-float3 30s ease-in-out infinite alternate;
+  width: 720px;
+  height: 720px;
+  left: 26%;
+  bottom: -160px;
+  background: radial-gradient(circle, rgba(130, 82, 34, 0.55) 0%, transparent 70%);
+  animation: orb-float3 26s ease-in-out infinite alternate;
 }
 
-/* Extra-faint cool accent drifting near the mid-left of the page. */
 .orb-4 {
-  width: 650px;
-  height: 650px;
-  left: 8%;
-  top: 55%;
-  background: radial-gradient(circle, rgba(44, 83, 100, 0.28) 0%, transparent 70%);
-  animation: orb-float4 50s ease-in-out infinite alternate;
+  width: 760px;
+  height: 760px;
+  left: 4%;
+  top: 48%;
+  background: radial-gradient(circle, rgba(52, 112, 138, 0.55) 0%, transparent 70%);
+  animation: orb-float4 44s ease-in-out infinite alternate;
 }
 
-/* A single, very slow diagonal light sweep crossing the page every ~26s. */
+/* Faint animated grid layer drifting behind content. */
+.grid-layer {
+  position: fixed;
+  inset: -10%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(120, 160, 190, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 160, 190, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 0%, transparent 75%);
+  animation: grid-drift 40s linear infinite;
+  will-change: transform;
+}
+
+/* A diagonal light sweep crossing the page every ~22s. */
 .light-sweep {
   position: fixed;
   top: -20%;
   left: -30%;
   width: 160%;
-  height: 60%;
+  height: 70%;
   z-index: 0;
   pointer-events: none;
   background: linear-gradient(
     105deg,
-    transparent 42%,
-    rgba(120, 150, 180, 0.045) 50%,
-    transparent 58%
+    transparent 40%,
+    rgba(140, 175, 205, 0.1) 50%,
+    transparent 60%
   );
   transform: translate3d(-40%, 0, 0);
-  animation: light-sweep 26s linear infinite;
+  animation: light-sweep 22s linear infinite;
   will-change: transform;
 }
 
+/* Large slow-moving atmospheric glow behind the hero content. */
+.hero-aurora {
+  position: absolute;
+  width: 1100px;
+  height: 1100px;
+  right: -15%;
+  top: -35%;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(56, 120, 150, 0.4) 0%, rgba(30, 70, 100, 0.18) 40%, transparent 70%);
+  filter: blur(70px);
+  border-radius: 9999px;
+  animation: hero-aurora-drift 24s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes hero-aurora-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { transform: translate3d(-220px, 160px, 0) scale(1.15); opacity: 0.8; }
+}
+
 @keyframes orb-float1 {
-  0% { transform: translate3d(0, 0, 0); opacity: 1; }
-  50% { opacity: 0.85; }
-  100% { transform: translate3d(120px, 90px, 0); opacity: 1; }
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { opacity: 0.75; }
+  100% { transform: translate3d(320px, 240px, 0) scale(1.2); opacity: 1; }
 }
 @keyframes orb-float2 {
-  0% { transform: translate3d(0, 0, 0); opacity: 1; }
-  50% { opacity: 0.8; }
-  100% { transform: translate3d(-110px, 110px, 0); opacity: 1; }
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { transform: translate3d(-300px, 280px, 0) scale(1.15); opacity: 1; }
 }
 @keyframes orb-float3 {
-  0% { transform: translate3d(0, 0, 0); opacity: 1; }
-  50% { opacity: 0.75; }
-  100% { transform: translate3d(90px, -90px, 0); opacity: 1; }
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { opacity: 0.65; }
+  100% { transform: translate3d(260px, -260px, 0) scale(1.25); opacity: 1; }
 }
 @keyframes orb-float4 {
-  0% { transform: translate3d(0, 0, 0); opacity: 1; }
-  50% { opacity: 0.7; }
-  100% { transform: translate3d(100px, -80px, 0); opacity: 1; }
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { transform: translate3d(280px, -220px, 0) scale(1.2); opacity: 1; }
+}
+@keyframes grid-drift {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(72px, 72px, 0); }
 }
 @keyframes light-sweep {
   0% { transform: translate3d(-40%, 0, 0); }
-  100% { transform: translate3d(40%, 10%, 0); }
+  100% { transform: translate3d(40%, 12%, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .orb-layer .orb,
-  .light-sweep {
+  .light-sweep,
+  .grid-layer,
+  .hero-aurora {
     animation: none !important;
   }
 }

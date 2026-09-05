@@ -48,6 +48,8 @@ export function Hero() {
         }}
       />
 
+      <div aria-hidden className="hero-aurora" />
+
       <motion.div style={{ x: snowX, y: snowY }} className="absolute inset-0">
         <Snowfall />
       </motion.div>
