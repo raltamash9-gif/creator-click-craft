@@ -459,6 +459,7 @@
   pointer-events: none;
   z-index: 0;
   border-radius: 9999px;
+  will-change: transform, opacity;
 }
 
 .orb-1 {
@@ -467,7 +468,7 @@
   left: -200px;
   top: -200px;
   background: radial-gradient(circle, rgba(34, 54, 84, 0.55) 0%, transparent 70%);
-  animation: orb-float1 28s ease-in-out infinite alternate;
+  animation: orb-float1 36s ease-in-out infinite alternate;
 }
 
 .orb-2 {
@@ -476,7 +477,7 @@
   right: -200px;
   top: 40%;
   background: radial-gradient(circle, rgba(22, 34, 56, 0.5) 0%, transparent 70%);
-  animation: orb-float2 35s ease-in-out infinite alternate;
+  animation: orb-float2 44s ease-in-out infinite alternate;
 }
 
 .orb-3 {
@@ -485,24 +486,67 @@
   left: 30%;
   bottom: -100px;
   background: radial-gradient(circle, rgba(92, 60, 28, 0.32) 0%, transparent 70%);
-  animation: orb-float3 22s ease-in-out infinite alternate;
+  animation: orb-float3 30s ease-in-out infinite alternate;
+}
+
+/* Extra-faint cool accent drifting near the mid-left of the page. */
+.orb-4 {
+  width: 650px;
+  height: 650px;
+  left: 8%;
+  top: 55%;
+  background: radial-gradient(circle, rgba(44, 83, 100, 0.28) 0%, transparent 70%);
+  animation: orb-float4 50s ease-in-out infinite alternate;
+}
+
+/* A single, very slow diagonal light sweep crossing the page every ~26s. */
+.light-sweep {
+  position: fixed;
+  top: -20%;
+  left: -30%;
+  width: 160%;
+  height: 60%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    rgba(120, 150, 180, 0.045) 50%,
+    transparent 58%
+  );
+  transform: translate3d(-40%, 0, 0);
+  animation: light-sweep 26s linear infinite;
+  will-change: transform;
 }
 
 @keyframes orb-float1 {
-  from { transform: translate(0px, 0px); }
-  to { transform: translate(80px, 60px); }
+  0% { transform: translate3d(0, 0, 0); opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { transform: translate3d(120px, 90px, 0); opacity: 1; }
 }
 @keyframes orb-float2 {
-  from { transform: translate(0px, 0px); }
-  to { transform: translate(-70px, 80px); }
+  0% { transform: translate3d(0, 0, 0); opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { transform: translate3d(-110px, 110px, 0); opacity: 1; }
 }
 @keyframes orb-float3 {
-  from { transform: translate(0px, 0px); }
-  to { transform: translate(60px, -70px); }
+  0% { transform: translate3d(0, 0, 0); opacity: 1; }
+  50% { opacity: 0.75; }
+  100% { transform: translate3d(90px, -90px, 0); opacity: 1; }
+}
+@keyframes orb-float4 {
+  0% { transform: translate3d(0, 0, 0); opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { transform: translate3d(100px, -80px, 0); opacity: 1; }
+}
+@keyframes light-sweep {
+  0% { transform: translate3d(-40%, 0, 0); }
+  100% { transform: translate3d(40%, 10%, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orb-layer .orb {
+  .orb-layer .orb,
+  .light-sweep {
     animation: none !important;
   }
 }
