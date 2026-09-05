@@ -4,6 +4,8 @@ export function Atmosphere() {
       <span className="orb orb-1" />
       <span className="orb orb-2" />
       <span className="orb orb-3" />
+      <span className="orb orb-4" />
+      <span className="light-sweep" />
     </div>
   );
 }
