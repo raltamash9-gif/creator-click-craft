@@ -23,13 +23,14 @@ export function Testimonials() {
           {items.map((p, i) => (
             <figure
               key={`${p.slug}-${i}`}
-              className=" w-[320px] shrink-0 overflow-hidden glass-card rounded-3xl p-3 backdrop-blur-xl sm:w-[400px]"
+              className=" w-[320px] shrink-0 overflow-hidden glass-card rounded-3xl p-3 sm:w-[400px]"
             >
               <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                 <img
                   src={p.src}
                   alt={`${p.category} YouTube thumbnail — ${p.title}`}
                   loading="lazy"
+                  decoding="async"
                   width={1280}
                   height={720}
                   className="h-full w-full object-cover"

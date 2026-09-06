@@ -47,12 +47,13 @@ export function CaseStudies() {
         <div className="mt-16 space-y-10 lg:mt-24 lg:space-y-16">
           {studies.map((study, i) => (
             <Reveal key={study.title} delay={0.05}>
-              <article className=" grid gap-10 overflow-hidden glass-card rounded-3xl p-6 backdrop-blur-xl lg:grid-cols-2 lg:gap-14 lg:p-10">
+              <article className=" grid gap-10 overflow-hidden glass-card rounded-3xl p-6 lg:grid-cols-2 lg:gap-14 lg:p-10">
                 <div className={`overflow-hidden rounded-2xl bg-ink ${i % 2 ? "lg:order-2" : ""}`}>
                   <img
                     src={study.src}
                     alt={`Case study thumbnail — ${study.title}`}
                     loading="lazy"
+                  decoding="async"
                     width={1280}
                     height={720}
                     className="h-full w-full object-cover"

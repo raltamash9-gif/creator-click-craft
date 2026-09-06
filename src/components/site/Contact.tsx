@@ -64,12 +64,12 @@ export function Contact() {
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     aria-label={`${c.label} — ${c.value}`}
                     data-cursor="link"
-                    className="group  block h-full glass-card rounded-3xl p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5"
+                    className="group  block h-full glass-card rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5"
                   >
                     {inner}
                   </a>
                 ) : (
-                  <div className="group h-full glass-card rounded-3xl p-7 backdrop-blur-xl">
+                  <div className="group h-full glass-card rounded-3xl p-7">
                     {inner}
                   </div>
                 )}
@@ -93,7 +93,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-ember inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               View Behance
               <ArrowUpRight className="h-4 w-4" />
@@ -103,7 +103,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
+              className="hover:shadow-glow inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
             >
               View Upwork
               <ArrowUpRight className="h-4 w-4" />

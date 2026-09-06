@@ -134,6 +134,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
             src={data.after}
             alt={data.afterAlt}
             loading="lazy"
+                  decoding="async"
             width={1280}
             height={720}
             className="absolute inset-0 h-full w-full object-cover"
@@ -146,6 +147,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
               src={data.before}
               alt={data.beforeAlt}
               loading="lazy"
+                  decoding="async"
               width={1280}
               height={720}
               className="absolute inset-0 h-full w-full object-cover"
