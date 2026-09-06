@@ -119,6 +119,7 @@ export function Work({
                           src={item.src}
                           alt={`${item.category} YouTube thumbnail — ${item.title}`}
                           loading="lazy"
+                  decoding="async"
                           width={1280}
                           height={720}
                           className="card-image-reveal h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-[1.06]"

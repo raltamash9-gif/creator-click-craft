@@ -200,6 +200,7 @@ function CaseStudyPage() {
                   src={project.src}
                   alt={`${project.title} final composite`}
                   loading="lazy"
+                  decoding="async"
                   width={1280}
                   height={720}
                   className="absolute inset-0 h-full w-full object-cover"
@@ -288,6 +289,7 @@ function CaseStudyPage() {
                   src={project.src}
                   alt={`${project.title} final thumbnail`}
                   loading="lazy"
+                  decoding="async"
                   width={1280}
                   height={720}
                   className="h-auto w-full object-cover"
@@ -325,6 +327,7 @@ function CaseStudyPage() {
                           src={r.src}
                           alt={`${r.category} thumbnail — ${r.title}`}
                           loading="lazy"
+                  decoding="async"
                           width={1280}
                           height={720}
                           className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"

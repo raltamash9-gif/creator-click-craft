@@ -30,6 +30,7 @@ export function Testimonials() {
                   src={p.src}
                   alt={`${p.category} YouTube thumbnail — ${p.title}`}
                   loading="lazy"
+                  decoding="async"
                   width={1280}
                   height={720}
                   className="h-full w-full object-cover"
