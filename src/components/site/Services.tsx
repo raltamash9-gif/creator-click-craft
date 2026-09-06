@@ -33,7 +33,7 @@ export function Services() {
             <motion.div
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className=" flex h-full flex-col glass-card rounded-3xl p-9 backdrop-blur-xl transition-shadow duration-500"
+              className=" flex h-full flex-col glass-card rounded-3xl p-9 transition-shadow duration-500"
             >
               <span className="text-[11px] tracking-[0.24em] text-subtle uppercase">
                 Service One
@@ -69,7 +69,7 @@ export function Services() {
             <motion.div
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className=" hover:shadow-glow relative flex h-full flex-col overflow-hidden rounded-3xl border border-accent/25 bg-card p-9 backdrop-blur-xl transition-shadow duration-500"
+              className=" hover:shadow-glow relative flex h-full flex-col overflow-hidden rounded-3xl border border-accent/25 bg-card p-9 transition-shadow duration-500"
             >
               <span
                 aria-hidden

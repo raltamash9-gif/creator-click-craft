@@ -97,7 +97,7 @@ export function Hero() {
             <a
               href="#contact"
               data-cursor="button"
-              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               Hire Me
             </a>

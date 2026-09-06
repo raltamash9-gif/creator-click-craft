@@ -23,7 +23,7 @@ export function Testimonials() {
           {items.map((p, i) => (
             <figure
               key={`${p.slug}-${i}`}
-              className=" w-[320px] shrink-0 overflow-hidden glass-card rounded-3xl p-3 backdrop-blur-xl sm:w-[400px]"
+              className=" w-[320px] shrink-0 overflow-hidden glass-card rounded-3xl p-3 sm:w-[400px]"
             >
               <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                 <img

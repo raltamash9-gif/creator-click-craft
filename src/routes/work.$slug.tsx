@@ -163,7 +163,7 @@ function CaseStudyPage() {
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
               {project.thinking.map((t, i) => (
                 <Reveal key={t.heading} delay={(i % 2) * 0.07}>
-                  <div className=" h-full glass-card rounded-3xl p-8 backdrop-blur-xl">
+                  <div className=" h-full glass-card rounded-3xl p-8">
                     <h3 className="text-lg font-bold tracking-[0.015em]">{t.heading}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
                   </div>
@@ -239,7 +239,7 @@ function CaseStudyPage() {
                       delay: revealed ? i * 0.75 : 0,
                       ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="glass-card rounded-2xl p-5 backdrop-blur-xl"
+                    className="glass-card rounded-2xl p-5"
                   >
                     <div className="flex items-baseline gap-3">
                       <span className="text-[11px] tracking-[0.2em] text-subtle">
@@ -269,7 +269,7 @@ function CaseStudyPage() {
             <div className="mt-10 flex flex-wrap gap-3">
               {project.tools.map((tool, i) => (
                 <Reveal key={tool} delay={Math.min(i * 0.05, 0.3)}>
-                  <span className=" inline-flex items-center gap-2 glass-card rounded-full px-5 py-3 text-sm tracking-wide backdrop-blur-xl">
+                  <span className=" inline-flex items-center gap-2 glass-card rounded-full px-5 py-3 text-sm tracking-wide">
                     <Check className="h-4 w-4 text-accent" />
                     {tool}
                   </span>
@@ -320,7 +320,7 @@ function CaseStudyPage() {
                     <motion.div
                       whileHover={{ y: -10 }}
                       transition={{ type: "spring", stiffness: 240, damping: 22 }}
-                      className=" overflow-hidden glass-card rounded-3xl p-3 backdrop-blur-xl transition-shadow duration-500"
+                      className=" overflow-hidden glass-card rounded-3xl p-3 transition-shadow duration-500"
                     >
                       <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                         <img
