@@ -1,26 +1,10 @@
-import { useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 
 import { Snowfall } from "@/components/site/Snowfall";
 import wolvesAsset from "@/assets/attacked-by-wolves.jpg.asset.json";
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const sx = useSpring(mx, { stiffness: 90, damping: 20 });
-  const sy = useSpring(my, { stiffness: 90, damping: 20 });
-  const snowX = useTransform(sx, (v) => v * 30);
-  const snowY = useTransform(sy, (v) => v * 30);
-
-  const onMove = (e: React.MouseEvent) => {
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    mx.set((e.clientX - rect.left) / rect.width - 0.5);
-    my.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-
   return (
     <section
       id="top"
@@ -48,13 +32,9 @@ export function Hero() {
         }}
       />
 
-      <div aria-hidden className="hero-aurora" />
+      <Snowfall />
 
-      <motion.div style={{ x: snowX, y: snowY }} className="absolute inset-0">
-        <Snowfall />
-      </motion.div>
-
-      <div ref={ref} onMouseMove={onMove} className="shell relative z-10">
+      <div className="shell relative z-10">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}

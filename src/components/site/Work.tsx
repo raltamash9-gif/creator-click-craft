@@ -104,13 +104,7 @@ export function Work({
                 transition={{ duration: 0.75, delay: (i % 6) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className={`group ${spanClass[item.span]} [perspective:1200px] [will-change:transform]`}
               >
-                <div
-                  className="card-float"
-                  style={{
-                    animationDuration: `${3.5 + (i % 4) * 0.5}s`,
-                    animationDelay: `${(i % 5) * 0.7}s`,
-                  }}
-                >
+                <div>
                   <Link
                     to="/work/$slug"
                     params={{ slug: item.slug }}
