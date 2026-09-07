@@ -29,16 +29,20 @@ export function Snowfall() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const set = () => setCount(window.innerWidth < 768 ? 16 : 26);
-    set();
-    window.addEventListener("resize", set);
-    return () => window.removeEventListener("resize", set);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    setCount(window.innerWidth < 768 ? 12 : 20);
   }, []);
 
   const flakes = useMemo(() => makeFlakes(count), [count]);
 
+  if (count === 0) return null;
+
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 z-[1] overflow-hidden"
+      style={{ contain: "strict" }}
+    >
       {flakes.map((f, i) => (
         <span
           key={i}
@@ -48,6 +52,7 @@ export function Snowfall() {
             width: f.size,
             height: f.size,
             background: f.color,
+            willChange: "transform",
             animation: `snow-fall ${f.fall}s linear ${f.delay}s infinite`,
           }}
         />
