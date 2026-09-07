@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "98001b42-c8a2-4803-b879-92ee35516217",
+  "asset_id": "282efd3e-ff13-4e78-992d-a20f3d13bb31",
   "project_id": "cb65fa1d-0f03-4dac-abbb-4e483ac1db7b",
-  "url": "/__l5e/assets-v1/98001b42-c8a2-4803-b879-92ee35516217/flash-speedforce-flashpoint.jpg",
-  "r2_key": "a/v1/cb65fa1d-0f03-4dac-abbb-4e483ac1db7b/98001b42-c8a2-4803-b879-92ee35516217/flash-speedforce-flashpoint.jpg",
-  "original_filename": "flash-speedforce-flashpoint.jpg",
-  "size": 248790,
-  "content_type": "image/jpeg",
-  "created_at": "2026-08-08T08:10:52Z"
+  "url": "/__l5e/assets-v1/282efd3e-ff13-4e78-992d-a20f3d13bb31/flash-split.webp",
+  "r2_key": "a/v1/cb65fa1d-0f03-4dac-abbb-4e483ac1db7b/282efd3e-ff13-4e78-992d-a20f3d13bb31/flash-split.webp",
+  "original_filename": "flash-split.webp",
+  "size": 145442,
+  "content_type": "image/webp",
+  "created_at": "2026-09-07T03:22:56Z"
 }

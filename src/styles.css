@@ -91,13 +91,22 @@
 
   html,
   body {
+    background: #0b0d12 !important;
+    min-height: 100vh;
+  }
+
+  /* Ambient gradient on its own composited layer — no repaint while scrolling. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    transform: translateZ(0);
     background:
       radial-gradient(ellipse 90% 55% at 50% -10%, rgba(42, 62, 92, 0.32) 0%, transparent 60%),
       radial-gradient(ellipse 65% 45% at 5% 45%, rgba(22, 32, 50, 0.5) 0%, transparent 55%),
-      radial-gradient(ellipse 55% 40% at 95% 80%, rgba(70, 48, 26, 0.2) 0%, transparent 55%),
-      #0b0d12 !important;
-    background-attachment: fixed !important;
-    min-height: 100vh;
+      radial-gradient(ellipse 55% 40% at 95% 80%, rgba(70, 48, 26, 0.2) 0%, transparent 55%);
   }
 
   body {
@@ -119,6 +128,7 @@
     pointer-events: none;
     z-index: 1;
     opacity: 0.03;
+    transform: translateZ(0);
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 200px 200px;
   }
@@ -171,7 +181,7 @@
 
 @utility glass {
   background: var(--card);
-  backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--border);
 }
 
@@ -321,20 +331,20 @@
 
 @utility glass-card {
   background: rgba(23, 27, 36, 0.55);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
   border-radius: 16px;
   transition: all 0.3s ease;
   &:hover {
     border-color: rgba(44, 83, 100, 0.7);
-    box-shadow: 0 8px 32px rgba(44, 83, 100, 0.2);
+    box-shadow: 0 6px 20px rgba(44, 83, 100, 0.18);
   }
 }
 
 .group:hover .glass-card {
   border-color: rgba(44, 83, 100, 0.7);
-  box-shadow: 0 8px 32px rgba(44, 83, 100, 0.2);
+  box-shadow: 0 6px 20px rgba(44, 83, 100, 0.18);
 }
 
 @keyframes snow-fall {
@@ -401,7 +411,7 @@
 .group:hover .card-hover {
   transform: translate3d(0, -6px, 0) scale(1.04);
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 12px 30px rgba(0, 0, 0, 0.45),
     0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
@@ -420,7 +430,7 @@
 
 @utility nav-glass {
   background: rgba(11, 13, 18, 0.7);
-  backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -453,7 +463,7 @@
 .orb-layer .orb {
   position: fixed;
   display: block;
-  filter: blur(70px);
+  filter: blur(48px);
   pointer-events: none;
   z-index: 0;
   border-radius: 9999px;

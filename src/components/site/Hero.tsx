@@ -14,6 +14,8 @@ export function Hero() {
         aria-hidden
         src={wolvesAsset.url}
         alt=""
+        decoding="async"
+        fetchPriority="high"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         style={{ objectPosition: "center 20%" }}
       />

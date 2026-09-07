@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "4b0f5d1f-c4ec-4293-b5ab-c101777186ca",
+  "asset_id": "5926d521-98b7-4de7-bed8-af792442dc31",
   "project_id": "cb65fa1d-0f03-4dac-abbb-4e483ac1db7b",
-  "url": "/__l5e/assets-v1/4b0f5d1f-c4ec-4293-b5ab-c101777186ca/death-note-split.jpg",
-  "r2_key": "a/v1/cb65fa1d-0f03-4dac-abbb-4e483ac1db7b/4b0f5d1f-c4ec-4293-b5ab-c101777186ca/death-note-split.jpg",
-  "original_filename": "death-note-split.jpg",
-  "size": 220180,
-  "content_type": "image/jpeg",
-  "created_at": "2026-08-08T08:27:28Z"
+  "url": "/__l5e/assets-v1/5926d521-98b7-4de7-bed8-af792442dc31/death-note-split.webp",
+  "r2_key": "a/v1/cb65fa1d-0f03-4dac-abbb-4e483ac1db7b/5926d521-98b7-4de7-bed8-af792442dc31/death-note-split.webp",
+  "original_filename": "death-note-split.webp",
+  "size": 120714,
+  "content_type": "image/webp",
+  "created_at": "2026-09-07T03:22:41Z"
 }
