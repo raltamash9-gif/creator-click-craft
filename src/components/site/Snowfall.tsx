@@ -29,7 +29,6 @@ export function Snowfall() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     setCount(window.innerWidth < 768 ? 12 : 20);
   }, []);
 
