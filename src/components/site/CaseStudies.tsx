@@ -48,15 +48,15 @@ export function CaseStudies() {
           {studies.map((study, i) => (
             <Reveal key={study.title} delay={0.05}>
               <article className=" grid gap-10 overflow-hidden glass-card rounded-3xl p-6 lg:grid-cols-2 lg:gap-14 lg:p-10">
-                <div className={`overflow-hidden rounded-2xl bg-ink ${i % 2 ? "lg:order-2" : ""}`}>
+                <div className={`overflow-hidden rounded-2xl bg-ink aspect-video ${i % 2 ? "lg:order-2" : ""}`}>
                   <img
                     src={study.src}
                     alt={`Case study thumbnail — ${study.title}`}
                     loading="lazy"
-                  decoding="async"
+                    decoding="async"
                     width={1280}
                     height={720}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                   />
                 </div>
                 <div className="min-w-0">
