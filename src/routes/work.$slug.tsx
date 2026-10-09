@@ -138,7 +138,8 @@ function CaseStudyPage() {
                   <motion.li
                     key={p}
                     initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: "some" }}
                     transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease: "easeOut" }}
                     className="flex gap-3 text-sm text-muted-foreground"
                   >
