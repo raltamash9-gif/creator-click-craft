@@ -21,7 +21,7 @@ export function Reveal({
       ref={ref}
       className={className}
       initial={{ opacity: 0, y: reducedMotion ? 0 : y }}
-      animate={entered || reducedMotion ? { opacity: 1, y: 0 } : undefined}
+      animate={entered || reducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y }}
       transition={{ duration: reducedMotion ? 0 : 0.7, delay: reducedMotion ? 0 : delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
