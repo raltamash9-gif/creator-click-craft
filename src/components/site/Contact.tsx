@@ -130,7 +130,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-14">
+    <footer className="relative z-[1] border-t border-border py-14">
       <div className="shell">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
           <div>

@@ -58,7 +58,7 @@ function Index() {
       <CustomCursor />
       <Nav />
 
-      <main className="bg-transparent">
+      <main className="relative z-[1] bg-transparent">
         <Hero />
         <TrustedBy onSelect={selectChannel} />
         <Work filter={filter} onFilterChange={setFilter} />

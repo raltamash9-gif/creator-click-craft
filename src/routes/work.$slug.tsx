@@ -67,7 +67,7 @@ function CaseStudyPage() {
       <CustomCursor />
 
       <Nav />
-      <main className="bg-transparent pt-32 lg:pt-40">
+      <main className="relative z-[1] bg-transparent pt-32 lg:pt-40">
         <div className="shell">
           <Reveal>
             <Link
