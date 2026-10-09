@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Shared content reveals must latch on first viewport entry and animate to permanent full opacity; do not map reading text opacity to scroll progress, so content stays readable after scrolling away and back.

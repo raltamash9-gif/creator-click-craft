@@ -110,7 +110,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
               key={t}
               initial={{ opacity: 0, x: -14 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: true, amount: "some" }}
               transition={{ duration: 0.55, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="flex gap-3"
             >

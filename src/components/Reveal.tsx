@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { motion } from "motion/react";
+import { useRef, type ReactNode } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
 
 export function Reveal({
   children,
@@ -12,13 +12,17 @@ export function Reveal({
   y?: number;
   className?: string;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const entered = useInView(ref, { once: true, amount: "some" });
+  const reducedMotion = useReducedMotion();
+
   return (
     <motion.div
+      ref={ref}
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: reducedMotion ? 0 : y }}
+      animate={entered || reducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      transition={{ duration: reducedMotion ? 0 : 0.7, delay: reducedMotion ? 0 : delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
