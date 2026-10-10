@@ -56,7 +56,7 @@ const comparisons: Comparison[] = [
 
 export function BeforeAfter() {
   return (
-    <section id="transformation" className="bg-ink py-24 text-ink-foreground lg:py-36">
+    <section id="transformation" className="section-tone-b py-24 text-ink-foreground lg:py-36">
       <div className="shell space-y-24 lg:space-y-32">
         {comparisons.map((c, i) => (
           <Comparison key={c.id} data={c} flip={i % 2 === 1} />
