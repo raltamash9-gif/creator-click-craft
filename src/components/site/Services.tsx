@@ -57,7 +57,7 @@ export function Services() {
               <a
                 href="#contact"
                 data-cursor="button"
-                className="hover:shadow-glow mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
+                className="hover:shadow-glow mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:bg-accent"
               >
                 Start a Project
                 <ArrowUpRight className="h-4 w-4" />
@@ -105,7 +105,7 @@ export function Services() {
                 <a
                   href="#contact"
                   data-cursor="button"
-                  className="hover:shadow-ember mt-9 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+                  className="hover:shadow-ember mt-9 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium tracking-wide transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:border-ember/40"
                 >
                   Discuss a Partnership
                   <ArrowUpRight className="h-4 w-4" />

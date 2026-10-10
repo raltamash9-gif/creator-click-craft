@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="grain relative min-h-[92vh] overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
+      className="relative min-h-[92vh] overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
     >
       <img
         aria-hidden
@@ -92,14 +92,14 @@ export function Hero() {
             <a
               href="#work"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
+              className="hover:shadow-glow inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:bg-accent"
             >
               View My Work
             </a>
             <a
               href="#contact"
               data-cursor="button"
-              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               Hire Me
             </a>

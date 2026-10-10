@@ -3,8 +3,6 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { motion, useScroll, useSpring } from "motion/react";
 
-import { CustomCursor } from "@/components/CustomCursor";
-import { Atmosphere } from "@/components/site/Atmosphere";
 
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
@@ -49,13 +47,11 @@ function Index() {
 
   return (
     <div className="relative z-[2] min-h-screen bg-transparent">
-      <Atmosphere />
       <motion.div
         aria-hidden
         style={{ scaleX: progress }}
         className="fixed inset-x-0 top-0 z-[110] h-[3px] origin-left bg-accent"
       />
-      <CustomCursor />
       <Nav />
 
       <main className="relative z-[1] bg-transparent">
