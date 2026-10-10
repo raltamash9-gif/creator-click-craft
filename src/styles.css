@@ -436,39 +436,9 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.orb-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
 
-.orb-layer .orb {
-  position: fixed;
-  display: block;
-  filter: blur(48px);
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 9999px;
-  transform: translateZ(0);
-}
 
-.orb-1 {
-  width: 900px;
-  height: 900px;
-  left: -220px;
-  top: -220px;
-  background: radial-gradient(circle, rgba(44, 96, 138, 0.95) 0%, transparent 70%);
-}
 
-.orb-2 {
-  width: 820px;
-  height: 820px;
-  right: -240px;
-  top: 32%;
-  background: radial-gradient(circle, rgba(28, 66, 104, 0.85) 0%, transparent 70%);
-}
 
 
 

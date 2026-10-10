@@ -11,7 +11,7 @@ export function Testimonials() {
     const el = trackRef.current;
     if (!el) return;
     const io = new IntersectionObserver(([entry]) => {
-      el.style.animationPlayState = entry.isIntersecting ? "" : "paused";
+      el.style.animationPlayState = entry?.isIntersecting ? "" : "paused";
     });
     io.observe(el);
     return () => io.disconnect();
