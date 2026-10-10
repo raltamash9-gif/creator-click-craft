@@ -119,20 +119,6 @@
     text-rendering: optimizeLegibility;
   }
 
-  body::after {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.03;
-    transform: translateZ(0);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 200px 200px;
-  }
 
 
 
@@ -182,7 +168,6 @@
 
 @utility glass {
   background: var(--card);
-  backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--border);
 }
 
@@ -331,12 +316,11 @@
 }
 
 @utility glass-card {
-  background: rgba(23, 27, 36, 0.55);
-  backdrop-filter: blur(8px);
+  background: rgba(23, 27, 36, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
   border-radius: 16px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
   &:hover {
     border-color: rgba(44, 83, 100, 0.7);
     box-shadow: 0 6px 20px rgba(44, 83, 100, 0.18);
@@ -430,8 +414,7 @@
 
 
 @utility nav-glass {
-  background: rgba(11, 13, 18, 0.7);
-  backdrop-filter: blur(14px) saturate(150%);
+  background: rgba(11, 13, 18, 0.94);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -453,39 +436,21 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.orb-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
+
+
+
+
+
+
+
+/* Performance: skip rendering offscreen long sections */
+#work, #faq, footer { content-visibility: auto; contain-intrinsic-size: auto 1200px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-.orb-layer .orb {
-  position: fixed;
-  display: block;
-  filter: blur(48px);
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 9999px;
-  transform: translateZ(0);
-}
-
-.orb-1 {
-  width: 900px;
-  height: 900px;
-  left: -220px;
-  top: -220px;
-  background: radial-gradient(circle, rgba(44, 96, 138, 0.95) 0%, transparent 70%);
-}
-
-.orb-2 {
-  width: 820px;
-  height: 820px;
-  right: -240px;
-  top: 32%;
-  background: radial-gradient(circle, rgba(28, 66, 104, 0.85) 0%, transparent 70%);
-}
-
-
-

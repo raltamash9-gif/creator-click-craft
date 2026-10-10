@@ -3,8 +3,6 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ArrowUpRight, Wand2, Check } from "lucide-react";
 
-import { CustomCursor } from "@/components/CustomCursor";
-import { Atmosphere } from "@/components/site/Atmosphere";
 
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Contact";
@@ -63,8 +61,6 @@ function CaseStudyPage() {
 
   return (
     <div className="relative z-[2] min-h-screen bg-transparent">
-      <Atmosphere />
-      <CustomCursor />
 
       <Nav />
       <main className="relative z-[1] bg-transparent pt-32 lg:pt-40">
@@ -187,7 +183,7 @@ function CaseStudyPage() {
                   type="button"
                   data-cursor="button"
                   onClick={() => setRevealed((v) => !v)}
-                  className="hover:shadow-glow inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
+                  className="hover:shadow-glow inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:bg-accent"
                 >
                   <Wand2 className="h-4 w-4" />
                   {revealed ? "Hide Design Process" : "Reveal Design Process"}
@@ -232,8 +228,8 @@ function CaseStudyPage() {
                     initial={false}
                     animate={
                       revealed
-                        ? { opacity: 1, x: 0, filter: "blur(0px)" }
-                        : { opacity: 0.35, x: -8, filter: "blur(1.5px)" }
+                        ? { opacity: 1, x: 0 }
+                        : { opacity: 0.35, x: -8 }
                     }
                     transition={{
                       duration: 0.7,
@@ -341,7 +337,7 @@ function CaseStudyPage() {
                           {r.category} · {r.year}
                         </p>
                         </div>
-                        <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
+                        <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-[transform,opacity,color,background-color,border-color] duration-300 group-hover:rotate-45 group-hover:text-accent" />
                       </div>
                     </motion.div>
                   </Link>

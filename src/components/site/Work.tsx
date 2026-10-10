@@ -132,7 +132,7 @@ export function Work({
                               "linear-gradient(160deg, oklch(1 0 0 / 0.22), transparent 42%), linear-gradient(to top, oklch(0 0 0 / 0.55), transparent 55%)",
                           }}
                         />
-                        <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium tracking-wide opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                        <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium tracking-wide opacity-0 transition-[transform,opacity,color,background-color,border-color] duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                           View Case Study →
                         </span>
                       </div>
@@ -143,7 +143,7 @@ export function Work({
                             {item.category} · {item.year}
                           </p>
                         </div>
-                        <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
+                        <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-[transform,opacity,color,background-color,border-color] duration-300 group-hover:rotate-45 group-hover:text-accent" />
                       </div>
                     </div>
                   </Link>

@@ -17,7 +17,7 @@ const cards = [
 
 export function Contact() {
   return (
-    <section id="contact" className="section-elevated grain relative overflow-hidden py-28 lg:py-40">
+    <section id="contact" className="section-elevated relative overflow-hidden py-28 lg:py-40">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -47,7 +47,7 @@ export function Contact() {
           {cards.map((c, i) => {
             const inner = (
               <>
-                <c.icon className="h-5 w-5 text-accent transition-all duration-300 group-hover:drop-shadow-[0_0_10px_oklch(0.623_0.214_259.8_/_0.75)]" />
+                <c.icon className="h-5 w-5 text-accent transition-[transform,opacity,color,background-color,border-color] duration-300 group-hover:drop-shadow-[0_0_10px_oklch(0.623_0.214_259.8_/_0.75)]" />
                 <p className="mt-5 text-[11px] tracking-[0.24em] text-subtle uppercase">
                   {c.label}
                 </p>
@@ -64,7 +64,7 @@ export function Contact() {
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     aria-label={`${c.label} — ${c.value}`}
                     data-cursor="link"
-                    className="group  block h-full glass-card rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5"
+                    className="group  block h-full glass-card rounded-3xl p-7 transition-[transform,opacity,color,background-color,border-color] duration-300 hover:-translate-y-1.5"
                   >
                     {inner}
                   </a>
@@ -83,7 +83,7 @@ export function Contact() {
             <a
               href={`mailto:${EMAIL}`}
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-accent"
+              className="hover:shadow-glow inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:bg-accent"
             >
               <Mail className="h-4 w-4" />
               Hire Me
@@ -93,7 +93,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-ember inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="hover:shadow-ember inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:border-ember/40"
             >
               View Behance
               <ArrowUpRight className="h-4 w-4" />
@@ -103,7 +103,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:border-accent/40"
+              className="hover:shadow-glow inline-flex items-center gap-2 glass-card rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:border-accent/40"
             >
               View Upwork
               <ArrowUpRight className="h-4 w-4" />
@@ -195,7 +195,7 @@ export function Footer() {
               type="button"
               data-cursor="button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs tracking-wide transition-[transform,opacity,color,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:border-accent/40"
             >
               Back to top
               <ArrowUp className="h-3.5 w-3.5" />
