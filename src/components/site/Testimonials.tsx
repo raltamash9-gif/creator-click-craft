@@ -1,9 +1,21 @@
+import { useEffect, useRef } from "react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { projects } from "@/lib/projects";
 
-const items = [...projects, ...projects];
+const subset = projects.slice(0, 8);
+const items = [...subset, ...subset];
 
 export function Testimonials() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => {
+      el.style.animationPlayState = entry.isIntersecting ? "" : "paused";
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
   return (
     <section id="selected-work" className="overflow-hidden py-28 lg:py-40">
       <div className="shell">
@@ -19,11 +31,11 @@ export function Testimonials() {
       </div>
 
       <div className="marquee group mt-14 lg:mt-20">
-        <div className="marquee-track group-hover:[animation-play-state:paused]">
+        <div ref={trackRef} className="marquee-track group-hover:[animation-play-state:paused]">
           {items.map((p, i) => (
             <figure
               key={`${p.slug}-${i}`}
-              className=" w-[320px] shrink-0 overflow-hidden glass-card rounded-3xl p-3 sm:w-[400px]"
+              className=" w-[320px] shrink-0 overflow-hidden rounded-3xl border border-border bg-card p-3 sm:w-[400px]"
             >
               <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                 <img

@@ -1,3 +1,4 @@
+import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
@@ -67,32 +68,28 @@ export function BeforeAfter() {
 }
 
 function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
-  const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
-  const dragging = useRef(false);
+  const frame = useRef(0);
 
-  const move = useCallback((clientX: number) => {
+  const setPos = useCallback((value: number) => {
     const el = ref.current;
     if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const next = ((clientX - rect.left) / rect.width) * 100;
-    setPos(Math.min(100, Math.max(0, next)));
+    const v = Math.min(100, Math.max(0, value));
+    cancelAnimationFrame(frame.current);
+    frame.current = requestAnimationFrame(() => el.style.setProperty("--pos", `${v}%`));
   }, []);
 
-  useEffect(() => {
-    const onMove = (e: PointerEvent) => {
-      if (dragging.current) move(e.clientX);
-    };
-    const onUp = () => {
-      dragging.current = false;
-    };
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
-    return () => {
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerup", onUp);
-    };
-  }, [move]);
+  const move = useCallback(
+    (clientX: number) => {
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      setPos(((clientX - rect.left) / rect.width) * 100);
+    },
+    [setPos],
+  );
+
+  useEffect(() => () => cancelAnimationFrame(frame.current), []);
 
   return (
     <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
@@ -111,7 +108,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
               initial={{ opacity: 0, x: -14 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: "some" }}
-              transition={{ duration: 0.55, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.35, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
               className="flex gap-3"
             >
               <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
@@ -125,9 +122,13 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
         <div
           ref={ref}
           className="shadow-lift relative aspect-[16/9] w-full touch-none overflow-hidden rounded-3xl border border-border bg-ink select-none"
+          style={{ "--pos": "50%" } as React.CSSProperties}
           onPointerDown={(e) => {
-            dragging.current = true;
+            e.currentTarget.setPointerCapture(e.pointerId);
             move(e.clientX);
+          }}
+          onPointerMove={(e) => {
+            if (e.currentTarget.hasPointerCapture(e.pointerId)) move(e.clientX);
           }}
         >
           <img
@@ -141,7 +142,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
           />
           <div
             className="absolute inset-0 overflow-hidden"
-            style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+            style={{ clipPath: "inset(0 calc(100% - var(--pos)) 0 0)" }}
           >
             <img
               src={data.before}
@@ -163,10 +164,10 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
 
           <div
             className="absolute inset-y-0 w-px bg-foreground/90"
-            style={{ left: `${pos}%` }}
+            style={{ left: "var(--pos)" }}
             aria-hidden
           >
-            <span className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 animate-[handle-pulse_2s_ease-out_infinite] items-center justify-center rounded-full bg-foreground text-xs font-semibold text-background">
+            <span className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-xs font-semibold text-background">
               ⇤⇥
             </span>
           </div>
@@ -175,7 +176,7 @@ function Comparison({ data, flip }: { data: Comparison; flip: boolean }) {
             type="range"
             min={0}
             max={100}
-            value={pos}
+            defaultValue={50}
             onChange={(e) => setPos(Number(e.target.value))}
             aria-label="Compare before and after"
             className="absolute inset-x-0 bottom-0 h-10 w-full cursor-ew-resize opacity-0"

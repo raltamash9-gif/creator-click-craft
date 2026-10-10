@@ -24,7 +24,7 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
               <div className="group relative">
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -inset-2 rounded-[2rem] bg-accent/20 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                  className="hidden"
                 />
                 <motion.button
                   type="button"

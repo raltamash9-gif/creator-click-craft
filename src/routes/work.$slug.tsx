@@ -228,8 +228,8 @@ function CaseStudyPage() {
                     initial={false}
                     animate={
                       revealed
-                        ? { opacity: 1, x: 0, filter: "blur(0px)" }
-                        : { opacity: 0.35, x: -8, filter: "blur(1.5px)" }
+                        ? { opacity: 1, x: 0 }
+                        : { opacity: 0.35, x: -8 }
                     }
                     transition={{
                       duration: 0.7,
