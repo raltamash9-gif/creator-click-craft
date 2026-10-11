@@ -14,6 +14,9 @@ import twdMistakesAsset from "@/assets/twd-mistakes.jpg.asset.json";
 import twdCommunitiesAsset from "@/assets/twd-communities.jpg.asset.json";
 import diabloXpAsset from "@/assets/diablo-xp-buff.png.asset.json";
 import diabloSoulsAsset from "@/assets/diablo-forgotten-souls.png.asset.json";
+import falloutVaultsAsset from "@/assets/fallout-vaults.png.asset.json";
+import nvidiaDownfallAsset from "@/assets/nvidia-downfall.png.asset.json";
+import schwererGustavAsset from "@/assets/schwerer-gustav.png.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
@@ -160,6 +163,52 @@ export const projects: Project[] = [
     ],
     layers: defaultLayers("survivor"),
     related: ["alexander-the-great", "radiation-leak", "bgmi-solo-vs-squad"],
+  },
+  {
+    slug: "nvidia-downfall-investigation",
+    title: "The Downfall of Nvidia?",
+    category: "Technology",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: nvidiaDownfallAsset.url,
+    span: "regular",
+    overview:
+      "A tech-investigation thumbnail where the story is told through a detective's evidence board. The central portrait was generated with AI, then nearly the entire frame — the corkboard, clippings, caution tape, glows and typography — was built and finished by hand in Photoshop.",
+    challenge:
+      "A corporate-collapse story has no monster to show — the danger has to come from paper, evidence and a single worried face.",
+    challengePoints: [
+      "Make a headline story readable without showing a product",
+      "Build tension with investigative props, not chaos",
+      "Keep 95% of the craft in Photoshop, not in generation",
+    ],
+    thinking: [
+      {
+        heading: "The evidence board as the story",
+        body: "A corkboard with pins, red string and clippings turns a stock-market story into a mystery the viewer wants solved.",
+      },
+      {
+        heading: "One worried witness",
+        body: "The wide-eyed face on the right carries the alarm so the board can stay calm and detailed.",
+      },
+      {
+        heading: "Headlines as props",
+        body: "Newspaper clippings and a TOP SECRET stamp deliver the premise inside the image — the title only confirms it.",
+      },
+      {
+        heading: "Caution tape as a frame device",
+        body: "Diagonal hazard tape corners the composition and gives the collage an editorial, magazine-cover edge.",
+      },
+    ],
+    tools: [
+      "Adobe Photoshop",
+      "AI-generated portrait",
+      "Photo manipulation",
+      "Compositing",
+      "Glow & lighting FX",
+      "Typography",
+    ],
+    layers: defaultLayers("shocked executive"),
+    related: ["master-coding", "celebrity-vector-portraits", "alexander-the-great"],
   },
   {
     slug: "radiation-leak",
@@ -704,6 +753,96 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Game captures", "AI-assisted assets", "Compositing", "Typography"],
     layers: defaultLayers("armoured boss"),
     related: ["diablo-secret-xp-buff", "bgmi-solo-vs-squad", "fooster-gaming-survival"],
+  },
+  {
+    slug: "every-fallout-vault-explained",
+    title: "Every Fallout Vault, Explained",
+    category: "Gaming",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: falloutVaultsAsset.url,
+    span: "regular",
+    overview:
+      "A Fallout lore-explainer thumbnail built from screenshots of the game's actual vault doors. Each door was enhanced with AI to recover detail, then cut, arranged and finished with hand-set typography in Photoshop.",
+    challenge:
+      "Three heavy metal objects side by side can read as a flat wall of grey — the frame needs colour, hierarchy and playfulness to survive a bright feed.",
+    challengePoints: [
+      "Make three vault doors read as a ranking, not a texture",
+      "Enhance game screenshots without losing the original geometry",
+      "Keep retro-futurist typography legible at sidebar size",
+    ],
+    thinking: [
+      {
+        heading: "Numbers as characters",
+        body: "31, 88 and 13 sit centre-stage on each wheel, turning industrial doors into three named characters the viewer can compare.",
+      },
+      {
+        heading: "Cream field, hard contrast",
+        body: "A warm parchment backdrop pushes the worn steel forward and borrows Fallout's vintage-poster language.",
+      },
+      {
+        heading: "Overlapping depth",
+        body: "The middle door sits largest and forward with the flanks tucked behind, so three objects stack into one focal pyramid.",
+      },
+      {
+        heading: "Red-and-white title block",
+        body: "Heavy slab type with hard shadows matches the franchise's Americana style and stays readable over the bright field.",
+      },
+    ],
+    tools: [
+      "Game screenshots",
+      "AI enhancement",
+      "Adobe Photoshop",
+      "Compositing",
+      "Typography",
+    ],
+    layers: defaultLayers("vault door trio"),
+    related: ["bgmi-solo-vs-squad", "diablo-secret-xp-buff", "fooster-gaming-survival"],
+  },
+  {
+    slug: "hitler-secret-weapons-ww2",
+    title: "Secret Weapons of World War 2",
+    category: "Documentary",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: schwererGustavAsset.url,
+    span: "wide",
+    overview:
+      "A history-documentary thumbnail built around a burned blueprint. The Schwerer Gustav railway gun was recreated with AI-generated assets, then composed, aged and lit almost entirely inside Photoshop so the schematic reads like a declassified wartime document.",
+    challenge:
+      "A 1,350-ton weapon has no photos that pop — the design had to sell its scale through the language of secret paperwork instead.",
+    challengePoints: [
+      "Communicate the size of a weapon most viewers have never seen",
+      "Keep generated assets faithful to the real machine",
+      "Make a document-styled frame stop the scroll",
+    ],
+    thinking: [
+      {
+        heading: "The blueprint as the hero",
+        body: "A technical drawing fills the frame like a declassified file, letting scale come from the annotations and rails rather than a photo.",
+      },
+      {
+        heading: "Burn and smoke for urgency",
+        body: "Charred edges, drifting smoke and a warm firelight edge make a static document feel like it was just pulled from a fire.",
+      },
+      {
+        heading: "The stare as the anchor",
+        body: "A grim period-accurate portrait on the left gives the abstract drawing a human weight and an emotional entry point.",
+      },
+      {
+        heading: "CONFIDENTIAL as the hook",
+        body: "A red rubber stamp at the bottom right promises forbidden knowledge — the cheapest, strongest curiosity trigger the format allows.",
+      },
+    ],
+    tools: [
+      "Adobe Photoshop",
+      "AI-generated assets",
+      "Paper ageing & compositing",
+      "Lighting FX",
+      "Typography",
+    ],
+    layers: defaultLayers("railway gun schematic"),
+    related: ["alexander-the-great", "attacked-by-wolves", "radiation-leak"],
   },
 ];
 
