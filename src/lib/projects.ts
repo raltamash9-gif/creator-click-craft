@@ -754,6 +754,96 @@ export const projects: Project[] = [
     layers: defaultLayers("armoured boss"),
     related: ["diablo-secret-xp-buff", "bgmi-solo-vs-squad", "fooster-gaming-survival"],
   },
+  {
+    slug: "every-fallout-vault-explained",
+    title: "Every Fallout Vault, Explained",
+    category: "Gaming",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: falloutVaultsAsset.url,
+    span: "regular",
+    overview:
+      "A Fallout lore-explainer thumbnail built from screenshots of the game's actual vault doors. Each door was enhanced with AI to recover detail, then cut, arranged and finished with hand-set typography in Photoshop.",
+    challenge:
+      "Three heavy metal objects side by side can read as a flat wall of grey — the frame needs colour, hierarchy and playfulness to survive a bright feed.",
+    challengePoints: [
+      "Make three vault doors read as a ranking, not a texture",
+      "Enhance game screenshots without losing the original geometry",
+      "Keep retro-futurist typography legible at sidebar size",
+    ],
+    thinking: [
+      {
+        heading: "Numbers as characters",
+        body: "31, 88 and 13 sit centre-stage on each wheel, turning industrial doors into three named characters the viewer can compare.",
+      },
+      {
+        heading: "Cream field, hard contrast",
+        body: "A warm parchment backdrop pushes the worn steel forward and borrows Fallout's vintage-poster language.",
+      },
+      {
+        heading: "Overlapping depth",
+        body: "The middle door sits largest and forward with the flanks tucked behind, so three objects stack into one focal pyramid.",
+      },
+      {
+        heading: "Red-and-white title block",
+        body: "Heavy slab type with hard shadows matches the franchise's Americana style and stays readable over the bright field.",
+      },
+    ],
+    tools: [
+      "Game screenshots",
+      "AI enhancement",
+      "Adobe Photoshop",
+      "Compositing",
+      "Typography",
+    ],
+    layers: defaultLayers("vault door trio"),
+    related: ["bgmi-solo-vs-squad", "diablo-secret-xp-buff", "fooster-gaming-survival"],
+  },
+  {
+    slug: "hitler-secret-weapons-ww2",
+    title: "Secret Weapons of World War 2",
+    category: "Documentary",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: schwererGustavAsset.url,
+    span: "wide",
+    overview:
+      "A history-documentary thumbnail built around a burned blueprint. The Schwerer Gustav railway gun was recreated with AI-generated assets, then composed, aged and lit almost entirely inside Photoshop so the schematic reads like a declassified wartime document.",
+    challenge:
+      "A 1,350-ton weapon has no photos that pop — the design had to sell its scale through the language of secret paperwork instead.",
+    challengePoints: [
+      "Communicate the size of a weapon most viewers have never seen",
+      "Keep generated assets faithful to the real machine",
+      "Make a document-styled frame stop the scroll",
+    ],
+    thinking: [
+      {
+        heading: "The blueprint as the hero",
+        body: "A technical drawing fills the frame like a declassified file, letting scale come from the annotations and rails rather than a photo.",
+      },
+      {
+        heading: "Burn and smoke for urgency",
+        body: "Charred edges, drifting smoke and a warm firelight edge make a static document feel like it was just pulled from a fire.",
+      },
+      {
+        heading: "The stare as the anchor",
+        body: "A grim period-accurate portrait on the left gives the abstract drawing a human weight and an emotional entry point.",
+      },
+      {
+        heading: "CONFIDENTIAL as the hook",
+        body: "A red rubber stamp at the bottom right promises forbidden knowledge — the cheapest, strongest curiosity trigger the format allows.",
+      },
+    ],
+    tools: [
+      "Adobe Photoshop",
+      "AI-generated assets",
+      "Paper ageing & compositing",
+      "Lighting FX",
+      "Typography",
+    ],
+    layers: defaultLayers("railway gun schematic"),
+    related: ["alexander-the-great", "attacked-by-wolves", "radiation-leak"],
+  },
 ];
 
 export function getProject(slug: string) {
