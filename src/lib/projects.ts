@@ -14,6 +14,9 @@ import twdMistakesAsset from "@/assets/twd-mistakes.jpg.asset.json";
 import twdCommunitiesAsset from "@/assets/twd-communities.jpg.asset.json";
 import diabloXpAsset from "@/assets/diablo-xp-buff.png.asset.json";
 import diabloSoulsAsset from "@/assets/diablo-forgotten-souls.png.asset.json";
+import falloutVaultsAsset from "@/assets/fallout-vaults.png.asset.json";
+import nvidiaDownfallAsset from "@/assets/nvidia-downfall.png.asset.json";
+import schwererGustavAsset from "@/assets/schwerer-gustav.png.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
