@@ -165,6 +165,52 @@ export const projects: Project[] = [
     related: ["alexander-the-great", "radiation-leak", "bgmi-solo-vs-squad"],
   },
   {
+    slug: "nvidia-downfall-investigation",
+    title: "The Downfall of Nvidia?",
+    category: "Technology",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: nvidiaDownfallAsset.url,
+    span: "regular",
+    overview:
+      "A tech-investigation thumbnail where the story is told through a detective's evidence board. The central portrait was generated with AI, then nearly the entire frame — the corkboard, clippings, caution tape, glows and typography — was built and finished by hand in Photoshop.",
+    challenge:
+      "A corporate-collapse story has no monster to show — the danger has to come from paper, evidence and a single worried face.",
+    challengePoints: [
+      "Make a headline story readable without showing a product",
+      "Build tension with investigative props, not chaos",
+      "Keep 95% of the craft in Photoshop, not in generation",
+    ],
+    thinking: [
+      {
+        heading: "The evidence board as the story",
+        body: "A corkboard with pins, red string and clippings turns a stock-market story into a mystery the viewer wants solved.",
+      },
+      {
+        heading: "One worried witness",
+        body: "The wide-eyed face on the right carries the alarm so the board can stay calm and detailed.",
+      },
+      {
+        heading: "Headlines as props",
+        body: "Newspaper clippings and a TOP SECRET stamp deliver the premise inside the image — the title only confirms it.",
+      },
+      {
+        heading: "Caution tape as a frame device",
+        body: "Diagonal hazard tape corners the composition and gives the collage an editorial, magazine-cover edge.",
+      },
+    ],
+    tools: [
+      "Adobe Photoshop",
+      "AI-generated portrait",
+      "Photo manipulation",
+      "Compositing",
+      "Glow & lighting FX",
+      "Typography",
+    ],
+    layers: defaultLayers("shocked executive"),
+    related: ["master-coding", "celebrity-vector-portraits", "alexander-the-great"],
+  },
+  {
     slug: "radiation-leak",
     title: "It Escaped",
     category: "Documentary",
