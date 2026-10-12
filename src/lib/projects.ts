@@ -10,8 +10,6 @@ import deathNoteAsset from "@/assets/death-note-split.jpg.asset.json";
 import celebrityAsset from "@/assets/celebrity-vector.webp.asset.json";
 import foosterAsset from "@/assets/fooster-gaming.webp.asset.json";
 import gordonRamsayAsset from "@/assets/gordon-ramsay.png.asset.json";
-import twdMistakesAsset from "@/assets/twd-mistakes.jpg.asset.json";
-import twdCommunitiesAsset from "@/assets/twd-communities.jpg.asset.json";
 import diabloXpAsset from "@/assets/diablo-xp-buff.png.asset.json";
 import diabloSoulsAsset from "@/assets/diablo-forgotten-souls.png.asset.json";
 import falloutVaultsAsset from "@/assets/fallout-vaults.png.asset.json";
@@ -674,88 +672,6 @@ export const projects: Project[] = [
     ],
     layers: defaultLayers("central reaction"),
     related: ["attacked-by-wolves", "celebrity-vector-portraits", "radiation-leak"],
-  },
-  {
-    slug: "walking-dead-biggest-mistakes",
-    title: "The Biggest Mistake in Every Season",
-    category: "Animation",
-    channel: "Portfolio piece",
-    year: "2026",
-    src: twdMistakesAsset.url,
-    span: "regular",
-    overview:
-      "A comic-book illustration thumbnail in a circular grid. Each season's portrait was generated as a separate piece of artwork, then colour-corrected and composited in Photoshop so all eight circles feel printed from the same ink.",
-    challenge:
-      "Eight different illustrated characters, generated independently, will never match by default — the grid fails if one circle looks imported.",
-    challengePoints: [
-      "Match line weight and palette across eight separate generations",
-      "Keep a 4×2 grid scannable at sidebar size",
-      "Give every season a distinct mood inside one style",
-    ],
-    thinking: [
-      {
-        heading: "Circles as comic panels",
-        body: "Thick-ringed medallions borrow the language of graphic-novel covers and let eight ideas sit in one frame without chaos.",
-      },
-      {
-        heading: "One grade, eight scenes",
-        body: "A shared warm-paper tone and unified black point pull every portrait into the same world.",
-      },
-      {
-        heading: "Hand-set season labels",
-        body: "Loose marker-style type under each circle keeps the illustrated energy instead of fighting it with corporate type.",
-      },
-    ],
-    tools: [
-      "AI generation",
-      "Prompt design",
-      "Adobe Photoshop",
-      "Colour correction",
-      "Compositing",
-    ],
-    layers: defaultLayers("circular portrait grid"),
-    related: ["walking-dead-communities-ranked", "death-note-split", "rick-and-morty-entire-story"],
-  },
-  {
-    slug: "walking-dead-communities-ranked",
-    title: "Every Community, Ranked by Collapse",
-    category: "Animation",
-    channel: "Portfolio piece",
-    year: "2026",
-    src: twdCommunitiesAsset.url,
-    span: "regular",
-    overview:
-      "A companion circular-grid thumbnail in the same comic-book system. Eight locations were each generated as standalone establishing shots, then corrected and composited in Photoshop so architecture, skies and ink all sit in one consistent style.",
-    challenge:
-      "Places are harder to rank visually than faces — each circle has to be instantly recognisable as a different settlement.",
-    challengePoints: [
-      "Make eight locations distinct at a glance",
-      "Hold the same illustration style as the season-mistakes piece",
-      "Keep long settlement names legible under small circles",
-    ],
-    thinking: [
-      {
-        heading: "Establishing shots, not objects",
-        body: "Each circle frames the location like a comic panel's wide shot, so the viewer reads a place, not a building.",
-      },
-      {
-        heading: "Consistent horizon logic",
-        body: "Shared sky tone and ink density make eight separately generated scenes feel drawn by one hand.",
-      },
-      {
-        heading: "Labels as captions",
-        body: "Hand-drawn type beneath each medallion turns the grid into a ranking the viewer can scan in seconds.",
-      },
-    ],
-    tools: [
-      "AI generation",
-      "Prompt design",
-      "Adobe Photoshop",
-      "Colour correction",
-      "Compositing",
-    ],
-    layers: defaultLayers("location grid"),
-    related: ["walking-dead-biggest-mistakes", "flash-speed-force-flashpoint", "celebrity-vector-portraits"],
   },
   {
     slug: "diablo-secret-xp-buff",
