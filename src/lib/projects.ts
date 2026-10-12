@@ -17,6 +17,7 @@ import diabloSoulsAsset from "@/assets/diablo-forgotten-souls.png.asset.json";
 import falloutVaultsAsset from "@/assets/fallout-vaults.png.asset.json";
 import nvidiaDownfallAsset from "@/assets/nvidia-downfall.png.asset.json";
 import schwererGustavAsset from "@/assets/schwerer-gustav.png.asset.json";
+import chatGptAsset from "@/assets/earn-using-chatgpt.webp.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
@@ -122,6 +123,78 @@ export const projects: Project[] = [
     ],
     layers: defaultLayers("Alexander"),
     related: ["snake-island", "radiation-leak", "master-coding"],
+  },
+  {
+    slug: "prompt-to-profit-chatgpt",
+    title: "Prompt to Profit — The ChatGPT Cheat Code",
+    category: "Technology",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: chatGptAsset.url,
+    span: "regular",
+    overview:
+      "A thumbnail about earning with AI, built to make an invisible idea legible at a glance. Interface assets were generated with ChatGPT, then composited, relit, lettered and graded in Adobe Photoshop so the frame reads as one scene rather than a stack of screenshots.",
+    challenge:
+      "There is nothing to photograph here — and a real dashboard collapses into noise the moment a thumbnail shrinks to sidebar size.",
+    challengePoints: [
+      "Turn an abstract promise into one readable scene",
+      "Let two UI panels inform without competing with the face",
+      "Hold a single palette across every generated asset",
+    ],
+    thinking: [
+      {
+        heading: "A centred subject as the anchor",
+        body: "The portrait splits the frame in two and gives the eye somewhere to land before either panel is read.",
+      },
+      {
+        heading: "Interfaces as evidence",
+        body: "An earnings panel on the left and a project panel on the right do the explaining, so the headline only has to make the claim.",
+      },
+      {
+        heading: "One emerald language",
+        body: "Mint, off-white and deep navy are held across every generated panel so nothing reads as a pasted-in screenshot.",
+      },
+      {
+        heading: "Depth from blur",
+        body: "Background charts are pushed out of focus while the subject and front panels stay sharp — separation without clutter.",
+      },
+    ],
+    tools: [
+      "Adobe Photoshop",
+      "ChatGPT-generated UI assets",
+      "Photo manipulation",
+      "Compositing",
+      "Lighting & exposure",
+      "Colour grading",
+      "Typography",
+    ],
+    layers: [
+      {
+        name: "Visual direction",
+        body: "A cinematic reference frame set the rules first — bold headline, centred portrait, layered interfaces behind it.",
+      },
+      {
+        name: "Generated UI assets",
+        body: "ChatGPT produced the neumorphic dashboards, revenue graphs, progress panels and 3D icons, all kept inside one emerald, mint and navy palette.",
+      },
+      {
+        name: "Composition & hierarchy",
+        body: "The subject sits between an earnings dashboard on the left and a project list on the right, with blurred panels pushed behind for depth.",
+      },
+      {
+        name: "Photoshop refinement",
+        body: "Subject scale, background blur, exposure and panel brightness were rebalanced by hand so the face stays the brightest thing in the frame.",
+      },
+      {
+        name: "Headline",
+        body: "“ChatGPT Is A Cheat Code” set in bold white with light dimensional shading, sized to survive sidebar dimensions.",
+      },
+      {
+        name: "Final polish",
+        body: "Clutter trimmed, subject separated from the background, and a small-size legibility pass before export.",
+      },
+    ],
+    related: ["master-coding", "nvidia-downfall-investigation", "celebrity-vector-portraits"],
   },
   {
     slug: "snake-island",
