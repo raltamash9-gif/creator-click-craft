@@ -126,7 +126,7 @@ export const projects: Project[] = [
   },
   {
     slug: "prompt-to-profit-chatgpt",
-    title: "Prompt to Profit — The ChatGPT Cheat Code",
+    title: "Prompt to Profit — ChatGPT Cheat Code",
     category: "Technology",
     channel: "Portfolio piece",
     year: "2026",
