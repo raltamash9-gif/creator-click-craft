@@ -15,7 +15,7 @@ import diabloSoulsAsset from "@/assets/diablo-forgotten-souls.png.asset.json";
 import falloutVaultsAsset from "@/assets/fallout-vaults.png.asset.json";
 import nvidiaDownfallAsset from "@/assets/nvidia-downfall.png.asset.json";
 import schwererGustavAsset from "@/assets/schwerer-gustav.png.asset.json";
-import chatGptAsset from "@/assets/earn-using-chatgpt-v2.webp.asset.json";
+import chatGptAsset from "@/assets/prompt-to-profit-4k.png.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
