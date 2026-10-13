@@ -174,7 +174,7 @@ function CaseStudyPage() {
         <section className="py-24 lg:py-32">
           <div className="shell">
             <Reveal>
-              <SectionLabel>Visual Breakdown</SectionLabel>
+              <SectionLabel>{project.processLabel ?? "Visual Breakdown"}</SectionLabel>
               <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
                 <h2 className="max-w-2xl text-[clamp(2rem,3.6vw,3.2rem)] leading-[1.05] font-extrabold">
                   How the composite was built.
