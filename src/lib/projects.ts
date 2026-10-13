@@ -15,7 +15,7 @@ import diabloSoulsAsset from "@/assets/diablo-forgotten-souls.png.asset.json";
 import falloutVaultsAsset from "@/assets/fallout-vaults.png.asset.json";
 import nvidiaDownfallAsset from "@/assets/nvidia-downfall.png.asset.json";
 import schwererGustavAsset from "@/assets/schwerer-gustav.png.asset.json";
-import chatGptAsset from "@/assets/earn-using-chatgpt.webp.asset.json";
+import chatGptAsset from "@/assets/earn-using-chatgpt-v2.webp.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     src: chatGptAsset.url,
     span: "regular",
     overview:
-      "A thumbnail about earning with AI, built to make an invisible idea legible at a glance. Interface assets were generated with ChatGPT, then composited, relit, lettered and graded in Adobe Photoshop so the frame reads as one scene rather than a stack of screenshots.",
+      "A thumbnail about earning with AI, built to make an invisible idea legible at a glance. Interface assets were generated with ChatGPT, then composited, relit, lettered and graded in Adobe Photoshop — with a final Nano Banana Pro enhancement pass lifting detail and lighting on the finished frame.",
     challenge:
       "There is nothing to photograph here — and a real dashboard collapses into noise the moment a thumbnail shrinks to sidebar size.",
     challengePoints: [
@@ -160,6 +160,7 @@ export const projects: Project[] = [
     tools: [
       "Adobe Photoshop",
       "ChatGPT-generated UI assets",
+      "Google Flow · Nano Banana Pro",
       "Photo manipulation",
       "Compositing",
       "Lighting & exposure",
@@ -190,6 +191,10 @@ export const projects: Project[] = [
       {
         name: "Final polish",
         body: "Clutter trimmed, subject separated from the background, and a small-size legibility pass before export.",
+      },
+      {
+        name: "Nano Banana Pro refinement",
+        body: "The finished Photoshop frame was run through Nano Banana Pro in Google Flow with a refining prompt written alongside ChatGPT — lifting micro-detail, skin texture and lighting so the composite reads sharper at full size and in the sidebar.",
       },
     ],
     related: ["master-coding", "nvidia-downfall-investigation", "celebrity-vector-portraits"],
