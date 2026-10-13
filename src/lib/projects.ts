@@ -16,6 +16,7 @@ import falloutVaultsAsset from "@/assets/fallout-vaults.png.asset.json";
 import nvidiaDownfallAsset from "@/assets/nvidia-downfall.png.asset.json";
 import schwererGustavAsset from "@/assets/schwerer-gustav.png.asset.json";
 import chatGptAsset from "@/assets/prompt-to-profit-4k.png.asset.json";
+import shopifyAgencyAsset from "@/assets/shopify-agency-4k.png.asset.json";
 
 export const categories = ["All", "Documentary", "Gaming", "Technology", "Animation"] as const;
 
@@ -48,6 +49,7 @@ export type Project = {
   thinking: { heading: string; body: string }[];
   tools: string[];
   layers: { name: string; body: string }[];
+  processLabel?: string;
   related: string[];
 };
 
@@ -77,6 +79,48 @@ const defaultLayers = (subject: string) => [
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "stop-hiring-wrong-shopify-agency",
+    title: "Stop Hiring the Wrong Shopify Agency (Do This Instead)",
+    category: "Technology",
+    channel: "Portfolio piece",
+    year: "2026",
+    src: shopifyAgencyAsset.url,
+    span: "regular",
+    overview:
+      "An e-commerce thumbnail that sells a decision in one glance: the wrong agency versus the right one. ChatGPT-generated assets were composited in Photoshop with custom-built notification cards, comparison panels and a revenue chart, then finished with a Nano Banana Pro refinement pass in Google Flow.",
+    challenge:
+      "Agency advice is abstract — the thumbnail had to make the cost of a bad choice and the payoff of a good one visible before the title is even read.",
+    challengePoints: [
+      "Show a clear wrong-vs-right contrast at sidebar size",
+      "Make UI elements feel native, not pasted in",
+      "Keep the subject as the emotional anchor",
+    ],
+    thinking: [
+      { heading: "Contrast as the story", body: "Side-by-side agency panels turn a long argument into an instant comparison." },
+      { heading: "Proof through interface", body: "Phone notifications and a rising revenue chart act as evidence of the outcome." },
+      { heading: "A human anchor", body: "The subject's lighting and expression lead the eye into the frame before the UI is read." },
+      { heading: "Built to stay legible", body: "Every card, icon and figure was sized and simplified to survive thumbnail scale." },
+    ],
+    tools: [
+      "Adobe Photoshop",
+      "ChatGPT-generated assets",
+      "Google Flow · Nano Banana Pro",
+      "Custom UI design",
+      "Compositing",
+      "Lighting & colour grading",
+    ],
+    processLabel: "Behind the Thumbnail",
+    layers: [
+      { name: "Research & reference", body: "Took visual inspiration from a thumbnail by an Upwork freelancer, then developed an original execution of my own." },
+      { name: "AI asset generation", body: "Used ChatGPT to generate the core visual assets for the scene." },
+      { name: "Composition", body: "Arranged every element in Photoshop into a balanced, attention-grabbing layout with a clear reading order." },
+      { name: "Custom UI design", body: "Created and refined the smartphone notification cards, agency comparison panels, icons and revenue chart by hand." },
+      { name: "Background & subject enhancement", body: "Added the background and refined the man's appearance, lighting and integration so he sits naturally in the composition." },
+      { name: "AI refinement", body: "Ran the finished frame through Nano Banana Pro in Google Flow to enhance textures, detail and overall image quality." },
+    ],
+    related: ["prompt-to-profit-chatgpt", "nvidia-downfall-investigation", "master-coding"],
+  },
   {
     slug: "alexander-the-great",
     title: "Alexander the Great",
