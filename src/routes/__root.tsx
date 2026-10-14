@@ -78,17 +78,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Altar Studio — Cinematic YouTube Thumbnail Design" },
+      { title: "Altamash Design Portfolio — YouTube Thumbnail Designer" },
       {
         name: "description",
         content:
           "Cinematic, high-converting YouTube thumbnail design and creative direction for growing creators.",
       },
-      { name: "author", content: "Altar Studio" },
+      { name: "author", content: "Altamash Design Portfolio" },
+      { property: "og:site_name", content: "Altamash Design Portfolio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Altar Studio — Cinematic YouTube Thumbnail Design" },
-      { name: "twitter:title", content: "Altar Studio — Cinematic YouTube Thumbnail Design" },
+      {
+        property: "og:title",
+        content: "Altamash Design Portfolio — YouTube Thumbnail Designer",
+      },
+      {
+        name: "twitter:title",
+        content: "Altamash Design Portfolio — YouTube Thumbnail Designer",
+      },
       {
         property: "og:description",
         content:

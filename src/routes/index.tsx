@@ -17,7 +17,7 @@ import { Services } from "@/components/site/Services";
 import { Faq } from "@/components/site/Faq";
 import { Contact, Footer } from "@/components/site/Contact";
 
-const title = "Altar Studio — Cinematic YouTube Thumbnail Design";
+const title = "Altamash Design Portfolio — Cinematic YouTube Thumbnail Design";
 const description =
   "Thumbnail design and creative direction for documentary, gaming, tech and education YouTube creators. Cinematic, high-converting thumbnails that earn the click.";
 

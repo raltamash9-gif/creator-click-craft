@@ -19,12 +19,12 @@ export const Route = createFileRoute("/work/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Case study unavailable — Altar Studio" },
+          { title: "Case study unavailable — Altamash Design Portfolio" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
-    const t = `${loaderData.project.title} — Thumbnail Case Study | Altar Studio`;
+    const t = `${loaderData.project.title} — Thumbnail Case Study | Altamash Design Portfolio`;
     const d = loaderData.project.overview.slice(0, 155);
     return {
       meta: [
@@ -46,7 +46,7 @@ function CaseNotFound() {
     <div className="shell flex min-h-screen flex-col items-center justify-center text-center">
       <h1 className="text-4xl font-extrabold">Case study not found</h1>
       <Link to="/" className="mt-6 text-accent underline">
-        Back to Altar Studio
+        Back to Altamash Design Portfolio
       </Link>
     </div>
   );
