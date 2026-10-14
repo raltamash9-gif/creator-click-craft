@@ -57,7 +57,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 text-[11px] tracking-[0.3em] text-subtle uppercase"
           >
-            [ Altar Studio — Thumbnail Design ]
+            [ Altamash — Design Portfolio ]
           </motion.p>
 
           <motion.h1

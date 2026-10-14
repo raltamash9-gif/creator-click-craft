@@ -53,10 +53,11 @@ export function Nav() {
         <nav className="shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 py-5 lg:grid-cols-[1fr_auto_1fr]">
           <a
             href="/"
+            aria-label="Altamash Design Portfolio — home"
             data-cursor="link"
-            className="min-w-0 truncate font-display text-lg font-extrabold tracking-[0.025em]"
+            className="min-w-0"
           >
-            ALTAR<span className="text-accent">.</span>STUDIO
+            <Brand />
           </a>
 
           <div className="hidden items-center gap-9 lg:flex">

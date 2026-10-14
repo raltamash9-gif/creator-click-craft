@@ -136,10 +136,11 @@ export function Footer() {
           <div>
             <Link
               to="/"
+              aria-label="Altamash Design Portfolio — home"
               data-cursor="link"
-              className="font-display text-base font-extrabold tracking-[0.025em]"
+              className="inline-flex"
             >
-              ALTAR<span className="text-accent">.</span>STUDIO
+              <Brand variant="compact" />
             </Link>
             <p className="mt-3 max-w-xs text-sm tracking-wide text-subtle">
               Cinematic thumbnail design & creative direction.
@@ -162,7 +163,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-8">
           <p className="text-xs tracking-wide text-subtle">
-            © {new Date().getFullYear()} Altar Studio. All rights reserved.
+            © {new Date().getFullYear()} Altamash Design Portfolio. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
