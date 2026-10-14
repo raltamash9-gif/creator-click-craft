@@ -8,6 +8,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Contact";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { getProject, projects, type Project } from "@/lib/projects";
+import socialCover from "@/assets/altamash-social-cover.jpg.asset.json";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -34,6 +35,10 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:description", content: d },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: t },
+        { name: "twitter:description", content: d },
+        { property: "og:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
+        { name: "twitter:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
       ],
     };
   },
