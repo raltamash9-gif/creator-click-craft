@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
+import { Brand } from "@/components/site/Brand";
+
 const items = [
   { id: "work", label: "Work" },
   { id: "why", label: "Why It Works" },

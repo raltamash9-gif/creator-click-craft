@@ -2,6 +2,7 @@ import { Mail, ArrowUpRight, MessageCircle, Globe, ArrowUp, Briefcase } from "lu
 import { Link } from "@tanstack/react-router";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
+import { Brand } from "@/components/site/Brand";
 
 const EMAIL = "raltamash9@gmail.com";
 const DISCORD = "altamashraza_123";

@@ -2,7 +2,7 @@
 
 # PROJECT TITLE
 
-ALTAR STUDIO
+ALTAMASH DESIGN PORTFOLIO
 
 Premium Interactive Thumbnail Design Portfolio
 
