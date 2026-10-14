@@ -13,14 +13,14 @@ export function Brand({ variant = "nav" }: BrandProps) {
   const secondarySize = variant === "nav" ? "text-[9px] lg:text-[10px]" : "text-[9px]";
 
   return (
-    <span className="flex flex-col leading-none">
+    <span className="inline-flex flex-col leading-none">
       <span
-        className={`font-display font-extrabold uppercase tracking-[0.08em] text-foreground ${primarySize}`}
+        className={`font-display font-extrabold uppercase leading-none tracking-[0.08em] text-foreground ${primarySize}`}
       >
         Altamash
       </span>
       <span
-        className={`mt-1.5 font-medium uppercase tracking-[0.34em] text-muted-foreground ${secondarySize}`}
+        className={`mt-1.5 font-medium uppercase leading-none tracking-[0.28em] text-muted-foreground ${secondarySize}`}
       >
         Design Portfolio
       </span>
