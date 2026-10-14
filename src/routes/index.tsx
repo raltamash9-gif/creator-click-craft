@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import socialCover from "@/assets/altamash-social-cover.jpg.asset.json";
 
 import { ScrollProgress } from "@/components/ScrollProgress";
 
@@ -17,9 +18,9 @@ import { Services } from "@/components/site/Services";
 import { Faq } from "@/components/site/Faq";
 import { Contact, Footer } from "@/components/site/Contact";
 
-const title = "Altamash Design Portfolio — Cinematic YouTube Thumbnail Design";
+const title = "ALTAMASH — Design Portfolio | YouTube Thumbnail Designer";
 const description =
-  "Thumbnail design and creative direction for documentary, gaming, tech and education YouTube creators. Cinematic, high-converting thumbnails that earn the click.";
+  "Explore ALTAMASH’s YouTube thumbnail design portfolio: cinematic visuals, Photoshop compositions and creative direction for documentary, tech and gaming creators.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,6 +31,13 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { property: "og:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
+      { name: "twitter:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
+      { property: "og:image:width", content: "2752" },
+      { property: "og:image:height", content: "1536" },
+      { property: "og:image:type", content: "image/jpeg" },
     ],
   }),
   component: Index,

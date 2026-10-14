@@ -106,16 +106,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Cinematic, high-converting YouTube thumbnail design and creative direction for growing creators.",
       },
-      {
-        property: "og:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f5ab6afb-8e15-4b87-a43b-8afde9c4de47",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f5ab6afb-8e15-4b87-a43b-8afde9c4de47",
-      },
     ],
     links: [
       {
