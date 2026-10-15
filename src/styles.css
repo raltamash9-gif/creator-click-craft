@@ -84,6 +84,7 @@
   --blueprint-lit-line: rgba(120, 160, 255, 0.15);
   --blueprint-marker: rgba(120, 160, 255, 0.35);
   --blueprint-cell: 72px;
+  --section-padding: 24px;
   --blueprint-grid: linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px), linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
   --blueprint-crosshair: linear-gradient(to right, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px), linear-gradient(to bottom, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px);
 }
@@ -453,6 +454,31 @@
 .blueprint-sections > section:not(:first-child) {
   position: relative;
   isolation: isolate;
+  padding-block: var(--section-padding);
+  margin-block: 0;
+}
+
+@media (min-width: 768px) {
+  .blueprint-sections { --section-padding: 32px; }
+}
+
+@media (min-width: 1024px) {
+  .blueprint-sections { --section-padding: 48px; }
+}
+
+/* Border images ignore rounded corners; client cards use one normal border. */
+.trusted-card-frame,
+.trusted-card {
+  border-radius: calc(var(--radius) + 24px);
+}
+
+.trusted-card {
+  border-image: none;
+}
+
+.trusted-card:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
 }
 
 .blueprint-sections > section:not(:first-child)::before,
