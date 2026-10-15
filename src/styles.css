@@ -489,6 +489,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .blueprint-sections > section:not(:first-child)::after {
+    display: none;
+  }
+}
+
 /* Performance: skip rendering offscreen long sections */
 #work, #faq, footer { content-visibility: auto; contain-intrinsic-size: auto 1200px; }
 
