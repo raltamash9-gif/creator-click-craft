@@ -23,7 +23,7 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
           {channels.map((c, i) => (
             <Reveal key={c.name} delay={(i % 3) * 0.07}>
               <div className="trusted-card-frame group relative rounded-3xl">
-                <Button asChild variant="ghost" className="trusted-card block h-auto w-full whitespace-normal rounded-3xl p-7 text-left font-normal">
+                <Button asChild variant="ghost" className="trusted-card block h-auto w-full whitespace-normal rounded-3xl p-7 text-left font-normal focus-visible:ring-0">
                 <motion.button
                   type="button"
                   data-cursor="button"
