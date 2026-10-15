@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
+import { Button } from "@/components/ui/button";
 import { channels } from "@/lib/projects";
 
 export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void }) {
@@ -21,18 +22,15 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {channels.map((c, i) => (
             <Reveal key={c.name} delay={(i % 3) * 0.07}>
-              <div className="group relative">
-                <span
-                  aria-hidden
-                  className="hidden"
-                />
+              <div className="trusted-card-frame group relative rounded-3xl">
+                <Button asChild variant="ghost" className="trusted-card block h-auto w-full whitespace-normal rounded-3xl p-7 text-left font-normal">
                 <motion.button
                   type="button"
                   data-cursor="button"
                   onClick={() => onSelect(c.category)}
                   whileHover={{ y: -8, scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                  className="gradient-border relative w-full glass-card rounded-3xl p-7 text-left"
+                  className="relative glass-card"
                 >
                   <p className="font-display text-xl font-extrabold tracking-[0.025em]">{c.name}</p>
                   <p className="mt-2 text-sm tracking-wide text-muted-foreground">{c.note}</p>
@@ -40,6 +38,7 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
                     {c.category}
                   </span>
                 </motion.button>
+                </Button>
               </div>
             </Reveal>
           ))}
