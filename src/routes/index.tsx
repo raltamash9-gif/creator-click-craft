@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import socialCover from "@/assets/altamash-social-cover.jpg.asset.json";
 
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { useBlueprintGrid } from "@/hooks/use-blueprint-grid";
 
 
 import { Nav } from "@/components/site/Nav";
@@ -45,6 +46,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [filter, setFilter] = useState("All");
+  const blueprintRef = useBlueprintGrid();
 
   const selectChannel = (channel: string) => {
     setFilter(channel);
@@ -56,7 +58,7 @@ function Index() {
       <ScrollProgress />
       <Nav />
 
-      <main className="relative z-[1] bg-transparent">
+      <main ref={blueprintRef} className="blueprint-sections relative z-[1] bg-transparent">
         <Hero />
         <TrustedBy onSelect={selectChannel} />
         <Work filter={filter} onFilterChange={setFilter} />

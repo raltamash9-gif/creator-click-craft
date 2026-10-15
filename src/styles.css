@@ -80,6 +80,12 @@
   --ring: rgba(44, 83, 100, 0.5);
   --ink: #0d1017;
   --ink-foreground: oklch(0.97 0.003 95);
+  --blueprint-line: rgba(120, 160, 255, 0.06);
+  --blueprint-lit-line: rgba(120, 160, 255, 0.15);
+  --blueprint-marker: rgba(120, 160, 255, 0.35);
+  --blueprint-cell: 72px;
+  --blueprint-grid: linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px), linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
+  --blueprint-crosshair: linear-gradient(to right, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px), linear-gradient(to bottom, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px);
 }
 
 
@@ -442,6 +448,47 @@
 
 
 
+
+/* Blueprint layers stay underneath content, including all thumbnail artwork. */
+.blueprint-sections > section:not(:first-child) {
+  position: relative;
+  isolation: isolate;
+}
+
+.blueprint-sections > section:not(:first-child)::before,
+.blueprint-sections > section:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.blueprint-sections > section:not(:first-child)::before {
+  --corner-x: calc(round(down, calc(100% - 72px), 72px) - 6px);
+  --corner-y: calc(round(down, calc(100% - 72px), 72px) - 6px);
+  background-image: var(--blueprint-crosshair), var(--blueprint-crosshair), var(--blueprint-crosshair), var(--blueprint-grid);
+  background-size: 13px 13px, 13px 13px, 13px 13px, 13px 13px, 13px 13px, 13px 13px, var(--blueprint-cell) var(--blueprint-cell), var(--blueprint-cell) var(--blueprint-cell);
+  background-position: 66px 66px, 66px 66px, var(--corner-x) 66px, var(--corner-x) 66px, 66px var(--corner-y), 66px var(--corner-y), 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat;
+  mask-image: linear-gradient(to right, transparent, black 96px, black calc(100% - 96px), transparent), linear-gradient(to bottom, transparent, black 120px, black calc(100% - 120px), transparent);
+  mask-composite: intersect;
+}
+
+.blueprint-sections > section:not(:first-child)::after {
+  --blueprint-line: var(--blueprint-lit-line);
+  background-image: var(--blueprint-grid);
+  background-size: var(--blueprint-cell) var(--blueprint-cell);
+  opacity: 0;
+  mask-image: radial-gradient(circle 250px at var(--mx, -500px) var(--my, -500px), black, transparent), linear-gradient(to right, transparent, black 96px, black calc(100% - 96px), transparent), linear-gradient(to bottom, transparent, black 120px, black calc(100% - 120px), transparent);
+  mask-composite: intersect;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .blueprint-sections > section[data-grid-active]::after {
+    opacity: 1;
+  }
+}
 
 /* Performance: skip rendering offscreen long sections */
 #work, #faq, footer { content-visibility: auto; contain-intrinsic-size: auto 1200px; }

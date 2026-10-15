@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Shared content reveals must latch on first viewport entry and animate to permanent full opacity; do not map reading text opacity to scroll progress, so content stays readable after scrolling away and back.
+- Homepage section decorations live in isolated negative-z-index pseudo-elements; the shared blueprint hook batches pointer-variable updates with requestAnimationFrame and never updates React state, preserving artwork and scroll performance.
