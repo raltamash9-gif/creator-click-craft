@@ -476,8 +476,7 @@
 }
 
 .blueprint-sections > section:not(:first-child)::after {
-  --blueprint-line: var(--blueprint-lit-line);
-  background-image: var(--blueprint-grid);
+  background-image: linear-gradient(to right, var(--blueprint-lit-line) 1px, transparent 1px), linear-gradient(to bottom, var(--blueprint-lit-line) 1px, transparent 1px);
   background-size: var(--blueprint-cell) var(--blueprint-cell);
   opacity: 0;
   mask-image: radial-gradient(circle 250px at var(--mx, -500px) var(--my, -500px), black, transparent), linear-gradient(to right, transparent, black 96px, black calc(100% - 96px), transparent), linear-gradient(to bottom, transparent, black 120px, black calc(100% - 120px), transparent);
@@ -485,7 +484,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .blueprint-sections > section[data-grid-active]::after {
+  .blueprint-sections > section:not(:first-child)[data-grid-active]::after {
     opacity: 1;
   }
 }
