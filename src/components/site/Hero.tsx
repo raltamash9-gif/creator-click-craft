@@ -11,9 +11,8 @@ export function Hero() {
       className="relative min-h-[92vh] overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
     >
       <img
-        aria-hidden
         src={wolvesAsset.url}
-        alt=""
+        alt="Attacked By Wolves thumbnail: a man escaping wolves in snowy mountains"
         decoding="async"
         fetchPriority="high"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
@@ -55,7 +54,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 text-[11px] tracking-[0.3em] text-subtle uppercase"
+            className="bracket-label mt-8 text-[11px] tracking-[0.3em] text-subtle uppercase"
           >
             [ Altamash — Design Portfolio ]
           </motion.p>
@@ -70,7 +69,7 @@ export function Hero() {
             <br />
             Thumbnails That
             <br />
-            Make People Click.
+            Make People <span className="text-interaction">Click.</span>
           </motion.h1>
 
           <motion.p

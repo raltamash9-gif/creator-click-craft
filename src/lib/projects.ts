@@ -50,6 +50,9 @@ export type Project = {
   tools: string[];
   layers: { name: string; body: string }[];
   processLabel?: string;
+  concept?: boolean;
+  videoUrl?: string;
+  viewCount?: number;
   related: string[];
 };
 
@@ -81,6 +84,7 @@ const defaultLayers = (subject: string) => [
 export const projects: Project[] = [
   {
     slug: "stop-hiring-wrong-shopify-agency",
+    concept: true,
     title: "Stop Hiring the Wrong Shopify Agency (Do This Instead)",
     category: "Technology",
     channel: "Portfolio piece",

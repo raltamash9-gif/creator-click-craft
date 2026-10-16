@@ -7,6 +7,7 @@ const items = [
   { id: "work", label: "Work" },
   { id: "why", label: "Why It Works" },
   { id: "process", label: "Process" },
+  { id: "about", label: "About" },
   { id: "services", label: "Services" },
   { id: "faq", label: "FAQ" },
   { id: "contact", label: "Contact" },
@@ -62,14 +63,15 @@ export function Nav() {
             <Brand />
           </a>
 
-          <div className="hidden items-center gap-9 lg:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {items.map((item) => (
               <a
                 key={item.id}
                 href={`/#${item.id}`}
                 data-cursor="link"
+                aria-current={active === item.id ? "location" : undefined}
                 className={`nav-underline text-sm tracking-wide transition-colors duration-300 ${
-                  active === item.id ? "text-foreground" : "text-muted-foreground"
+                  active === item.id ? "text-interaction" : "text-muted-foreground"
                 } hover:text-foreground`}
               >
                 {item.label}

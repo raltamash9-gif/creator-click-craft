@@ -46,7 +46,8 @@ export function Services() {
                 <span className="text-sm tracking-wide text-subtle">Starting from</span>
                 <span className="font-display text-5xl font-extrabold tracking-[0.015em]">$50</span>
               </p>
-              <ul className="mt-8 space-y-3 text-sm tracking-wide text-muted-foreground">
+              <h4 className="mt-8 text-sm font-semibold">What's included</h4>
+              <ul className="mt-3 space-y-3 text-sm tracking-wide text-muted-foreground">
                 {single.map((s) => (
                   <li key={s} className="flex gap-3">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
@@ -54,6 +55,7 @@ export function Services() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-5 text-xs text-subtle">Long-term discounts can be discussed for recurring work.</p>
               <a
                 href="#contact"
                 data-cursor="button"
@@ -94,7 +96,8 @@ export function Services() {
                 <p className="mt-2 text-sm tracking-wide text-subtle">
                   No fixed monthly package — let's talk volume.
                 </p>
-                <ul className="mt-8 space-y-3 text-sm tracking-wide text-muted-foreground">
+                <h4 className="mt-8 text-sm font-semibold">What's included</h4>
+                <ul className="mt-3 space-y-3 text-sm tracking-wide text-muted-foreground">
                   {retainer.map((s) => (
                     <li key={s} className="flex gap-3">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
@@ -102,6 +105,7 @@ export function Services() {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-5 text-xs text-subtle">Long-term discounts are agreed around your upload volume.</p>
                 <a
                   href="#contact"
                   data-cursor="button"
@@ -114,6 +118,7 @@ export function Services() {
             </motion.div>
           </Reveal>
         </div>
+        <a href="#contact" className="mt-8 inline-block text-sm text-muted-foreground underline underline-offset-4">Start a project →</a>
       </div>
     </section>
   );

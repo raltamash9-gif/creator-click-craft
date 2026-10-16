@@ -82,6 +82,7 @@ export function Process() {
             ))}
           </ol>
         </div>
+        <a href="#contact" className="mt-8 inline-block text-sm text-muted-foreground underline underline-offset-4">Start a project →</a>
       </div>
     </section>
   );

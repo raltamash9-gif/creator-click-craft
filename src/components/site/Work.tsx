@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { categories, projects } from "@/lib/projects";
+import { thumbnailAlt, videoDetails } from "@/lib/project-presentation";
 
 const spanClass: Record<string, string> = {
   wide: "md:col-span-2",
@@ -117,7 +118,7 @@ export function Work({
                       >
                         <img
                           src={item.src}
-                          alt={`${item.category} YouTube thumbnail — ${item.title}`}
+                          alt={thumbnailAlt(item)}
                           loading="lazy"
                   decoding="async"
                           width={1280}
@@ -141,12 +142,19 @@ export function Work({
                           <h3 className="truncate text-lg font-bold tracking-[0.015em]">{item.title}</h3>
                           <p className="mt-1 truncate text-sm tracking-wide text-muted-foreground">
                             {item.category} · {item.year}
+                            {item.concept && <span className="ml-2 inline-block rounded border border-border px-1.5 py-0.5 text-[10px] text-subtle">Concept</span>}
                           </p>
                         </div>
                         <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-[transform,opacity,color,background-color,border-color] duration-300 group-hover:rotate-45 group-hover:text-accent" />
                       </div>
                     </div>
                   </Link>
+                  {videoDetails(item) && (
+                    <div className="mt-2 flex items-center gap-3 px-1 text-xs text-muted-foreground">
+                      <a href={videoDetails(item)?.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Watch video</a>
+                      {videoDetails(item)?.views !== undefined && <span>{videoDetails(item)?.views?.toLocaleString("en-US")} views</span>}
+                    </div>
+                  )}
                 </div>
               </motion.article>
             ))}

@@ -8,7 +8,8 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Contact";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { getProject, projects, type Project } from "@/lib/projects";
-import socialCover from "@/assets/altamash-social-cover.jpg.asset.json";
+import { thumbnailAlt } from "@/lib/project-presentation";
+import socialCover from "@/assets/altamash-social-share.jpg.asset.json";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/work/$slug")({
     if (!project) throw notFound();
     return { project };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
         meta: [
@@ -27,6 +28,7 @@ export const Route = createFileRoute("/work/$slug")({
     }
     const t = `${loaderData.project.title} — Thumbnail Case Study | Altamash Design Portfolio`;
     const d = loaderData.project.overview.slice(0, 155);
+    const url = `https://altamashportfolio.lovable.app/work/${encodeURIComponent(params.slug)}`;
     return {
       meta: [
         { title: t },
@@ -34,12 +36,14 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:title", content: t },
         { property: "og:description", content: d },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: t },
         { name: "twitter:description", content: d },
         { property: "og:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
         { name: "twitter:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   notFoundComponent: CaseNotFound,
@@ -89,7 +93,8 @@ function CaseStudyPage() {
             >
               <img
                 src={project.src}
-                alt={`${project.category} thumbnail — ${project.title}`}
+                alt={thumbnailAlt(project)}
+                decoding="async"
                 width={1280}
                 height={720}
                 className="h-auto max-h-[70vh] w-full object-contain"
@@ -200,7 +205,7 @@ function CaseStudyPage() {
               <div className="shadow-lift relative aspect-[16/9] overflow-hidden rounded-3xl border border-border bg-ink">
                 <img
                   src={project.src}
-                  alt={`${project.title} final composite`}
+                  alt={thumbnailAlt(project)}
                   loading="lazy"
                   decoding="async"
                   width={1280}
@@ -289,7 +294,7 @@ function CaseStudyPage() {
               <div className="shadow-lift mt-8 overflow-hidden rounded-[2rem] border border-border bg-ink">
                 <img
                   src={project.src}
-                  alt={`${project.title} final thumbnail`}
+                  alt={thumbnailAlt(project)}
                   loading="lazy"
                   decoding="async"
                   width={1280}
@@ -327,7 +332,7 @@ function CaseStudyPage() {
                       <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                         <img
                           src={r.src}
-                          alt={`${r.category} thumbnail — ${r.title}`}
+                          alt={thumbnailAlt(r)}
                           loading="lazy"
                   decoding="async"
                           width={1280}

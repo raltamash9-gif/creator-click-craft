@@ -31,7 +31,7 @@ export function Reveal({
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center text-[11px] font-medium tracking-[0.3em] text-subtle uppercase">
+    <span className="bracket-label inline-flex items-center text-[11px] font-medium tracking-[0.3em] text-subtle uppercase">
       [&nbsp;{children}&nbsp;]
     </span>
   );
