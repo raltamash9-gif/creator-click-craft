@@ -5,6 +5,7 @@ import codingAsset from "@/assets/master-coding.png.asset.json";
 const studies = [
   {
     src: alexanderAsset.url,
+    alt: "Alexander the Great commanding an army in a firelit oil-painting-style battle scene",
     channel: "Documentary style",
     title: "One subject, one emotion, zero clutter",
     problem:
@@ -19,6 +20,7 @@ const studies = [
   },
   {
     src: codingAsset.url,
+    alt: "Portrait surrounded by glowing code and technology logos with a Master Coding in 30 Days headline",
     channel: "Tech & education style",
     title: "Making an abstract topic visual",
     problem:
@@ -51,7 +53,7 @@ export function CaseStudies() {
                 <div className={`overflow-hidden rounded-2xl bg-ink aspect-video ${i % 2 ? "lg:order-2" : ""}`}>
                   <img
                     src={study.src}
-                    alt={`Case study thumbnail — ${study.title}`}
+                    alt={study.alt}
                     loading="lazy"
                     decoding="async"
                     width={1280}

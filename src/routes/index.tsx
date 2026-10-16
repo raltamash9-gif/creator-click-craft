@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import socialCover from "@/assets/altamash-social-cover.jpg.asset.json";
+import socialCover from "@/assets/altamash-social-share.jpg.asset.json";
 
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { useBlueprintGrid } from "@/hooks/use-blueprint-grid";
@@ -14,6 +14,8 @@ import { CaseStudies } from "@/components/site/CaseStudies";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { WhyItWorks } from "@/components/site/WhyItWorks";
 import { Process } from "@/components/site/Process";
+import { About } from "@/components/site/About";
+import { TestimonialQuote } from "@/components/site/TestimonialQuote";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Services } from "@/components/site/Services";
 import { Faq } from "@/components/site/Faq";
@@ -31,15 +33,17 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://altamashportfolio.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       { property: "og:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
       { name: "twitter:image", content: `https://altamashportfolio.lovable.app${socialCover.url}` },
-      { property: "og:image:width", content: "2752" },
-      { property: "og:image:height", content: "1536" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { property: "og:image:type", content: "image/jpeg" },
     ],
+    links: [{ rel: "canonical", href: "https://altamashportfolio.lovable.app/" }],
   }),
   component: Index,
 });
@@ -63,9 +67,11 @@ function Index() {
         <TrustedBy onSelect={selectChannel} />
         <Work filter={filter} onFilterChange={setFilter} />
         <CaseStudies />
+        <TestimonialQuote />
         <BeforeAfter />
         <WhyItWorks />
         <Process />
+        <About />
         <Testimonials />
         <Services />
         <Faq />

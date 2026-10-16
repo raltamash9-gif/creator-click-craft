@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { projects } from "@/lib/projects";
+import { thumbnailAlt } from "@/lib/project-presentation";
 
 const subset = projects.slice(0, 8);
 const items = [...subset, ...subset];
@@ -40,7 +41,7 @@ export function Testimonials() {
               <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-ink">
                 <img
                   src={p.src}
-                  alt={`${p.category} YouTube thumbnail — ${p.title}`}
+                  alt={thumbnailAlt(p)}
                   loading="lazy"
                   decoding="async"
                   width={1280}

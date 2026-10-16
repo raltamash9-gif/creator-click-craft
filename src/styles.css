@@ -43,6 +43,7 @@
   --color-ring: var(--ring);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-interaction: var(--interaction);
 
   --font-display: "Clash Display", "General Sans", "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -85,6 +86,7 @@
   --blueprint-marker: rgba(120, 160, 255, 0.35);
   --blueprint-cell: 72px;
   --section-padding: 24px;
+  --interaction: #4F8CFF;
   --blueprint-grid: linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px), linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
   --blueprint-crosshair: linear-gradient(to right, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px), linear-gradient(to bottom, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px);
 }
@@ -451,6 +453,22 @@
 
 
 /* Blueprint layers stay underneath content, including all thumbnail artwork. */
+.bracket-label { color: var(--interaction); }
+
+@media (hover: hover) {
+  [data-cursor="button"]:hover {
+    border-color: var(--interaction);
+  }
+  [data-cursor="button"][class*="bg-primary"]:hover {
+    background-color: var(--interaction);
+  }
+  [data-cursor="button"]:not([class*="bg-primary"]):hover {
+    color: var(--interaction);
+  }
+}
+
+main section[id] { scroll-margin-top: 96px; }
+
 .blueprint-sections > section:not(:first-child) {
   position: relative;
   isolation: isolate;
