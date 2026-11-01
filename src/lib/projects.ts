@@ -178,6 +178,7 @@ export const projects: Project[] = [
     year: "2026",
     src: chatGptAsset.url,
     span: "regular",
+    concept: true,
     overview:
       "A thumbnail about earning with AI, built to make an invisible idea legible at a glance. Interface assets were generated with ChatGPT, then composited, relit, lettered and graded in Adobe Photoshop — with a final Nano Banana Pro enhancement pass lifting detail and lighting on the finished frame.",
     challenge:
