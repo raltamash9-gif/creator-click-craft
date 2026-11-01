@@ -551,6 +551,19 @@ main section[id] { scroll-margin-top: 96px; }
   }
 }
 
+/* Grid visibility: brighter lines on desktop, strongest on small screens. */
+@media (min-width: 768px) {
+  :root {
+    --blueprint-line: rgba(120, 160, 255, 0.11);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --blueprint-line: rgba(120, 160, 255, 0.17);
+  }
+}
+
 /* Performance: skip rendering offscreen long sections */
 #work, #faq, footer { content-visibility: auto; contain-intrinsic-size: auto 1200px; }
 
