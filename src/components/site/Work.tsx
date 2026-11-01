@@ -113,29 +113,16 @@ export function Work({
                     className="block"
                   >
                     <div className="card-hover">
-                      <div
-                        className={`relative overflow-hidden rounded-2xl border border-border bg-ink ${ratioClass}`}
-                      >
+                      <div className="card-frame relative overflow-hidden rounded-2xl border border-border bg-ink aspect-[16/9]">
                         <img
                           src={item.src}
                           alt={thumbnailAlt(item)}
                           loading="lazy"
-                  decoding="async"
+                          decoding="async"
                           width={1280}
                           height={720}
-                          className="card-image-reveal h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-[1.06]"
+                          className="card-image-reveal h-full w-full object-cover"
                         />
-                        <span
-                          aria-hidden
-                          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                          style={{
-                            background:
-                              "linear-gradient(160deg, oklch(1 0 0 / 0.22), transparent 42%), linear-gradient(to top, oklch(0 0 0 / 0.55), transparent 55%)",
-                          }}
-                        />
-                        <span className="absolute bottom-4 left-4 translate-y-3 rounded-full bg-background/90 px-4 py-2 text-xs font-medium tracking-wide opacity-0 transition-[transform,opacity,color,background-color,border-color] duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                          View Case Study →
-                        </span>
                       </div>
                       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-1 pt-5 pb-2">
                         <div className="min-w-0">
@@ -145,7 +132,7 @@ export function Work({
                             {item.concept && <span className="ml-2 inline-block rounded border border-border px-1.5 py-0.5 text-[10px] text-subtle">Concept</span>}
                           </p>
                         </div>
-                        <ArrowUpRight className="h-5 w-5 shrink-0 text-subtle transition-[transform,opacity,color,background-color,border-color] duration-300 group-hover:rotate-45 group-hover:text-accent" />
+                        <ArrowUpRight className="card-arrow h-5 w-5 shrink-0 text-subtle" />
                       </div>
                     </div>
                   </Link>
