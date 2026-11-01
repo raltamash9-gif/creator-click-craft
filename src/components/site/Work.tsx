@@ -11,7 +11,6 @@ const spanClass: Record<string, string> = {
   regular: "md:col-span-2",
 };
 
-const ratioClass = "aspect-[16/9]";
 
 export function Work({
   filter,
