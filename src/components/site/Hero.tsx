@@ -17,14 +17,22 @@ export function Hero() {
         fetchPriority="high"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[62%_30%] lg:object-[50%_20%]"
       />
-      {/* Mobile only: darker floor behind the text so the subject stays visible above it */}
-      {/* Desktop: darken the left half behind the headline */}
+      {/* Desktop only: darken the left half behind the headline */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 lg:block hidden"
         style={{
           background:
             "linear-gradient(to right, rgba(8,12,24,0.92) 0%, rgba(8,12,24,0.6) 45%, rgba(8,12,24,0.2))",
+        }}
+      />
+      {/* Mobile only: darker floor behind the text so the subject stays visible above it */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 lg:hidden"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(8,12,24,0.97) 0%, rgba(8,12,24,0.72) 48%, transparent 78%)",
         }}
       />
       <div
