@@ -18,12 +18,20 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[62%_30%] lg:object-[50%_20%]"
       />
       {/* Mobile only: darker floor behind the text so the subject stays visible above it */}
+      {/* Desktop: darken the left half behind the headline */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 lg:hidden"
+        className="pointer-events-none absolute inset-0 lg:block hidden"
         style={{
           background:
-            "linear-gradient(to top, rgba(8,12,24,0.97) 0%, rgba(8,12,24,0.72) 48%, transparent 78%)",
+            "linear-gradient(to right, rgba(8,12,24,0.92) 0%, rgba(8,12,24,0.6) 45%, rgba(8,12,24,0.2))",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-40"
+        style={{
+          background: "linear-gradient(to bottom, rgba(8,12,24,0.55), transparent)",
         }}
       />
 
