@@ -1,5 +1,5 @@
 import { SectionLabel } from "@/components/Reveal";
-import portrait from "@/assets/portrait-placeholder.webp.asset.json";
+import portrait from "@/assets/altamash-portrait.png.asset.json";
 
 export function About() {
   return (
@@ -8,8 +8,7 @@ export function About() {
         <SectionLabel>About</SectionLabel>
         <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
           <figure className="shrink-0">
-            <img src={portrait.url} alt="Portrait placeholder for Altamash Raza" width={240} height={240} loading="lazy" decoding="async" className="h-24 w-24 rounded-full border border-border object-cover" />
-            <figcaption className="mt-2 text-xs text-subtle">Photo placeholder</figcaption>
+            <img src={portrait.url} alt="Altamash, YouTube thumbnail designer" width={240} height={240} loading="lazy" decoding="async" className="h-24 w-24 rounded-full border border-border object-cover" />
           </figure>
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold">Altamash Raza</h2>
