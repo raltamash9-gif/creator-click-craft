@@ -45,7 +45,7 @@ export function Hero() {
       <Snowfall />
 
       <div className="shell relative z-10">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
