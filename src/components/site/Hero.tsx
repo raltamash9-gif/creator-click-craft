@@ -15,23 +15,24 @@ export function Hero() {
         alt="Attacked By Wolves thumbnail: a man escaping wolves in snowy mountains"
         decoding="async"
         fetchPriority="high"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-        style={{ objectPosition: "center 20%" }}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[62%_30%] lg:object-[50%_20%]"
       />
+      {/* Desktop only: darken the left half behind the headline */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 lg:block hidden"
         style={{
           background:
             "linear-gradient(to right, rgba(8,12,24,0.92) 0%, rgba(8,12,24,0.6) 45%, rgba(8,12,24,0.2))",
         }}
       />
+      {/* Mobile only: darker floor behind the text so the subject stays visible above it */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 lg:hidden"
         style={{
           background:
-            "linear-gradient(to top, rgba(8,12,24,0.95), rgba(8,12,24,0.25) 55%, transparent 80%)",
+            "linear-gradient(to top, rgba(8,12,24,0.97) 0%, rgba(8,12,24,0.72) 48%, transparent 78%)",
         }}
       />
       <div
