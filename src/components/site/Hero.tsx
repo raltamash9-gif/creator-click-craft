@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[92vh] overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
+      className="relative min-h-[92vh] overflow-hidden pt-28 pb-14 lg:pt-28 lg:pb-20"
     >
       <img
         src={wolvesAsset.url}
@@ -22,14 +22,23 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
-          background: "linear-gradient(to right, rgba(10,15,20,0.88), rgba(10,15,20,0.15))",
+          background:
+            "linear-gradient(to right, rgba(8,12,24,0.92) 0%, rgba(8,12,24,0.6) 45%, rgba(8,12,24,0.2))",
         }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
-          background: "linear-gradient(to top, rgba(10,15,20,0.9), transparent 45%)",
+          background:
+            "linear-gradient(to top, rgba(8,12,24,0.95), rgba(8,12,24,0.25) 55%, transparent 80%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-40"
+        style={{
+          background: "linear-gradient(to bottom, rgba(8,12,24,0.55), transparent)",
         }}
       />
 
@@ -41,7 +50,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="glass inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-xs tracking-wide text-muted-foreground"
+            className="inline-flex items-center gap-2.5 rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground"
+            style={{ background: "rgba(8,12,24,0.6)" }}
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
@@ -54,16 +64,17 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="bracket-label mt-8 text-[11px] tracking-[0.3em] text-subtle uppercase"
+            className="bracket-label mt-6 inline-flex items-center rounded-full border border-border px-4 py-2 text-[13px] font-semibold uppercase tracking-[0.22em]"
+            style={{ background: "rgba(8,12,24,0.6)" }}
           >
-            [ Altamash — Design Portfolio ]
+            [ YouTube Thumbnail Designer ]
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 text-[clamp(2.9rem,7vw,88px)] leading-[1] font-extrabold tracking-[0.03em]"
+            className="mt-5 text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.05] font-extrabold tracking-[0.01em] [text-wrap:balance]"
           >
             Designing
             <br />
@@ -76,7 +87,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground lg:text-xl"
+            className="mt-6 max-w-[52ch] text-lg leading-relaxed text-[rgba(255,255,255,0.88)] [text-shadow:0_2px_14px_rgba(8,12,24,0.65)] lg:text-xl"
           >
             Helping Documentary, Gaming, Tech and Education creators stand out with cinematic,
             high-converting YouTube thumbnails.
@@ -86,27 +97,31 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-wrap items-center gap-4"
           >
             <a
               href="#work"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:bg-accent"
+              className="inline-flex items-center rounded-full border border-[rgba(255,255,255,0.4)] px-7 py-3.5 text-sm font-medium tracking-wide text-foreground transition-[background-color,border-color,color] duration-300 hover:border-interaction hover:text-interaction"
             >
               View My Work
             </a>
             <a
               href="#contact"
               data-cursor="button"
-              className="hover:shadow-ember glass-card inline-flex items-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:border-ember/40"
+              className="inline-flex items-center rounded-full bg-interaction px-7 py-3.5 text-sm font-medium tracking-wide text-[#0B0F1A] transition-[background-color] duration-300 hover:bg-[#5E99FF]"
             >
               Hire Me
             </a>
           </motion.div>
+
+          <p className="mt-6 text-sm tracking-wide text-subtle">
+            Documentary · Gaming · Tech · Animation
+          </p>
         </div>
       </div>
 
-      <div className="shell relative z-10 mt-20 flex justify-center lg:mt-24">
+      <div className="shell relative z-10 mt-12 flex justify-center lg:mt-14">
         <div className="flex flex-col items-center gap-3 text-[11px] font-semibold tracking-[0.24em] text-subtle uppercase">
           Scroll to Explore
           <ArrowDown className="h-4 w-4 animate-[bounce-arrow_2s_ease-in-out_infinite] text-accent" />

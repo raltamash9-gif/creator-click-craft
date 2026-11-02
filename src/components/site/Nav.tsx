@@ -83,7 +83,7 @@ export function Nav() {
             <a
               href="/#contact"
               data-cursor="button"
-              className="hover:shadow-glow inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium tracking-wide text-primary-foreground transition-[transform,opacity,color,background-color,border-color] duration-300 hover:scale-[1.03] hover:bg-accent"
+              className="inline-flex items-center rounded-full bg-interaction px-5 py-2.5 text-sm font-medium tracking-wide text-[#0B0F1A] transition-[background-color] duration-300 hover:bg-[#5E99FF]"
             >
               Hire Me
             </a>
