@@ -98,25 +98,52 @@
     border-color: var(--color-border);
   }
 
-  html,
-  body {
+  html {
     background: #0b0d12 !important;
     min-height: 100vh;
   }
 
-  /* Ambient gradient on its own composited layer — no repaint while scrolling. */
+  /* Body stays transparent so the fixed z-index:-1 layer paints above the base. */
+  body {
+    background: transparent !important;
+    min-height: 100vh;
+  }
+
+  /* Static ambient background layer: dark base + two radial glows + tiled film grain. */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
     transform: translateZ(0);
-    background:
-      radial-gradient(ellipse 90% 55% at 50% -10%, rgba(46, 68, 100, 0.42) 0%, transparent 60%),
-      radial-gradient(ellipse 65% 45% at 5% 45%, rgba(26, 38, 60, 0.6) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 50% at 50% 55%, rgba(24, 34, 52, 0.4) 0%, transparent 60%),
-      radial-gradient(ellipse 55% 40% at 95% 80%, rgba(76, 52, 28, 0.26) 0%, transparent 55%);
+    background-image:
+      radial-gradient(circle 640px at 12% 4%, rgba(79, 140, 255, 0.10) 0%, transparent 70%),
+      radial-gradient(circle 700px at 88% 96%, rgba(255, 140, 60, 0.06) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.03'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: auto, auto, 180px 180px;
+  }
+
+  /* Desktop only: left-edge ruler strip + guide line, outside the content column. */
+  @media (min-width: 1100px) {
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 8px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(79, 140, 255, 0.25), rgba(79, 140, 255, 0.25));
+      background-size: 6px 100%, 14px 80px, 1px 100%;
+      background-repeat: repeat-y, repeat-y, no-repeat;
+      background-position: 0 0, 0 0, 28px 0;
+    }
   }
 
   body {
