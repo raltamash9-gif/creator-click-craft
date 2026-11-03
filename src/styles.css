@@ -98,9 +98,14 @@
     border-color: var(--color-border);
   }
 
-  html,
-  body {
+  html {
     background: #0b0d12 !important;
+    min-height: 100vh;
+  }
+
+  /* Body stays transparent so the fixed z-index:-1 layer paints above the base. */
+  body {
+    background: transparent !important;
     min-height: 100vh;
   }
 
