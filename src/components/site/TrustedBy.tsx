@@ -14,12 +14,9 @@ export function TrustedBy({ onSelect }: { onSelect: (channel: string) => void })
           <h2 className="mt-6 max-w-3xl text-[clamp(2.2rem,4vw,3.6rem)] leading-[1.04] font-extrabold">
             Trusted by growing YouTube channels.
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground lg:text-lg">
-            Select a channel to see the work made for it.
-          </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
           {channels.map((c, i) => (
             <Reveal key={c.name} delay={(i % 3) * 0.07}>
               <div className="trusted-card-frame group relative rounded-3xl">
