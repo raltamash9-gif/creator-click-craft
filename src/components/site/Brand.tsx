@@ -20,7 +20,7 @@ export function Brand({ variant = "nav" }: BrandProps) {
         Altamash
       </span>
       <span
-        className={`mt-1.5 font-medium uppercase leading-none tracking-[0.28em] text-muted-foreground ${secondarySize}`}
+        className={`mt-1.5 font-medium uppercase leading-none tracking-[0.28em] text-foreground/80 ${secondarySize}`}
       >
         Design Portfolio
       </span>
