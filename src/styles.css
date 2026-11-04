@@ -44,6 +44,7 @@
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
   --color-interaction: var(--interaction);
+  --color-interaction-bright: var(--interaction-bright);
 
   --font-display: "Clash Display", "General Sans", "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -87,6 +88,7 @@
   --blueprint-cell: 72px;
   --section-padding: 24px;
   --interaction: #4F8CFF;
+  --interaction-bright: #5B9BFF;
   --blueprint-grid: linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px), linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
   --blueprint-crosshair: linear-gradient(to right, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px), linear-gradient(to bottom, transparent 6px, var(--blueprint-marker) 6px 7px, transparent 7px);
 }
@@ -464,6 +466,11 @@
 @utility nav-glass {
   background: rgba(11, 13, 18, 0.94);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  /* Mobile: solid header with a slight blur over the page beneath it. */
+  @media (max-width: 767px) {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
 }
 
 /* Section surface variation — smooth, layered separation between major sections. */
@@ -506,7 +513,7 @@
   }
 }
 
-main section[id] { scroll-margin-top: 96px; }
+section[id] { scroll-margin-top: 96px; }
 
 .blueprint-sections > section:not(:first-child) {
   position: relative;
