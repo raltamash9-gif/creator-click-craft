@@ -83,7 +83,7 @@ export function Nav() {
             <a
               href="/#contact"
               data-cursor="button"
-              className="inline-flex items-center rounded-full bg-interaction px-5 py-2.5 text-sm font-medium tracking-wide text-[#0B0F1A] transition-[background-color] duration-300 hover:bg-[#5E99FF]"
+              className="hidden md:inline-flex items-center rounded-full bg-interaction px-5 py-2.5 text-sm font-medium tracking-wide text-[#0B0F1A] transition-[background-color] duration-300 hover:bg-[#5E99FF]"
             >
               Hire Me
             </a>
