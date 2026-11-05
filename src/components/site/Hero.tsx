@@ -18,7 +18,7 @@ export function Hero() {
           alt="Attacked By Wolves thumbnail: a man escaping wolves in snowy mountains"
           decoding="async"
           fetchPriority="high"
-          className="pointer-events-none h-full w-full scale-[1.3] origin-[62%_55%] object-cover object-[62%_45%] md:scale-none md:origin-center md:object-[62%_30%] lg:object-[50%_20%]"
+          className="pointer-events-none h-full w-full scale-[1.12] origin-[45%_40%] object-cover object-[78%_50%] md:scale-none md:origin-center md:object-[62%_30%] lg:object-[50%_20%]"
         />
         {/* Mobile only: fade the bottom 45% of the image into the page background. */}
         <div
